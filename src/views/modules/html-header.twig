@@ -22,13 +22,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
   {# Google Tag Manager #}
-  {% include 'modules/third-party.twig' %}
+  {# include 'modules/third-party.twig' #}
 
   {# Other Metas #}
   <meta name="HandheldFriendly" content="True" />
 
   {# Stylesheet #}
-  <link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="{{site.theme.uri}}/stylesheets/app.css">
 
   {# Favicons #}
@@ -39,9 +38,6 @@
 
   {# SEO Tags #}
   {% include 'modules/seo-tags.twig' %}
-
-  {# Critical FOFT With Data URI #}
-  {% include 'utility/foft.twig' %}
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

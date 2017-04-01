@@ -2,12 +2,12 @@
 
 <body class="{{body_class}}">
 	{# Google Tag Manager (noscript) #}
-  {% include 'modules/third-party-noscript.twig' %}
+  {# include 'modules/third-party-noscript.twig' #}
 
 	{% include 'utility/svg.twig' %}
-	{% include 'components/modal.twig' %}
-	{% include 'components/announcement.twig' %}
-	{% include 'modules/mobile-header.twig' %}
+	{# include 'components/modal.twig' #}
+	{# include 'components/announcement.twig' #}
+	{# include 'modules/mobile-header.twig' #}
 	{% include 'modules/header.twig' %}
 
 	{% block before_content %}{% endblock %}
@@ -15,7 +15,7 @@
 		{% block content %}{% endblock %}
 	</main>
 
-	{% include 'components/cta.twig' %}
+	{# include 'components/cta.twig' #}
 	{% include 'modules/footer.twig' %}
 	{% include 'modules/html-footer.twig' %}
 
