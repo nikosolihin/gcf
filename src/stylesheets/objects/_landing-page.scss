@@ -1,0 +1,166 @@
+.LandingPage {
+  @include from(md) {
+    box: vertical;
+  }
+  @include from(xl) {
+    box: horizontal space-between;
+    border-bottom: 2px solid $white;
+  }
+  &-banner {
+    @include cover;
+    @include overlay(false);
+    position: relative;
+    width: 100%;
+    @include from(md) {
+      padding: $single*5 0;
+    }
+    @include from(xl) {
+      box: vertical top left;
+      width: 45%;
+      padding: 0;
+      border: 3px solid $white;
+      border-left: 0;
+    }
+    &Copy {
+      padding: $single*1.5 $single*2.75 $single*2;
+      background-color: rgba(255, 255, 255, 0.85);
+      @include from(md) {
+        width: 80%;
+      }
+      @include from(xl) {
+        position: absolute;
+        top: 65%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      p {
+        font-size: 1rem / 1.65;
+        @include from(md) {
+          font-size: 1.1rem / 1.65;
+        }
+      }
+    }
+  }
+
+  &-content {
+    box: vertical;
+    width: 100%;
+    @include from(xl) {
+      width: 55%;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    box: vertical;
+    @include from(md) {
+      box: horizontal space-between;
+    }
+    &--alt {
+      @include from(md) {
+        box: horizontal-reverse space-between;
+      }
+    }
+
+    // Colors
+    &:nth-child(3n+1) &Body {
+      @extend .LandingPage-itemBody--white;
+    }
+    &:nth-child(3n+2) &Body {
+      @extend .LandingPage-itemBody--navy;
+    }
+    &:nth-child(3n+3) &Body {
+      @extend .LandingPage-itemBody--orange;
+    }
+  }
+
+  &-itemImage {
+    @include cover;
+    width: 100%;
+    height: 10rem;
+    order: 1;
+    @include from(md) {
+      width: 50%;
+      height: auto;
+      min-height: $single*17.5;
+      border: 3px solid white;
+    }
+  }
+
+  &-itemBody {
+    box: vertical middle;
+    position: relative;
+    width: 100%;
+    padding: $single*2;
+    order: 2;
+    overflow: hidden;
+    @include from(md) {
+      width: 50%;
+      border: 3px solid white;
+    }
+    .Button {
+      margin-top: $single*1.25;
+    }
+    .flex-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+    &Icon {
+      position: absolute;
+      bottom: $single;
+      right: $single*1.5;
+      z-index: 1;
+      svg {
+        size: .85rem;
+        transition: all .1s ease-out;
+      }
+    }
+
+    // Pseudos
+    &:hover svg {
+      transform: translate3d(8px, 0, 0);
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 83%;
+      position: absolute;
+      top: 35px;
+      width: 165%;
+      z-index: 0;
+      right: -440px;
+      transform: rotate(-72deg);
+    }
+
+    // Appereances
+    &--navy {
+      @include white;
+      background-color: $navy;
+      &::after {
+        background-color: lighten($navy, 3.25%);
+      }
+    }
+    &--orange {
+      @include white;
+      background-color: $orange;
+      &::after {
+        background-color: lighten($orange, 4.75%);
+      }
+      .Button {
+        @extend .Button--gray;
+      }
+    }
+    &--white {
+      background-color: #fafafa;
+      .Button {
+        @extend .Button--navy;
+      }
+      svg {
+        fill: $navy;
+      }
+      &::after {
+        background-color: darken($white, 4.75%);
+      }
+    }
+  }
+}

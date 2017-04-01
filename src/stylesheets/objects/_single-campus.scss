@@ -1,0 +1,211 @@
+.SingleCampus {
+  padding-bottom: $single*4;
+
+  &-facilities {
+    font-size: 1.2rem / 1.45;
+    margin-bottom: $single*2;
+    @include from(lg) {
+      font-size: 1.3rem / 1.45;
+    }
+  }
+  &-message {
+    box: vertical center;
+    position: relative;
+    width: 100%;
+    margin-top: 5.5rem;
+    @include from(lg) {
+      margin-top: 8rem; // must be larger than photo's top value
+    }
+  }
+  &-photo {
+    @include cover;
+    position: absolute;
+    size: 8rem;
+    top: -4rem; // must be half of height
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    @include from(md) {
+      size: 9rem;
+      top: -4.5rem;
+    }
+    @include from(lg) {
+      size: 10rem;
+      top: -5rem;
+    }
+  }
+  &-messageBody {
+    background-color: #F5F9FC;
+    border-radius: 4px;
+
+    padding: $single*5 $single*1.25 $single*3;
+    @include from(lg) {
+      padding: $single*7 $single*5 $single*3;
+    }
+    p:not([class]) {
+      font-size: $font-size-h5;
+      @include from(lg) {
+        font-size: $font-size-h4;
+      }
+    }
+    h2 {
+      display: block;
+      position: relative;
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: $single*3;
+      @include from(lg) {
+        font-size: 42px;
+        margin-bottom: $single*5.5;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3px;
+        width: 2.75rem;
+        background-color: $yellow;
+        bottom: -$single*1.5;
+        @include from(lg) {
+          bottom: -$single*2.5;
+        }
+      }
+    }
+  }
+  &-messageShare {
+    box: horizontal middle center;
+    margin-top: $single*3;
+    .Share-title {
+      margin-bottom: 0;
+      margin-right: $threefourth;
+    }
+    .Share-button {
+      margin-bottom: 0;
+      svg {
+        size: $single;
+      }
+    }
+    .Share-socialMedia {
+      box: horizontal middle;
+    }
+  }
+  &-news {
+    &:first-child {
+      border-bottom: 1px solid $line;
+      padding-bottom: $single*2;
+    }
+    &:last-child {
+      padding-top: $single;
+    }
+    // If on mobile, only display 1 news and event item
+    .Feed-item:nth-child(n+2) {
+      display: none;
+      @include from(lg) {
+        display: inherit;
+      }
+    }
+  }
+  &-maps {
+    position: relative;
+    &Locations {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 1000;
+      min-width: $single*16;
+      border-radius: 4px;
+      background-color: #fafafa;
+      box-shadow: 0 5px 10px rgba(0,0,0,.15);
+      @include from(md) {
+        top: 50%;
+        left: 3%;
+        transform: translate3d(0, -50%, 0);
+      }
+      @include from(lg) {
+        left: 6%;
+      }
+      @include from(xl) {
+        left: 8%;
+      }
+      @include from(xxl) {
+        left: 12%;
+      }
+    }
+    &Button {
+      display: block;
+      padding: $single $single*1.5;
+      border-bottom: 1px solid $line;
+      .Button {
+        cursor: pointer;
+      }
+      a {
+        margin-left: $half;
+      }
+      h3 {
+        font-size: 1.4rem;
+      }
+      p {
+        line-height: 1.5;
+      }
+      svg {
+        size: $threefourth;
+        fill: #999;
+      }
+      &:hover {
+        background-color: $white;
+      }
+      &Phone {
+        margin-bottom: $single;
+        svg {
+          size: $single;
+        }
+        > .flex-wrapper {
+          box: horizontal top;
+          > .flex-wrapper {
+            margin-left: $half;
+          }
+        }
+      }
+    }
+    #Map {
+      height: $single*26;
+    }
+    &--tall {
+      #Map {
+        height: $single*35;
+      }
+    }
+  }
+
+  &-quicklinks {
+    margin-bottom: $single*3;
+    svg {
+      size: $single;
+      fill: $orange;
+      margin-right: $threefourth;
+    }
+  }
+  &-quicklink {
+    display: block;
+    box: horizontal middle;
+    margin-bottom: $half;
+    &:first-of-type {
+      margin-top: $threefourth;
+    }
+  }
+
+  &-mapsLaunch {
+    display: none !important;
+    @include from(md) {
+      display: inline-block !important;
+    }
+  }
+  &-mapsLaunchMobile {
+    display: inline-block !important;
+    @include from(md) {
+      display: none !important;
+    }
+  }
+}

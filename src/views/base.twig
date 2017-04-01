@@ -1,0 +1,23 @@
+{% include 'modules/html-header.twig' %}
+
+<body class="{{body_class}}">
+	{# Google Tag Manager (noscript) #}
+  {% include 'modules/third-party-noscript.twig' %}
+
+	{% include 'utility/svg.twig' %}
+	{% include 'components/modal.twig' %}
+	{% include 'components/announcement.twig' %}
+	{% include 'modules/mobile-header.twig' %}
+	{% include 'modules/header.twig' %}
+
+	{% block before_content %}{% endblock %}
+	<main class="wrapper">
+		{% block content %}{% endblock %}
+	</main>
+
+	{% include 'components/cta.twig' %}
+	{% include 'modules/footer.twig' %}
+	{% include 'modules/html-footer.twig' %}
+
+</body>
+</html>

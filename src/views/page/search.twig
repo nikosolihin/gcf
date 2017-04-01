@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <script>
+    (function() {
+      var cx = '{{gcse_id}}';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+  <div class="CustomSearch container">
+    <div class="CustomSearch-sidebar Sidebar">
+      <div class="CustomSearch-sidebarBody">
+        <div class="CustomSearch-filter">
+          <span class="h7 medium caps spaced faint">{{__('Filter by Campus', 'sdh')}}</span>
+        </div>
+
+        {# Sidebar Builder #}
+        {% if sidebar_sections %}
+          {% include 'layout/sidebar-base.twig' %}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="CustomSearch-result">
+      {# Breadcrumb #}
+      {% include 'components/breadcrumb.twig' %}
+      <div class="Intro">
+        <h1 class="Intro-heading h2 light navy">{{__('Search', 'sdh')}}</h1>
+      </div>
+      <gcse:search linktarget="_parent"></gcse:search>
+    </div>
+  </div>
+{% endblock %}

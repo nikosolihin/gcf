@@ -1,0 +1,110 @@
+{% include 'modules/search.twig' %}
+
+{% if locale == 'id_ID' %}
+  {% set language = 'Indonesian' %}
+  {% set language_link = languages.id %}
+  {% set language_other = 'English' %}
+  {% set language_other_link = languages.en %}
+{% elseif locale == 'en_US' %}
+  {% set language = 'English' %}
+  {% set language_link = languages.en %}
+  {% set language_other = 'Indonesian' %}
+  {% set language_other_link = languages.id %}
+{% endif %}
+<header class="Header">
+
+<nav class="Header-secondary" role="navigation">
+
+  <div class="Header-pusher"></div>
+
+  <div class="Header-languages">
+    <svg aria-hidden="true" role="presentation" title="Select Language">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#globe"></use>
+    </svg>
+    <span class="h7 medium white">{{language|title}}</span>
+    <svg aria-hidden="true" role="presentation" title="Select Language">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#down"></use>
+    </svg>
+    {% if not languages.solo %}
+      <div class="Header-languagesDropdown">
+        <a href="{{language_other_link}}" class="h7 medium white">{{language_other}}</a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="Header-slogan h7 medium white">{{slogan}}</div>
+
+  <div class="Header-quicklinks">
+    <a href="{{site.url}}/news" class="Header-quicklink h7 medium yellow">
+      <svg aria-hidden="true" role="presentation" title="See our school news">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use>
+      </svg><span>{{__('School News', 'sdh')}}</span>
+    </a>
+    <a href="{{site.url}}/events" class="Header-quicklink h7 medium yellow">
+      <svg aria-hidden="true" role="presentation" title="See our events">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+      </svg><span>{{__('Event Calendar', 'sdh')}}</span>
+    </a>
+  </div>
+
+  <div class="Header-secondaryList">
+    {% for item in secondary_menu %}
+      <a href="{{item.link}}" class="Header-secondaryLink h7 caps medium white">{{item.title}}</a>
+    {% endfor %}
+  </div>
+
+  <a href="" class="Header-search" data-component="search">
+    <svg aria-hidden="true" role="presentation" title="Search SDH Website">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+    </svg>
+  </a>
+</nav>
+
+<div class="Header-nav">
+  <div class="flex-wrap">
+    <a class="Header-logo" href="{{site.url}}">
+      <div class="Header-seal">
+        <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+        </svg>
+      </div>
+      <div class="Header-textLogo">
+        <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+        </svg>
+      </div>
+    </a>
+  </div>
+
+  <nav class="Header-primary" role="navigation">
+    {% for item in primary_menu %}
+      {% if item.link in current_url %}
+        {% set is_active = ' is-Active' %}
+      {% else %}
+        {% set is_active = '' %}
+      {% endif %}
+      <div class="Header-primaryItem">
+        <a {% if item.title != __('Campuses', 'sdh') %}href="{{item.link}}"{% endif %} class="Header-primaryLink h5 medium {{is_active}}">{{item.title}}</a>
+        <div class="Header-primaryDropdown">
+          <div class="Header-primaryImage lazyload" data-bgset="{{item.image.sm}}"></div>
+          <div class="Header-primaryList">
+            {% if item.title == __('Campuses', 'sdh') %}
+              {# Our Campuses #}
+              {% for campus in campuses %}
+                <a href="{{campus.link}}" class="h6 medium">{{campus.name|title}}</a>
+              {% endfor %}
+            {% else %}
+              {# Other menu #}
+              {% for child in item.children %}
+                <a href="{{child.link}}" class="h6 medium">{{child.title}}</a>
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </nav>
+
+</div>
+
+</header>

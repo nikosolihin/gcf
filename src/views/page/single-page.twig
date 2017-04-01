@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+{% block content %}
+
+{% include 'components/banner.twig' %}
+
+{% if not is_stories %}
+  {% include 'components/subnav.twig' %}
+{% endif %}
+
+{% set sidebar = no_sidebar ? 'noSidebar' : '' %}
+
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
+  <div class="SinglePage-share Share">
+    {% include 'components/social-share.twig' %}
+  </div>
+  <div class="SinglePage-content">
+    <div class="Intro">
+      <div class="Intro-breadcrumb">
+        {% include 'components/breadcrumb.twig' %}
+      </div>
+      <h1 class="Intro-heading h2 light navy">{{post.title}}</h1>
+
+      {# If banner is disabled, move teaser to here #}
+      <p class="Intro-teaser light{% if acf.banner_size == 'hidden' %} Intro-teaser--show{% endif %}">{{acf.teaser}}</p>
+    </div>
+    {% include 'layout/base.twig' %}
+  </div>
+
+  {% if not no_sidebar %}
+    <div class="SinglePage-sidebar Sidebar">
+      {% if toc %}
+        <div class="Toc{% if with_toc_block %} Toc--withBlock{% endif %}" data-component="toc">
+          <h5 class="h7 caps spaced navy bold">{{__('In This Section', 'sdh')}}</h5>
+        </div>
+        {% if with_toc_block %}
+          <div class="Toc-block">
+            <div class="Toc-blockImage lazyload" data-bgset="{{toc_block.image.xs}}"></div>
+            <div class="Toc-blockWrapper Toc-blockWrapper--{{toc_block.alignment}}">
+              <h4 class="h3 white normal noMargin">{{toc_block.title}}</h4>
+              <a href="{{toc_block.link}}" class="Button Button--small">{{__('Read More', 'sdh')}}</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if sidebar_sections %}
+        {% include 'layout/sidebar-base.twig' %}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% endblock %}

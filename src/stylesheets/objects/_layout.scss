@@ -1,0 +1,103 @@
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.flex-wrapper {
+  // Just an empty div
+  &--fixed {
+    flex: 0 0 auto;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $container-width;  // 1280px
+
+  &--landing {
+    max-width: $container-landing-width;
+  }
+
+  //=== Spacing ===
+  &--spacedTop {
+    @include from(md) {
+      margin-top: $single*4;
+    }
+  }
+  &--spacedBottom {
+    @include from(md) {
+      margin-bottom: $single*4;
+    }
+  }
+}
+
+.row {
+  box: vertical;
+  + .row {
+    margin-top: 0; // Dont change. Ex: full span heading before a 3-column layout.
+  }
+  @include from(md) {
+    // Flex on tablet up
+    box: horizontal wrap;
+  }
+  > * {
+    width: 100%;
+  }
+  &--of-2 {
+    @include from($desktop) {
+      .column { width: 50%; }
+    }
+  }
+  &--of-3 {
+    @include from(md) {
+      .column { width: 33.33%; }
+    }
+  }
+  &--of-4 {
+    .column {
+      @include from(md) {
+        width: 50%;
+      }
+      @include from(xl) {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.column {
+  width: 100%;
+  // On mobile give margin bottom
+  margin-bottom: $single*1.25;
+
+  // The column divs act as a flex child wrapper.
+  @include from($desktop) {
+    border-left: 1.125rem solid transparent;
+    border-right: 1.125rem solid transparent;
+    &:last-of-type {
+      // The following keep single column in their place,
+      // despite being only child
+      &.column-right {
+        margin-left: auto;
+      }
+      &.column-left {
+        margin-right: auto;
+      }
+      &.column-mid {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-left {
+    border-left: 0;
+  }
+  &-right {
+    border-right: 0;
+  }
+
+  @at-root [class="row"] > .column {
+    // Single column dont need borders
+    border: 0;
+  }
+}

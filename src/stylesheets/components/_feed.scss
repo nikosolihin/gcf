@@ -1,0 +1,150 @@
+.Feed {
+
+  &-heading {
+    @include line-divider($single*2.5);
+  }
+
+  &-body {
+    box: vertical;
+    margin-top: $single;
+  }
+  &-item {
+    display: block;
+    margin-bottom: $single*1.5;
+  }
+  &-title {
+    transition: color .125s ease-in-out;
+    line-height: 1.3;
+    margin-bottom: 0;
+    @at-root .Feed-item:hover #{&} {
+      color: $navy-light;
+    }
+    @at-root .Feed--list #{&} {
+      margin-bottom: .125rem;
+    }
+    @at-root .Feed--event #{&} {
+      margin-bottom: $quarter;
+    }
+  }
+  &-teaser {
+    color: #666;
+    margin: $half 0 0;
+    line-height: 1.45;
+  }
+  &-meta {
+    display: block;
+    box: horizontal top;
+    line-height: 1.125;
+    color: #888;
+    svg {
+      size: .85rem;
+      flex: 0 0 auto;
+      fill: $orange;
+      margin-right: $quarter;
+    }
+    & + & {
+      margin-top: $half;
+    }
+  }
+  &-media {
+    box: vertical middle center;
+    size: 65px;
+    flex: 0 0 auto;
+    &Day {
+      line-height: 1;
+      font-size: 22px;
+    }
+    &Month {
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    &Image {
+      @include cover;
+      size: 100%;
+      margin-bottom: $half;
+    }
+  }
+
+  // Post types
+  &--event {
+    .Feed-media {
+      background-color: $navy;
+      border-radius: 50%;
+    }
+    &.Feed--card {
+      .Feed-media {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Display Styles
+  &--list {
+    .Feed-media {
+      display: none;
+    }
+  }
+  &--card {
+    .Feed-item {
+      box: vertical;
+      margin-bottom: $single*1.5;
+      .flex-wrapper {
+        padding-left: 0;
+      }
+    }
+    .Feed-media {
+      width: 100%;
+      height: 7.5rem;
+      margin-bottom: $quarter;
+    }
+  }
+  &--object {
+    .Feed-item {
+      box: horizontal top;
+      .flex-wrapper {
+        padding-left: $threefourth;
+      }
+    }
+  }
+
+  ///////////////// JUICER.IO /////////////////
+  &-social {
+    // Juicer.io custom styling
+    &.juicer-feed {
+      font-family: $font-family !important;
+      h1.referral { display: none; }
+      .j-stack {
+        .feed-item {
+          border: 1px solid #e5e5e5;
+          border-radius: 2px;
+          .j-message p a.auto {
+            @include hover($link-color, $link-hover-color);
+            font-weight: $font-weight-medium;
+          }
+          .j-meta {
+            .comments, .likes {
+              font-size: .75rem;
+            }
+            a::before {
+              font-size: .8rem !important;
+            }
+          }
+          &.juicer { // Ad feed
+            display: none !important;
+          }
+        }
+      }
+      .j-paginate.juicer-button {
+        margin-top: $single;
+        margin-bottom: $single;
+        border: 0;
+        border-radius: 3px;
+        background-color: $button-bg;
+        border: 2px solid $button-bg;
+        padding: $half $threefourth;
+        text-transform: none;
+        text: $white $font-weight-bold center none $font-size-h6 $line-height;
+      }
+    }
+  }
+}

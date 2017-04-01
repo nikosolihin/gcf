@@ -1,0 +1,25 @@
+.ArchiveNews {
+  position: relative;
+  margin: $single*3 0 $single*4;
+
+  &-control {
+    box: horizontal middle left;
+    margin: $single*2 0 $single*3;
+    padding: $single 0;
+    border-top: 1px solid $line;
+    border-bottom: 1px solid $line;
+  }
+
+  &-filter {
+    box: horizontal middle;
+    margin-right: $single*2.5;
+  }
+
+  &-content {
+    box: horizontal wrap top left;
+    min-height: $single*10;
+    &--fadeOut {
+      opacity: .3;
+    }
+  }
+}

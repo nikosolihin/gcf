@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="column">
+    {% if fullCallout %}
+      <div class="Callout Callout--column">
+    {% endif %}
+    {% block full %}{% endblock %}
+    {% if fullCallout %}
+      </div>
+    {% endif %}
+  </div>
+</div>

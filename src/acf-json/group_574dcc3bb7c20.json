@@ -1,0 +1,79 @@
+{
+    "key": "group_574dcc3bb7c20",
+    "title": "Text Editor",
+    "fields": [
+        {
+            "key": "field_574dcc566c5f8",
+            "label": "",
+            "name": "editor",
+            "type": "medium_editor",
+            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph. Highlight text for formatting options.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "standard_buttons": [
+                "bold",
+                "underline",
+                "anchor",
+                "quote",
+                "orderedlist",
+                "unorderedlist",
+                "justifyLeft",
+                "justifyCenter",
+                "justifyRight",
+                "h2",
+                "h3",
+                "removeFormat"
+            ],
+            "custom_buttons": [
+                {
+                    "name": "italic-two",
+                    "label": "<span class=\"dashicons dashicons-editor-italic\"><\/span>",
+                    "tag": "em",
+                    "attributes": ""
+                },
+                {
+                    "name": "lead",
+                    "label": "<span class=\"dashicons dashicons-editor-textcolor\"><\/span>",
+                    "tag": "div",
+                    "attributes": [
+                        {
+                            "name": "class",
+                            "value": "Lead"
+                        }
+                    ]
+                }
+            ],
+            "other_options": [
+                "disableDoubleReturn",
+                "disableExtraSpaces",
+                "allowBreakInSingleLineInput"
+            ],
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Text Editor",
+    "modified": 1490802559
+}

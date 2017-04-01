@@ -1,0 +1,69 @@
+.Intro {
+  &-heading {
+    position: relative;
+    padding-bottom: $single*1.75;
+    margin-bottom: $single*3;
+    font-size: 1.75rem / 1.25;
+    @include from(md) {
+      font-size: $font-size-h2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 2.75rem;
+      background-color: $yellow;
+    }
+
+    &--center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-teaser {
+    @extend .light;
+    color: #888;
+    margin-bottom: $single*2;
+    font-size: 1.1rem / 1.45;
+    @include from(md) {
+      font-size: 1.35rem / 1.45;
+    }
+    @include from(lg) {
+      display: none;
+      @at-root .archive #{&} {
+        display: block;
+      }
+    }
+    &--show {
+      display: block !important;
+    }
+  }
+
+  &--withMeta {
+    .Intro-heading {
+      padding-bottom: 0;
+      margin-bottom: $half;
+      &::after {
+        display: none;
+      }
+    }
+    .Intro-meta {
+      position: relative;
+      padding-bottom: $single*2.5;
+      margin-bottom: $single*2.5;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 2.75rem;
+        background-color: $yellow;
+      }
+    }
+  }
+}

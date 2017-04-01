@@ -1,0 +1,62 @@
+.Spotlight {
+	margin-top: $threefourth;
+	svg {
+		fill: $white;
+		size: $threefourth;
+	}
+	&-cell {
+		width: 100%;
+		margin-right: $quarter;
+	}
+	&-button {
+		box: vertical middle center;
+		padding: 0 $threefourth 0 $half;
+	}
+	&-quote {
+		margin-bottom: $half;
+	}
+	&-bubble {
+		box: horizontal;
+		position: relative;
+		background-color: $navy;
+		padding: $single*1.25 0 $single;
+		margin-bottom: $single;
+		border-radius: 3px;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -9px;
+			left: $single*2;
+			width: 0;
+			height: 0;
+			border-left: 9px solid transparent;
+			border-right: 9px solid transparent;
+			border-top: 9px solid $navy;
+		}
+		> .flex-wrapper {
+			box: vertical right;
+		}
+	}
+	&-person {
+		box: horizontal middle center;
+		.h5 {
+			line-height: 1.425;
+		}
+		> .flex-wrapper:first-child {
+			margin-right: $single;
+		}
+	}
+	&-photo {
+		@include cover;
+		size: $single*3;
+		border-radius: 50%;
+	}
+
+	@at-root .Sidebar-section--framed #{&} {
+		margin-left: -$single*1.5;
+		margin-right: -$single*1.5;
+		&-bubble {
+			border-radius: 0;
+		}
+	}
+}

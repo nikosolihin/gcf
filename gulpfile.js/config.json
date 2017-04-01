@@ -1,0 +1,104 @@
+{
+  "root": {
+    "src": "./src",
+    "de_st": "./public",
+    "dest": "./htdocs/wp-content/themes/gcf"
+  },
+
+  "tasks": {
+    "browserSync": {
+      "notify": false,
+      "browser": "google chrome",
+      "proxy": {
+        "target": "http://gcf.dev"
+      }
+    },
+
+    "static": {
+      "src": "static",
+      "dest": "./"
+    },
+
+    "wp": {
+      "files": ["style.css", "screenshot.png"]
+    },
+
+    "acf": {
+      "src": "acf-json",
+      "dest": "acf-json"
+    },
+
+    "js": {
+      "src": "javascripts",
+      "dest": "javascripts",
+      "entries": {
+        "app": ["./app.js"]
+      },
+      "extensions": ["js", "json"],
+      "babel": {
+        "presets": ["es2015", "stage-1"],
+        "plugins": []
+      },
+      "extractSharedJs": false
+    },
+
+    "css": {
+      "src": "stylesheets",
+      "dest": "stylesheets",
+      "autoprefixer": {
+        "browsers": ["last 3 versions"]
+      },
+      "sass": {
+        "indentedSyntax": false,
+        "errLogToConsole": true,
+        "outputStyle": "compressed",
+        "includePaths": [
+          "./node_modules/normalize.css",
+          "./node_modules/flickity/css"
+        ]
+      },
+      "extensions": ["scss", "css"]
+    },
+
+    "twig": {
+      "src": "views",
+      "dest": "views",
+      "extensions": ["twig"]
+    },
+
+    "php": {
+      "src": "php",
+      "dest": "./",
+      "extensions": ["php"]
+    },
+
+    "languages": {
+      "src": "languages",
+      "dest": "languages",
+      "extensions": ["mo", "po"]
+    },
+
+    "images": {
+      "src": "images",
+      "dest": "images",
+      "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
+    "fonts": {
+      "src": "fonts",
+      "dest": "fonts",
+      "extensions": ["woff2", "woff"]
+    },
+
+    "svgSprite": {
+      "src": "icons",
+      "dest": "utility",
+      "injectTo": "svg.twig",
+      "extensions": ["svg"]
+    },
+
+    "production" : {
+      "rev": true
+    }
+  }
+}

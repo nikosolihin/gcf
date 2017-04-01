@@ -1,0 +1,10 @@
+<ol class="{{'Breadcrumb'|modifiers("#{style}, #{trailing}")}}">
+  <li class="Breadcrumb-item">
+    <a class="Breadcrumb-link h7 medium caps spaced" href="{{site.url}}">{{__('Home', 'sdh')}}</a>
+  </li>
+  {% for item in breadcrumb %}
+    <li class="Breadcrumb-item">
+      <a class="Breadcrumb-link h7 medium caps spaced" href="{{item.link}}">{{item.title}}</a>
+    </li>
+  {% endfor %}
+</ol>

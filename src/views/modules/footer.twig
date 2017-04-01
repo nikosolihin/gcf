@@ -1,0 +1,121 @@
+{% if footer_bg and footer_bg is iterable %}
+  {% set footer_image = footer_bg|serveImage %}
+{% else %}
+  {% set footer_image = fallback.image %}
+{% endif %}
+
+{% if locale == 'id_ID' %}
+  {% set language = 'Indonesian' %}
+  {% set language_link = languages.id %}
+  {% set language_other = 'English' %}
+  {% set language_other_link = languages.en %}
+{% elseif locale == 'en_US' %}
+  {% set language = 'English' %}
+  {% set language_link = languages.en %}
+  {% set language_other = 'Indonesian' %}
+  {% set language_other_link = languages.id %}
+{% endif %}
+
+<footer class="Footer lazyload" data-bgset="{{footer_image.xxl}} [(min-width: {{xxl}})] | {{footer_image.xl}} [(min-width: {{xl}})] | {{footer_image.lg}} [(min-width: {{lg}})] | {{footer_image.md}} [(min-width: {{md}})] | {{footer_image.sm}} [(min-width: {{sm}})] | {{footer_image.xs}}">
+
+  <section class="Footer-info container">
+    <div class="Footer-infoLogo">
+      <div class="Header-seal">
+        <svg aria-hidden="true" role="presentation" title="SDH Seal Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#seal"></use>
+        </svg>
+      </div>
+      <div class="Header-textLogo">
+        <svg aria-hidden="true" role="presentation" title="SDH Text Logo">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-text"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="Footer-infoAddress">
+      <div class="flex-wrapper">
+        <h3 class="h7 medium caps spaced orange noMargin">{{__('Head Office', 'sdh')}}</h3>
+        <p class="h6 normal gray noMargin">{{org.address}}</p>
+      </div>
+      <div class="flex-wrapper">
+        <h3 class="h7 medium caps spaced orange noMargin">{{org.dept_one}}</h3>
+        <p class="h6 normal gray noMargin">{{org.details_one}}</p>
+      </div>
+      <div class="flex-wrapper">
+        <h3 class="h7 medium caps spaced orange noMargin">{{__('Associations', 'sdh')}}</h3>
+        <a href="http://acsi.or.id/member-16-17/" class="Footer-association">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#asci"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="Footer-infoSocial">
+      {% for name, link in social %}
+        {% if name == 'facebook' %}
+          {# Use the plain facebook icon #}
+          {% set name = 'fbook' %}
+        {% endif %}
+        {% if link %}
+        <a href="{{link}}" class="flex">
+          <svg aria-hidden="true" role="presentation" title="{{name}}">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+          </svg>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="Footer-primary container">
+    {% for parent in footer.parents %}
+      <div class="Footer-column">
+        <a href="{{parent.link}}" class="h7 caps spaced navy medium center">{{parent.title}}</a>
+        <ul class="List center">
+          {% for child in parent.children %}
+            <li><a href="{{child.link}}" class="Footer-link h6 normal gray">{{child.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+    {# Campuses #}
+    <div class="Footer-column">
+      <div class="h7 caps spaced navy medium">{{__('Campuses', 'sdh')}}</div>
+      <div class="flex-wrapper">
+        {% for campus in campuses %}
+          <a href="{{campus.link}}" class="Footer-link h6 normal gray">{{campus.name}}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <div class="Footer-secondary container">
+    <div class="Footer-legal">
+      <span class="h7 medium faint">
+        Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}
+      </span>
+    </div>
+    <div class="Footer-essentials">
+      {% if career %}
+        <a href="{{career}}" class="Footer-secondaryLink h7 medium">{{__('Career', 'sdh')}}</a>
+        <span class="Footer-dot">●</span>
+      {% endif %}
+
+      {% if policy %}
+        <a href="{{policy}}" class="Footer-secondaryLink h7 medium">{{__('Privacy Policy', 'sdh')}}</a>
+        <span class="Footer-dot">●</span>
+      {% endif %}
+
+      <a href="{{feedback}}" class="Footer-secondaryLink h7 medium">{{__('Feedback', 'sdh')}}</a>
+      <span class="Footer-dot">●</span>
+
+      <div class="Footer-languages">
+        <span class="h7 medium faint">{{__('Languages', 'sdh')}}:</span>
+        <a href="{{language_link}}" class="Footer-secondaryLink h7 medium  Footer-secondaryLink--active">{{language}}</a>
+        {% if not languages.solo %}
+          <a href="{{language_other_link}}" class="Footer-secondaryLink h7 medium">{{language_other}}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>
