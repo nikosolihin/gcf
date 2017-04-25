@@ -80,9 +80,9 @@
     "postcss-short-text": "^1.1.0",
     "pretty-hrtime": "1.0.3",
     "require-dir": "0.3.1",
-    "webpack": "2.3.2",
-    "webpack-dev-middleware": "1.10.1",
-    "webpack-hot-middleware": "2.18.0"
+    "webpack": "1.12.14",
+    "webpack-dev-middleware": "1.5.1",
+    "webpack-hot-middleware": "2.10.0"
   },
   "license": "MIT",
   "dependencies": {
