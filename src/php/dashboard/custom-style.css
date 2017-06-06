@@ -2,13 +2,13 @@
 /* Replace WP Login Logo and BG
 /*=============================================*/
 #login h1 a {
-	background-image: url('https://lh3.googleusercontent.com/-zNfXITbSGaQ/WL-l0NibwiI/AAAAAAAABbA/E7Ca0a8cl2QEpVIg_0VEWWiGj2KI3GhOACHM/s400/sdh-logo-admin.png');
+	background-image: url('https://lh3.googleusercontent.com/-kmlsn0KFTFw/WRLwUUF205I/AAAAAAAAAI4/ZA-HY6FyHvUAN4THHcB0du45ZXrLHCTDACHM/s576/gcf-admin-logo.png');
 	background-size: contain;
-	width: 219px;
-	height: 67px;
+	width: 250px;
+	height: 54px;
 }
 body.login.login-action-login {
-	background: url('https://lh3.googleusercontent.com/-8ZAjJHuSLEQ/WJWeCP2HdvI/AAAAAAAAAkc/ZcjaMGjGdUscORuj7rLh3aBHhZnsKZKAACHM/s1440/sdh-admin.jpg') no-repeat center center/cover;
+	background: url('https://lh3.googleusercontent.com/-Vee0ZW93yWs/WRLtjRw0XII/AAAAAAAAAIQ/SuohoYIeneYzLJX-en6X4T-OqnIo_rl5wCHM/s1440/gcf-admin-bg.jpg') no-repeat center center/cover;
 }
 
 /*=============================================*/
@@ -33,7 +33,7 @@ p#backtoblog {
 /* Remove the default WP custom taxonomy box
 /* and replace with the acf one
 /*=============================================*/
-#tagsdiv-role.postbox {
+#tagsdiv-resource_topic.postbox {
 	display: none;
 }
 
@@ -190,10 +190,10 @@ p#backtoblog {
 	float: right!important;
 	clear: none!important;
 	min-height: 0!important;
-}
+}*/
 .acf-short {
 	min-height: 100px !important;
-}*/
+}
 
 /*=============================================*/
 /* For layout columns as horizontal rows
@@ -310,7 +310,7 @@ p#backtoblog {
 /*=============================================*/
 /* Medium Editor Styling
 /*=============================================*/
-#poststuff .medium-editor-element > * {
+/*#poststuff .medium-editor-element > * {
 	padding: 0;
 	margin: 0;
 }
@@ -345,49 +345,7 @@ p#backtoblog {
 }
 #poststuff .medium-editor-element li {
 	margin-bottom: 2px;
-}
-
-/*=============================================*/
-/* Hide Zoneboard blocks for campus_manager role.
-/*=============================================*/
-body.role-campus_manager .dashboard-grid .dashboard-panel {
-	display: none;
-}
-body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(4),
-body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(5),
-body.role-campus_manager .dashboard-grid .dashboard-panel:nth-child(6) {
-	display: block;
-}
-
-/*=============================================*/
-/* Hide Clear cache for campus_manager role.
-/*=============================================*/
-body.role-campus_manager #wp-admin-bar-clear-timber-cache {
-	display: none;
-}
-
-/*=============================================*/
-/* Hide feed component for campus_manager role.
-/*=============================================*/
-body.role-campus_manager .acf-fc-popup a[data-layout="feed"] {
-	display: none !important;
-}
-
-/*=============================================*/
-/* Hide Head Office campus term for campus_manager role.
-/*=============================================*/
-body.role-campus_manager #campuschecklist #campus-6,
-body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
-	display: none !important;
-}
-
-/*=============================================*/
-/* Hide "Most Used" campus term, "Add New Campus"
-/*=============================================*/
-#campus-tabs > li.hide-if-no-js,
-#campus-adder {
-	display: none !important;
-}
+}*/
 
 /*=============================================*/
 /* Hide weird Network dropdown menu items
@@ -407,7 +365,7 @@ body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
 /*=============================================*/
 /* Medium Editor
 /*=============================================*/
-[data-type="medium_editor"] > .acf-input > span {
+/*[data-type="medium_editor"] > .acf-input > span {
 	display: none !important;
 }
 [data-type="medium_editor"] .acf-input span {
@@ -452,4 +410,4 @@ body.role-campus_manager .inline-edit-col > .campus-checklist > #campus-6 {
 	font-size: 20px;
 	letter-spacing: .75px;
 	line-height: 1.4;
-}
+}*/

@@ -1,0 +1,52 @@
+{# Default: Web feeds, automatic #}
+{% set internal = data.internal is defined ? data.internal : true %}
+{% set mode = data.mode is defined ? data.mode : true %}
+
+{% if internal %}
+  {% set type = 'resource' %}
+  {% set style = data.style is defined ? data.style : 'list' %}
+  {% set meta = data.metadata is defined ? data.metadata : ['date', 'topics', 'type'] %}
+
+  {# Do getPosts() in php #}
+  {% set posts = getPosts(data) %}
+
+  {% if posts %}
+  <div class="{{'Feed'|modifiers("#{style}")}}">
+    <div class="Feed-body">
+      {% for post in posts %}
+      <div class="Feed-item">
+        <div class="Feed-media">
+          <a href="{{post.link}}" class="Feed-mediaImage lazyload" data-bgset="{{post.image.xs}}"></a>
+        </div>
+        <div class="flex-wrapper">
+          <a href="{{post.link}}" class="Feed-title regular medium">{{post.title}}</a>
+          <div class="Feed-meta small medium faint">
+            {% if post.author %}
+              <em class="light dark-gray">{{__('By', 'gcf')}}</em>&nbsp;&nbsp;
+              <a href="{{site.url ~ '/resources/?utf8=%E2%9C%93&author=' ~ post.author_id}}" class="brown">{{post.author}}</a>
+              <em class="light dark-gray">&nbsp;&nbsp;on</em>
+              &nbsp;&nbsp;{{post.date|date('M j, Y')}}
+            {% else %}
+              <em class="light dark-gray">{{__('On', 'gcf')}}</em>&nbsp;&nbsp;{{post.date|date('M j, Y')}}
+            {% endif %}
+          </div>
+          {% if post.topics %}
+            <div class="flex-wrapper">
+              {% for topic in post.topics %}
+                <a class="Pill Pill--mini hmicro" href="{{site.url ~ '/resources/?utf8=%E2%9C%93&topics=' ~ topic.slug}}">{{topic.name}}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+    <p class="h5 normal gray">{{empty}}</p>
+  {% endif %}
+{% else %}
+  <!-- <ul class="Feed-social juicer-feed" data-feed-id="sekolah-dian-harapan" data-columns="3" data-per="9" data-style="user" data-overlay="false">
+    <h2 class="Intro-heading Intro-heading--center center h3 light navy">{{__('Stay Connected', 'sdh')}}</h3>
+  </ul> -->
+{% endif %}

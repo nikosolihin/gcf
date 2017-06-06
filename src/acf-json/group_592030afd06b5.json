@@ -1,0 +1,88 @@
+{
+    "key": "group_592030afd06b5",
+    "title": "Video Options",
+    "fields": [
+        {
+            "key": "field_592030afd3b0f",
+            "label": "Video URL",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_592030afd3ba9",
+            "label": "Paste Video URL here",
+            "name": "video_url",
+            "type": "oembed",
+            "instructions": "The video will be embedded in the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_type:video"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy_ancestor",
+                "operator": "==",
+                "value": "resource_type:video"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "POST_TYPE : New Resource : VIDEO",
+    "modified": 1495286700
+}

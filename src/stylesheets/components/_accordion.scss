@@ -1,0 +1,52 @@
+.Accordion {
+  @include normalist;
+
+  &-checkbox {
+    display: none;
+    &:not(checked) ~ .Accordion-body {
+      display: none;
+    }
+    &:checked {
+      ~ .Accordion-body {
+        display: block;
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        animation: expand .165s ease-out;
+      }
+      ~ .Accordion-head .Accordion-icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &-head {
+    user-select: none;
+    * { user-select: none }
+    box: horizontal space-between middle;
+    cursor: pointer;
+    color: $brown;
+    font-weight: $font-weight-bold;
+    padding: $single*1.25 0;
+    margin-bottom: 0;
+  }
+
+  &-icon {
+    box: horizontal center middle;
+    flex: 0 0 auto;
+    margin: 0 $threefourth 0 $single*1.5;
+    size: 30px;
+    transition: all .1025s ease-in-out;
+    svg {
+      fill: $brown;
+      size: $single*1.5;
+    }
+  }
+
+  &-body {
+    margin-bottom: $single*3;
+  }
+
+  &-item {
+    border-bottom: 1px solid #eee;
+  }
+}

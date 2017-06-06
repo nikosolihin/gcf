@@ -1,0 +1,123 @@
+.Gallery {
+  position: relative;
+
+  &-content {
+    position: relative;
+    top: -$single*27;
+    border: $single*2 solid $beige;
+    background-color: $white;
+    padding: $single*25 $single*2 0;
+    z-index: 1;
+  }
+
+  &-preview {
+    position: absolute;
+    top: 50%;
+    right: -4.1%;
+    z-index: 2;
+    width: $single*19;
+    height: $single*15;
+    overflow: hidden;
+    transform: translateY(-50%);
+    &Cell {
+      @include cover;
+      width: $single*19;
+      height: $single*15;
+      flex: 0 0 auto;
+    }
+  }
+
+  &-body {
+    position: relative;
+    width: 82.5%;
+    height: $single*43; // TODO: Responsify gallery height
+    z-index: 3;
+  }
+
+  &-coverPage {
+    position: absolute;
+    bottom: $single*5;
+    left: 12%;
+    width: 52%;
+    &Title {
+      text-shadow: 0 0 1rem rgba(35,31,32,.33333333),
+        0 0 0.125rem rgba(35,31,32,.4);
+    }
+    &Meta {
+      text-shadow: 0 0 1.25em #231f20;
+    }
+  }
+
+  &-cell {
+    @include cover;
+    size: 100%;
+  }
+  &-previewCell {
+    @include overlay(true, 'rgba(0,0,0,.17)');
+    @include cover;
+    size: 100%;
+  }
+
+  &-caption {
+    position: absolute;
+    bottom: -5%;
+    left: 15%;
+    z-index: 4;
+    width: 57%;
+    &Item {
+      display: none;
+      background-color: #f9f9f9;
+      border-bottom: 5px solid #eee;
+      padding: $single*1.25 $single*1.5;
+      border-radius: 2px;
+      opacity: .98;
+      &--show {
+        display: block;
+      }
+    }
+  }
+
+  &-buttons {
+    box: horizontal middle;
+    position: absolute;
+    top: 50%;
+    right: -$single*8.25; // Width of pagination plus button
+    z-index: 4;
+    transform: translateY(-50%);
+  }
+
+  &-button {
+    box: vertical middle center;
+    size: $single*2.75;
+    color: $white;
+    background-color: $brown;
+    svg {
+      transition: all .125s ease-in-out;
+      will-change: transform;
+      size: $single*1.75;
+    }
+    &Right {
+      color: $brown;
+      background-color: $white;
+      &:hover svg {
+        transform: translateX(15%);
+      }
+    }
+    &Left {
+      &:hover svg {
+        transform: translateX(-15%);
+      }
+    }
+  }
+
+  &-pagination {
+    box: horizontal middle center;
+    width: $single*5.5;
+    height: $single*2.75;
+    background-color: $white;
+    cursor: default;
+    &Slash {
+      margin: 0 $half;
+    }
+  }
+}

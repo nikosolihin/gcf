@@ -1,0 +1,139 @@
+{
+    "key": "group_575702ac269fc",
+    "title": "Photo Gallery Options",
+    "fields": [
+        {
+            "key": "field_591eb0bdeec91",
+            "label": "Link To",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57570ad943004",
+            "label": "Album URL",
+            "name": "album_url",
+            "type": "url",
+            "instructions": "Provide a \"View Album\" button that links to an external photo hosting services such as as Flickr or Google Photos. Valid URLs must begin with \"http:\" or \"https:\" Leave blank for no button.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_591eb0b2eec90",
+            "label": "Gallery",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59031fe56203f",
+            "label": "Pick a group of photos to feature in the gallery",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The order of photos follows the order of selected photos below with the first photo used as the gallery cover photo. The gallery will automatically pull in descriptions set in Google Photos as captions. \r\n<br><br>\r\n<strong>Note:<\/strong><br>\r\n• Text on the cover photo works best if the cover image has a darker, blurred or blank left side.<br>\r\n• If you need to edit a photo's description in Google Photos after it has been previously selected here, remove it below and reselect it to pull in the most recent description.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_575707c6b6701",
+            "label": "Select Photos",
+            "name": "gallery",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 9999,
+            "google_photos_user_id": "",
+            "google_photos_access_token": "",
+            "google_photos_message": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_type:photo"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy_ancestor",
+                "operator": "==",
+                "value": "resource_type:photo"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "POST_TYPE : New Resource : PHOTO",
+    "modified": 1495281710
+}

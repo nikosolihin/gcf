@@ -1,0 +1,77 @@
+.Button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  display: inline-block;
+  padding: $half $threefourth;
+  background-color: $brown;
+  border: 2px solid $brown;
+  transition: all .1s ease-in-out;
+  text: $white $font-weight-bold left none $font-size-small 1;
+
+  &--block {
+    display: block;
+    border-radius: 0;
+  }
+
+  // Style
+  &--orange {
+    background-color: $orange;
+    border: 2px solid $orange;
+  }
+  &--green {
+    background-color: $green;
+    border: 2px solid $green;
+  }
+  &--red {
+    background-color: $red;
+    border: 2px solid $red;
+  }
+  &--metal {
+    background-color: $metal;
+    border: 2px solid $metal;
+  }
+  &--blue {
+    background-color: $blue;
+    border: 2px solid $blue;
+  }
+  &--coffee {
+    background-color: $coffee;
+    border: 2px solid $coffee;
+  }
+  &--maroon {
+    background-color: $maroon;
+    border: 2px solid $maroon;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid transparent;
+  }
+
+  &--withIcon {
+    box: horizontal middle center;
+    svg {
+      size: $single;
+      margin-right: $half;
+    }
+  }
+
+  // Sizes
+  &--small {
+    padding: $quarter $threefourth;
+  }
+  &--large {
+    padding: $single $single*1.75;
+  }
+
+  // Utilities
+  &--spaced {
+    margin-right: $half;
+  }
+
+  // Within the sidebar, use small buttons
+  @at-root .Sidebar-section #{&} {
+    @extend .Button--small;
+  }
+}

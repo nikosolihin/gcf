@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {% if not with_banner %}
+    {% set introMod = 'noBanner' %}
+    {% set wrapperMod = 'pushUp' %}
+  {% endif %}
+  {% if type_slug == 'video' %}
+    {% set introMod = 'video' %}
+  {% endif %}
+  {% include 'resource/single-resource-header.twig' %}
+
+  <div class="SingleResource--{{type_slug}} {{'SingleResource-wrapper'|modifiers("#{wrapperMod}")}}">
+    <div class="SingleResource container">
+      {% include 'resource/single-resource-sidebar.twig' %}
+      <div class="SingleResource-content">
+        <p class="lead">{{acf.teaser}}</p>
+        {% include 'layout/base.twig' %}
+      </div>
+
+      {% if type_slug == 'article' %}
+        <div class="SingleResource-sidebar">
+          {# Show tags in the right sidebar for article #}
+          <div class="SingleResource-tags">
+            <h5 class="hregular bold brown">{{__('Tagged as', 'gcf')}}</h5>
+            {% for topic in topics %}
+              <a class="Pill hmicro" href="{{site.url ~ '/resources/?utf8=%E2%9C%93&topics=' ~ topic.slug}}">{{topic.name}}</a>
+            {% endfor %}
+          </div>
+          {# Sidebar Builder #}
+          {% if sidebar_sections %}
+            {% include 'layout/sidebar-base.twig' %}
+          {% endif %}
+        </div>
+      {% endif %}
+
+    </div>
+    {% include 'resource/single-resource-related.twig' %}
+  </div>
+
+{% endblock %}

@@ -28,7 +28,7 @@ module.exports = function(env) {
         'window.jQuery': 'jquery'
       }),
       // Disable moment.js locale languages requires
-      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     ],
     resolve: {
       root: jsSrc,

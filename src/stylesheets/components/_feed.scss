@@ -1,0 +1,130 @@
+.Feed {
+
+  &-body {
+    box: vertical;
+    margin-top: $single;
+  }
+  &-item {
+    display: block;
+    padding-bottom: $single;
+    margin-bottom: $single;
+    border-bottom: 1px solid #f1f1f1;
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  &-title {
+    @include hover(#494949, $brown);
+    display: block;
+    color: #494949;
+    transition: color .125s ease-in-out;
+    line-height: 1.25;
+    margin-bottom: $quarter;
+  }
+  &-teaser {
+    color: #666;
+    margin: $half 0 0;
+    line-height: 1.45;
+  }
+  &-meta {
+    display: block;
+    box: horizontal top;
+    line-height: 1.125;
+    color: #888;
+    margin-bottom: .6rem;
+    svg {
+      size: .85rem;
+      flex: 0 0 auto;
+      fill: $orange;
+      margin-right: $quarter;
+    }
+    & + & {
+      margin-top: $half;
+    }
+  }
+  &-media {
+    box: vertical middle center;
+    size: 70px;
+    flex: 0 0 auto;
+    &:hover {
+      + .flex-wrapper > .Feed-title {
+        color: $brown;
+      }
+    }
+    &Image {
+      @include cover;
+      size: 100%;
+    }
+  }
+
+  // Display Styles
+  &--list {
+    .Feed-media {
+      display: none;
+    }
+  }
+  &--card {
+    .Feed-item {
+      box: vertical;
+      margin-bottom: $single*1.5;
+      .flex-wrapper {
+        padding-left: 0;
+      }
+    }
+    .Feed-media {
+      width: 100%;
+      height: 10rem;
+      margin-bottom: $threefourth;
+    }
+  }
+  &--object {
+    .Feed-item {
+      box: horizontal top;
+      > .flex-wrapper {
+        padding-left: $single;
+      }
+    }
+  }
+
+  // ///////////////// JUICER.IO /////////////////
+  // &-social {
+  //   // Juicer.io custom styling
+  //   &.juicer-feed {
+  //     font-family: $font-family !important;
+  //     h1.referral { display: none; }
+  //     .j-stack {
+  //       .feed-item {
+  //         border: 1px solid #e5e5e5;
+  //         border-radius: 2px;
+  //         .j-message p a.auto {
+  //           @include hover($link-color, $link-hover-color);
+  //           font-weight: $font-weight-medium;
+  //         }
+  //         .j-meta {
+  //           .comments, .likes {
+  //             font-size: .75rem;
+  //           }
+  //           a::before {
+  //             font-size: .8rem !important;
+  //           }
+  //         }
+  //         &.juicer { // Ad feed
+  //           display: none !important;
+  //         }
+  //       }
+  //     }
+  //     .j-paginate.juicer-button {
+  //       margin-top: $single;
+  //       margin-bottom: $single;
+  //       border: 0;
+  //       border-radius: 3px;
+  //       background-color: $button-bg;
+  //       border: 2px solid $button-bg;
+  //       padding: $half $threefourth;
+  //       text-transform: none;
+  //       text: $white $font-weight-bold center none $font-size-h6 $line-height;
+  //     }
+  //   }
+  // }
+}

@@ -1,0 +1,17 @@
+.Footer {
+  box: horizontal space-between;
+  margin-top: $single*5;
+
+  &-column {
+    box: vertical;
+    > a {
+      margin-bottom: $quarter;
+      &:first-child {
+        margin-bottom: $half;
+      }
+    }
+    &Title {
+      margin-bottom: $threefourth;
+    }
+  }
+}

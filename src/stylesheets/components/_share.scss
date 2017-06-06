@@ -1,0 +1,24 @@
+.Share {
+  margin-bottom: $single*2;
+
+  .flex-wrapper {
+    box: horizontal middle;
+  }
+
+  &-button {
+    box: vertical middle center;
+    size: $single*1.9;
+    color: #888;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: $half;
+    transition: all .225s ease-in-out;
+    svg {
+      height: .775rem;
+    }
+    &:hover {
+      color: $brown;
+      border-color: $brown;
+    }
+  }
+}

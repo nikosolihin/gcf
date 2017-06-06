@@ -1,0 +1,75 @@
+.Pagination {
+  box: horizontal middle center;
+  margin-top: $single*3;
+  will-change: opacity, visibility;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in-out;
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-nav {
+    box: horizontal center middle;
+    color: $brown;
+    cursor: pointer;
+    svg {
+      transition: all .125s ease-in-out;
+    }
+    &--inactive {
+      cursor: default;
+      color: #bbb;
+      span {
+        color: inherit;
+      }
+      &:hover {
+        svg {
+          transform: translateX(0) !important;
+        }
+      }
+    }
+  }
+
+  &-prev {
+    margin-right: $single*1.5;
+    &:hover {
+      svg {
+        transform: translateX(-5px);
+      }
+    }
+  }
+
+  &-next {
+    margin-left: $single;
+    &:hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &-pages {
+    box: horizontal middle center;
+  }
+
+  &-page {
+    @include hover($gray-lighter, $brown);
+    box: vertical center middle;
+    size: $single*1.5;
+    margin-right: .4rem;
+    cursor: pointer;
+    &--current {
+      @include hover($white, $white);
+      background-color: $brown;
+      border-radius: 2px;
+    }
+  }
+
+  &-ellipses {
+    &--inactive {
+      display: none;
+    }
+  }
+}

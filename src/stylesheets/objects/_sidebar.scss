@@ -1,0 +1,28 @@
+.Sidebar {
+
+  &-section {
+    margin-bottom: $single;
+
+    // Style
+    &--callout {
+      padding: $single*1.25 $single*1.5;
+      border-radius: 3px;
+    }
+
+    // Colors
+    &--beige {
+      background-color: lighten($beige,1.75%);
+    }
+    &--gray {
+      background-color: #f6f6f6;
+    }
+    &--type {
+      @include white;
+    }
+    &--metal {
+      @include white;
+      background-color: lighten($metal, 8%);
+    }
+  }
+
+}

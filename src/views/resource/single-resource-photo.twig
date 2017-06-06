@@ -1,0 +1,12 @@
+{# Share #}
+{% include 'components/share.twig' %}
+
+{# CTA #}
+{% if acf.album_url %}
+  <a href="{{acf.album_url}}" class="SingleResource-cta Button Button--withIcon">
+    <svg aria-hidden="true" role="presentation" title="{{__('View photo album', 'gcf')}}">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ext-link"></use>
+    </svg>
+    <span>{{__('See Full Album', 'gcf')}}</span>
+  </a>
+{% endif %}

@@ -1,0 +1,8 @@
+<div class="ArchiveResource-filterTopics">
+  <div class="ArchiveResource-filterTitle brown bold">{{__('Topics', 'gcf')}}</div>
+  <div class="flex-wrapper">
+    {% for topic in all_topics %}
+      <a class="Pill hmicro" data-component="pill" data-topic="{{topic.slug}}" data-topic-id="{{topic.id}}">{{topic.name}}</a>
+    {% endfor %}
+  </div>
+</div>

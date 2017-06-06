@@ -1,0 +1,34 @@
+{% for block in data.blocks %}
+  {% set post = TimberPost(block) %}
+  {% set block_image = post.get_field('image') %}
+  {% set description = post.get_field('description') %}
+  {% set link_type = post.get_field('type') %}
+
+  {% if block_image and block_image is iterable %}
+    {% set image = block_image|serveImage %}
+  {% else %}
+    {% set image = fallback.image %}
+  {% endif %}
+
+  {% if link_type == "single" %}
+    {% set url = post.get_field('single_url') %}
+  {% elseif link_type == "external" %}
+    {% set url = post.get_field('external_url') %}
+  {% else %}
+    {% set url = post.get_field('search_url') %}
+  {% endif %}
+
+  <div class="Block lazyload" data-component="block" data-url="{{url}}" data-bgset="{{image.xs}}">
+    <div class="Block-title medium white center">{{post.title}}</div>
+    <a href="{{url}}" class="Block-body">
+      <p class="Block-bodyTitle h4 bold white center">{{post.title}}</p>
+      <p class="Block-bodyTeaser h5 normal white center">{{description}}</p>
+      <p class="Block-bodyLink h7 caps medium spaced yellow noMargin">
+        <span>{{__('Learn More', 'sdh')}}</span>
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use>
+        </svg>
+      </p>
+    </a>
+  </div>
+{% endfor %}

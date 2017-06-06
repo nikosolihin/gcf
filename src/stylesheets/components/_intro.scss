@@ -1,0 +1,48 @@
+.Intro {
+  position: relative;
+  z-index: 2;
+  padding: 0 $single*1.75;
+
+  &-box {
+    box: vertical center middle;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    color: $white;
+    padding: $single*1.75 $single;
+    border-radius: 2px;
+    max-width: $single*40;
+    transform: translate3d(-50%, 40%, 0);
+  }
+
+  &-heading {
+    margin: $half 0 $threefourth;
+  }
+
+  &-subtitle {
+    margin: -$threefourth 0 $threefourth;
+  }
+
+  @at-root #{&}--video #{&} {
+    &-box {
+      bottom: -11.5%;
+    }
+  }
+
+  &--noBanner {
+    .Intro-box {
+      bottom: auto;
+      top: $single*1.5;
+    }
+    .Banner {
+      width: 100%;
+      height: $single*27;
+      &-image {
+        display: none;
+      }
+    }
+  }
+
+}

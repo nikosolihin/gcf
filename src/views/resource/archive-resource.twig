@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block before_content %}
+  {% include 'components/resource-object.twig' %}
+{% endblock %}
+
+{% block content %}
+
+  {# --- Resource Archive --- #}
+  <div id="archive-resource" class="ArchiveResource">
+    {% include 'resource/archive-resource-filter.twig' %}
+    <div class="container">
+      {% include 'resource/archive-resource-header.twig' %}
+      {% include 'resource/archive-resource-result.twig' %}
+      {% include 'resource/archive-resource-pagination.twig' %}
+    </div>
+  </div>
+
+{% endblock %}

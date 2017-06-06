@@ -1,0 +1,167 @@
+{
+    "key": "group_57db8340ef27b",
+    "title": "Metadata Selector",
+    "fields": [
+        {
+            "key": "field_57add3560dfed",
+            "label": "Mode",
+            "name": "mode",
+            "type": "true_false",
+            "instructions": "<strong>Automatic<\/strong> will display posts categorized by types\/topics in descending order by publish date. <strong>Manual<\/strong> allows picking individual resource items of your choice.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Automatic",
+            "ui_off_text": "Manual"
+        },
+        {
+            "key": "field_57db95919f531",
+            "label": "Select Post(s)",
+            "name": "manual_posts",
+            "type": "relationship",
+            "instructions": "This list contains all resource items. You may select any resource items you like. Drag to reorder.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "resource"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5911818c69ba2",
+            "label": "Select Type(s)",
+            "name": "feed_types",
+            "type": "taxonomy",
+            "instructions": "Select the types this feed should display. <em>Leave blank for all types<\/em>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "resource_type",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_57db87f447bc1",
+            "label": "Select Topic(s)",
+            "name": "feed_topics",
+            "type": "taxonomy",
+            "instructions": "Select the topics this feed should display. <em>Leave blank for all topics<\/em>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "resource_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_57b59199df3a3",
+            "label": "Metadata",
+            "name": "metadata",
+            "type": "checkbox",
+            "instructions": "<strong>NOTE:<\/strong> Each teaser in a list will be limited to its first 50 characters.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teaser": "Teaser",
+                "date": "Publish Date",
+                "type": "Type",
+                "topic": "Topics",
+                "author": "Author"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [
+                "date",
+                "type"
+            ],
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Metadata Selector",
+    "modified": 1494320862
+}

@@ -1,0 +1,215 @@
+.ArchiveResource-filter {
+  background-color: lighten($beige,2%);
+  padding: $single*1.75 0;
+  margin-bottom: $single*2;
+  @include from(lg) {
+    margin-bottom: $single*4;
+  }
+
+  .container {
+    box: horizontal top space-between;
+    @include at(lg) {
+      margin: 0 $single;
+    }
+    &:first-of-type {
+      @include to(sm) {
+        box: vertical;
+        padding: 0 $threefourth;
+      }
+    }
+    &:last-of-type {
+      @include to(sm) {
+        padding: 0 $threefourth;
+      }
+    }
+  }
+
+  &Button {
+    box: horizontal middle space-between;
+    cursor: pointer;
+    padding: $threefourth $single;
+    color: $brown;
+    transition: all .1s ease-in-out;
+
+    @include to(sm) {
+      width: 100%;
+      order: 2;
+      margin-top: $half;
+    }
+    @include from(md) {
+      width: $single*10;
+    }
+    &:hover {
+      @include from(lg) {
+        color: $white;
+        background-color: $brown;
+        border-radius: 3px;
+        span {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  &Panel {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+    will-change: max-height, opacity;
+    max-height: 0;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    @include from(md) {
+      padding: 0 $single;
+      background-color: $white;
+    }
+    @include from(lg) {
+      padding: 0 $single*1.25;
+    }
+    @include from(xl) {
+      padding: 0 $single*2;
+    }
+  }
+
+  &Wrapper {
+    box: vertical;
+    padding: $single $single $single*1.5;
+    width: 100%;
+    background-color: $white;
+    @include from(md) {
+      padding: $single*1.5 0 $single*2;
+      box: horizontal wrap space-between;
+      background-color: transparent;
+    }
+    > .flex-wrapper {
+      width: 100%;
+      flex: 1;
+      padding-top: $single*2;
+      box: horizontal center middle;
+    }
+  }
+
+  &Title {
+    margin-bottom: .65rem;
+    width: 100%;
+  }
+
+  &Types {
+    @include from(md) {
+      width: 25%;
+    }
+    @include from(lg) {
+      width: 28%;
+    }
+    > .flex-wrapper {
+      box: horizontal wrap;
+    }
+  }
+
+  &Type {
+    width: 100%;
+    box: horizontal middle space-between;
+    padding: $threefourth 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    > .flex-wrapper {
+      box: horizontal middle;
+      > svg {
+        size: .9rem;
+        fill: #c5c5c5;
+        margin-right: $threefourth;
+      }
+      > span {
+        transition: all .125s ease-in-out;
+      }
+    }
+    @include from(lg) {
+      width: 50%;
+      &:nth-child(odd) {
+        border-right: .65rem solid transparent;
+      }
+      &:nth-child(even) {
+        border-left: .65rem solid transparent;
+      }
+    }
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    &:hover {
+      svg {
+        fill: $brown;
+      }
+      span {
+        color: $brown;
+      }
+    }
+  }
+
+  &Topics {
+    padding: $half 0;
+    @include from(md) {
+      width: 52%;
+      padding: 0 $single 0 $single*1.5;
+    }
+    @include from(lg) {
+      width: 47%;
+      padding: 0 $half 0 $single*1.5;
+    }
+  }
+
+  &Date {
+    @include from(md) {
+      width: 23%;
+    }
+    @include from(lg) {
+      width: 18%;
+    }
+    > .flex-wrapper {
+      box: horizontal middle;
+      div:nth-child(2) {
+        margin: 0 .6rem;
+      }
+    }
+    &Of {
+      text-align: center;
+      padding: .55rem 0;
+    }
+    &Month {
+      will-change: max-height, opacity;
+      max-height: 0;
+      opacity: 0;
+      transition: all .15s ease-in-out, opacity .2s;
+      &--open {
+        max-height: 75px;
+        opacity: 1;
+      }
+    }
+  }
+
+  &Authors {
+    margin-bottom: $single*1.25;
+    .Select {
+      width: 95%;
+    }
+  }
+
+  // Panel's open state
+  &--open {
+    .ArchiveResource-filterButton {
+      color: $white;
+      background-color: $brown;
+      border-radius: 3px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      span { color: inherit; }
+      svg {
+        transform: rotateZ(180deg);
+      }
+    }
+    .ArchiveResource-filterPanel {
+      max-height: 2000px;
+      opacity: 1;
+    }
+  }
+}

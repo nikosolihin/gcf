@@ -1,0 +1,25 @@
+<div class="ArchiveResource-filterTypes">
+  <div class="ArchiveResource-filterTitle brown bold">{{__('Resource Types', 'gcf')}}</div>
+
+  <div class="flex-wrapper">
+    {% for type in all_types %}
+      <div class="ArchiveResource-filterType">
+        <div class="flex-wrapper">
+          <svg aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{type.slug}}"></use>
+          </svg>
+          <span class="gray hsmall">{{type.name}}</span>
+        </div>
+        <div class="Checkbox" data-component="checkbox" data-type="{{type.slug}}" data-type-id="{{type.id}}">
+          <svg class="Checkbox-empty"aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkbox"></use>
+          </svg>
+          <svg class="Checkbox-checked"aria-hidden="true" role="presentation" title="">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+          </svg>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>

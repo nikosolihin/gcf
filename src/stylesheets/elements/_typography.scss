@@ -1,3 +1,7 @@
+//=============================================
+// This file is strictly typography related
+// (font-size, etc.) and stylistic classes.
+//=============================================
 html {
   font-family: $font-family;
   font-size: $font-size-root;
@@ -7,122 +11,91 @@ html {
 }
 
 body {
-  text: $body-color $font-weight-normal none $font-size $line-height normal;
+  text: $body $font-weight-normal none $font-size $line-height normal;
 }
 
 .h1 {
-  text: $font-weight-light none $headings-color $font-size-h1 1 normal;
+  text: $font-weight-light none $headings $font-size-h1 $headings-line-height normal;
 }
 
 .h2 {
-  text: $font-weight-light none $headings-color $font-size-h2 1.275 .4px;
+  text: $font-weight-bold none $headings $font-size-h2 1.275 normal;
 }
 
 .h3 {
-  text: $font-weight-light none $headings-color $font-size-h3 1.4 normal;
+  text: $font-weight-bold none $headings $font-size-h3 1.4 normal;
 }
 
-.h4 {
-  text: $font-weight-medium none $headings-color $font-size-h4 1.3 normal;
+.h4, .hlarge {
+  text: $font-weight-medium none $headings $font-size-large 1.3 normal;
+}
+.large {
+  font-size: $font-size-large;
 }
 
-.h5 {
-  text: $font-weight-medium none $headings-color $font-size-h5 $line-height normal;
+.h5, .hregular {
+  text: $font-weight-medium none $headings $font-size-regular $line-height normal;
+}
+.regular {
+  font-size: $font-size-regular;
 }
 
-.h6 {
-  text: none $font-size-h6 $line-height normal;
+.h6, .hsmall {
+  text: $font-weight-medium none $font-size-small 1 normal;
+}
+.small {
+  font-size: $font-size-small;
 }
 
-.h7 {
-  text: none $font-size-h7 $line-height normal;
+.h7, .hmicro {
+  text: $font-weight-medium none $font-size-micro 1 normal;
+}
+.micro {
+  font-size: $font-size-micro;
 }
 
+//=============================================
+// Stylistic Classes
+//=============================================
+// Weight
 .light {
   font-weight: $font-weight-light;
 }
 .normal {
   font-weight: $font-weight-normal;
 }
-.medium {
+.medium, b, strong {
   font-weight: $font-weight-medium;
 }
-
-b, strong, .bold {
+.bold {
   font-weight: $font-weight-bold;
 }
 
-ul,
-ol {
-  padding-left: $list-padding-left;
+// Decorations
+.caps {
+  text-transform: uppercase;
 }
-
-ul {
-  list-style-type: $list-style-type-ul-first;
-  ul {
-    list-style-type: $list-style-type-ul-second;
-    ul {
-      list-style-type: $list-style-type-ul-third;
-    }
+.spaced {
+  letter-spacing: 1px;
+}
+.underline, u {
+  @include underline;
+  &--dark {
+    @include underline(true);
   }
 }
-
-ol {
-  list-style-type: $list-style-type-ol-first;
-  ol {
-    list-style-type: $list-style-type-ol-second;
-    ol {
-      list-style-type: $list-style-type-ol-third;
-    }
-  }
+.lead {
+  text: $font-weight-light none #999 1.388rem 1.5 normal;
+  margin-bottom: $single*2;
 }
 
-// All Links
-a, a[href] {
-  text-decoration: none;
-  &:focus,
-  &:hover {
-    text-decoration: none;
-  }
+// Alignments
+.center {
+  text-align: center;
 }
-
-// Default Links
-a[href]:not([class]),
-a[href^="mailto"]:not([class]) {
-  @include hover($link-color, $link-hover-color);
-  display: inline;
+.right {
+  text-align: right;
 }
-
-hr {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: $single*3;
-  border: 0;
-  margin: $single 0;
-  @include from(md) {
-    margin: $single*2 0;
-  }
-  &::after {
-    display: block;
-    position: absolute;
-    top: -22%;
-    left: 50%;
-    transform: translateX(-50%);
-    content: "...";
-    font-size: $font-size-h1;
-    line-height: 1;
-    color: $orange;
-  }
-}
-
-blockquote {
-  color: $gray;
-  font-size: $font-size-h3;
-  font-weight: $font-weight-light;
-  margin: $single*3 auto;
-  p {
-    line-height: 1.45 !important;
-    text-align: center;
-  }
+.italic {
+  font-style: italic;
 }

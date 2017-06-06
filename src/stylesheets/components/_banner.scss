@@ -1,0 +1,14 @@
+.Banner {
+  &-image {
+    @include cover;
+    width: 100%;
+    height: $single*27;
+
+    &--top {
+      background-position: top center;
+    }
+    &--bottom {
+      background-position: bottom center;
+    }
+  }
+}

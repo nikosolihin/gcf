@@ -1,0 +1,34 @@
+.Checkbox {
+  @include noselect;
+  > * {
+    @include noselect;
+  }
+  cursor: pointer;
+
+  &-empty {
+    display: block;
+    fill: $gray-lighter;
+  }
+  &-checked {
+    display: none;
+    fill: $brown;
+  }
+
+  &:hover {
+    svg { fill: $brown; }
+  }
+
+  @at-root .ArchiveResource-filterType:hover #{&} {
+    svg { fill: $brown; }
+  }
+
+  // State
+  &--active {
+    .Checkbox-empty {
+      display: none;
+    }
+    .Checkbox-checked {
+      display: block;
+    }
+  }
+}

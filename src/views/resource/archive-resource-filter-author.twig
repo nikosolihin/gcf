@@ -1,0 +1,15 @@
+<div class="ArchiveResource-filterAuthors">
+  <div class="ArchiveResource-filterTitle brown bold">{{__('Author', 'gcf')}}</div>
+
+  <div class="Dropdown" data-component="select" data-select="author">
+    <select class="gray hsmall noMargin noPadding noLineHeight">
+      <option value="any" selected>{{__('Any Author', 'gcf')}}</option>
+      {% for author in all_authors %}
+        <option value="{{author.id}}">{{author.name}}</option>
+      {% endfor %}
+    </select>
+    <svg aria-hidden="true" role="presentation" title="{{__('Select Author', 'gcf')}}">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down"></use>
+    </svg>
+  </div>
+</div>

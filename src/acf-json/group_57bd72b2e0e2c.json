@@ -1,0 +1,95 @@
+{
+    "key": "group_57bd72b2e0e2c",
+    "title": "Banner",
+    "fields": [
+        {
+            "google_photos_user_id": "",
+            "key": "field_57bd72dff6803",
+            "label": "Image",
+            "name": "image",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 1
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "top": "Top",
+                "middle": "Middle",
+                "bottom": "Bottom",
+                "custom": "Custom"
+            },
+            "default_value": "middle",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value",
+            "key": "field_57740634e1728",
+            "label": "Vertical Alignment",
+            "name": "alignment",
+            "type": "radio",
+            "instructions": "Banner images will automatically try to span the current user's browser width. However, sometimes this process causes images to misalign vertically. Use this to correct that. <strong>NOTE: This setting applies for banner images only, not share images.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "key": "field_577408789163a",
+            "label": "Custom Value",
+            "name": "custom_alignment",
+            "type": "number",
+            "instructions": "Enter a custom percentage value. 0% being the topmost and 100% bottom of the y-axis.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57740634e1728",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Banner",
+    "modified": 1486282849
+}

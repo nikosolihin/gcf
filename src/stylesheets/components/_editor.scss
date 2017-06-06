@@ -1,0 +1,143 @@
+.Editor {
+  font-size: 1.1111rem;  // 20px
+  line-height: 1.55;
+
+  h2 {
+    @extend .h3, .light, .orange;
+  }
+
+  h3 {
+    @extend .h5, .bold, .caps, .spaced, .faint;
+  }
+
+  ul, ol {
+    position: relative;
+    padding: 0;
+    margin-left: $single*1.75;
+    margin-bottom: $half;
+    list-style: none;
+
+    > ul,
+    > ol {
+      margin-left: $single*1.5;
+    }
+  }
+
+  li {
+    font-size: $font-size-root;
+    line-height: 1.325;
+    padding-bottom: $half;
+  }
+
+  ul > li::before {
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: $brown;
+    position: absolute;
+    left: -$single*1.5;
+    margin-top: 10px;
+  }
+
+  ol {
+    counter-reset: item;
+    > li::before {
+      display: block;
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      left: -$single*1.5;
+      font-size: .9444rem;
+      font-weight: $font-weight-bold;
+      color: $brown;
+    }
+  }
+
+  pre {
+    font-family: $font-family;
+    text: $font-weight-light normal #555 1rem 1.5 normal;
+    position: relative;
+    background-color: lighten($beige,1.75%);
+    border-radius: 3px;
+    margin: $threefourth 0;
+    padding: $single*1.25 $single*1.5;
+    position: relative;
+    width: 45%;
+    float: right;
+    transform: translateX(20%);
+    overflow: visible;
+    // https://css-tricks.com/snippets/css/make-pre-text-wrap/
+    word-break: keep-all;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    &::before {
+      content: '';
+      display: block;
+      width: 3.25rem;
+      height: 1.125rem;
+      position: absolute;
+      top: -9px;
+      left: -25px;
+      background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxzdHlsZT4KICAgIC5zdDB7ZmlsbDojRTI5RjVCO30KICA8L3N0eWxlPgogIDxwYXRoIGQ9Ik0yNSAyMGMtMy45IDAtNy0zLjEtNy03czMuMS03IDctNyA3IDMuMSA3IDd2MWMwIDcuNy02LjMgMTQtMTQgMTR2LTRjMi43IDAgNS4yLTEgNy4xLTIuOS40LS40LjctLjggMS0xLjItLjQuMS0uNy4xLTEuMS4xek03IDIwYy0zLjkgMC03LTMuMS03LTdzMy4xLTcgNy03IDcgMy4xIDcgN3YxYzAgNy43LTYuMyAxNC0xNCAxNHYtNGMyLjcgMCA1LjItMSA3LjEtMi45LjQtLjQuNy0uOCAxLTEuMi0uNC4xLS43LjEtMS4xLjF6IiBjbGFzcz0ic3QwIi8+Cjwvc3ZnPgo=) no-repeat center center/contain;
+    }
+  }
+
+  blockquote {
+    text: $font-weight-light normal #555 1.0555rem 1.5 normal;
+    position: relative;
+    margin: $single*3 0;
+    padding: $single*2;
+    background-color: lighten($beige,1.75%);
+    border-radius: 3px;
+
+    // If within a callout column
+    @at-root .Callout #{&} {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      &::before,
+      &::after {
+        background-color: #f5f5f5;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+      position: absolute;
+      top: -.55rem;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxzdHlsZT4KICAgIC5zdDB7ZmlsbDojRTI5RjVCO30KICA8L3N0eWxlPgogIDxwYXRoIGQ9Ik03IDE0YzMuOSAwIDcgMy4xIDcgN3MtMy4xIDctNyA3LTctMy4xLTctN3YtMUMwIDEyLjMgNi4zIDYgMTQgNnY0Yy0yLjcgMC01LjIgMS03LjEgMi45LS40LjQtLjcuOC0xIDEuMi40LS4xLjgtLjEgMS4xLS4xem0xOCAwYzMuOSAwIDcgMy4xIDcgN3MtMy4xIDctNyA3LTctMy4xLTctN3YtMWMwLTcuNyA2LjMtMTQgMTQtMTR2NGMtMi43IDAtNS4yIDEtNy4xIDIuOS0uNC40LS43LjgtMSAxLjIuNC0uMS44LS4xIDEuMS0uMXoiIGNsYXNzPSJzdDAiLz4KPC9zdmc+Cg==) no-repeat center center/contain;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 3.25rem;
+      height: 1.125rem;
+      position: absolute;
+      bottom: -.55rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiB2aWV3Qm94PSIwIDAgMzIgMzIiPgogIDxzdHlsZT4KICAgIC5zdDB7ZmlsbDojRTI5RjVCO30KICA8L3N0eWxlPgogIDxwYXRoIGQ9Ik0yNSAyMGMtMy45IDAtNy0zLjEtNy03czMuMS03IDctNyA3IDMuMSA3IDd2MWMwIDcuNy02LjMgMTQtMTQgMTR2LTRjMi43IDAgNS4yLTEgNy4xLTIuOS40LS40LjctLjggMS0xLjItLjQuMS0uNy4xLTEuMS4xek03IDIwYy0zLjkgMC03LTMuMS03LTdzMy4xLTcgNy03IDcgMy4xIDcgN3YxYzAgNy43LTYuMyAxNC0xNCAxNHYtNGMyLjcgMCA1LjItMSA3LjEtMi45LjQtLjQuNy0uOCAxLTEuMi0uNC4xLS43LjEtMS4xLjF6IiBjbGFzcz0ic3QwIi8+Cjwvc3ZnPgo=) no-repeat center center/contain;
+    }
+  }
+
+  // Editor component within sidebar
+  @at-root .Sidebar-section #{&} {
+    font-size: $font-size-regular;  // 18px
+    h2 {
+      @extend .hregular, .bold, .brown;
+    }
+    h3 {
+      @extend .hsmall, .bold, .caps, .spaced, .brown;
+    }
+  }
+
+}

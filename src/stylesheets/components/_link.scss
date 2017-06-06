@@ -1,0 +1,36 @@
+.Link {
+  box: horizontal middle;
+  padding: $half 0;
+  span {
+    transition: all .125s ease-out;
+    line-height: 1;
+  }
+  svg {
+    size: $single*1.35;
+    fill: $brown;
+    transition: all .125s ease-out;
+    margin-left: $quarter;
+  }
+  &:hover {
+    span {
+      color: $brown;
+    }
+    svg {
+      transform: translate3d(5px, 0, 0);
+    }
+  }
+  // Alignment
+  &--right {
+    box: horizontal middle right;
+  }
+  &--reversed {
+    svg {
+      order: 1;
+      margin-left: 0;
+      margin-right: $half;
+    }
+    span {
+      order: 2;
+    }
+  }
+}

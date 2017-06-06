@@ -1,0 +1,51 @@
+.Announcement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $zindex-announcement;
+  min-width: 100%;
+  background-color: $navy;
+  padding: .63rem 0;
+  opacity: 1;
+  visibility: visible;
+  transition: all .1s ease-out;
+
+  // Hide by default
+  display: none;
+
+  .container {
+    box: horizontal middle space-between;
+  }
+
+  &-message {
+    line-height: 1.275;
+    padding: 0 $single;
+  }
+  &-button {
+    flex: 0 0 auto;
+    margin-left: $single;
+  }
+  &-close {
+    box-item: top;
+    box: horizontal middle center;
+    transform: rotate(45deg);
+    svg {
+      margin: 0;
+      size: 30px;
+    }
+  }
+
+  &--bottom {
+    top: 100vh;
+    left: 0;
+    transform: translate3d(0,-100%,0);
+  }
+  &--closed {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0,-6.5%,0);
+  }
+  &--show {
+    display: block;
+  }
+}

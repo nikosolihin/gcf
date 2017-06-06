@@ -1,0 +1,12 @@
+<div class="SingleResource-related container" data-component="carousel">
+  <div class="flex-wrapper">
+    <h5 class="h3 light brown noMargin">{{__('Related Resources', 'gcf')}}</h5>
+    <a href="{{site.url ~ '/resources/?utf8=%E2%9C%93'}}" class="Link Link--reversed hregular faint noPadding">
+      <span>{{__('Resource Library', 'gcf')}}</span>
+      <svg aria-hidden="true" role="presentation" title="Visit Link">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+      </svg>
+    </a>
+  </div>
+  {% include 'components/resource-feed.twig' with {data: related_resources, empty: __('No Resources Found.', 'gcf')} %}
+</div>
