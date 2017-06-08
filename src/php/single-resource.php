@@ -3,9 +3,7 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-// $context['acf'] = get_fields();
 $context['acf'] = get_fields();
-var_dump($context['acf']);
 $context['sections'] = $context['acf']['sections'];
 $context['with_banner'] = $context['acf']['with_banner'];
 $related_quantity = get_field('related_quantity', 'option');
