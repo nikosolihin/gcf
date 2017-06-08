@@ -1,0 +1,41 @@
+<div class="{{'Intro'|modifiers("#{introMod}")}}">
+
+  {% if type_slug != 'photo' %}
+    <div class="Intro-box" style="background-color: {{type_color}}">
+      <div class="Icon">
+        <svg aria-hidden="true" role="presentation" title="{{type}} resource">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{type_slug}}"></use>
+        </svg>
+        <span class="hsmall caps spaced white">{{type}}</span>
+      </div>
+      <h1 class="Intro-heading h1 white center">{{post.title}}</h1>
+      {% if acf.subtitle %}
+        <h1 class="Intro-subtitle h3 white light center">{{acf.subtitle}}</h1>
+      {% endif %}
+      {% if author %}
+        <div class="Author">
+          <div class="Author-image lazyload" data-bgset="{{author.get_field('photo')|serveSquareImage(true)['xs']}}"></div>
+          <div class="small white bold">
+            {{__('By', 'gcf')}}&nbsp;
+            <a href="#" class="white underline--dark">{{author.title|title}}</a>
+            &nbsp;{{__('on', 'gcf')}}&nbsp;
+            {{post.date|date('M j, Y')}}
+          </div>
+        </div>
+      {% else %}
+        <div class="small white bold">
+           {{__('Published on', 'gcf')}} January 11, 2017
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if type_slug == 'photo' and acf.gallery %}
+    {% include 'components/gallery.twig' with {gallery: acf.gallery} %}
+  {% elseif type_slug == 'video' and acf.video_url %}
+    {% include 'components/video.twig' with {video: acf.video_url} %}
+  {% else %}
+    {% include 'components/banner.twig' %}
+  {% endif %}
+
+</div>

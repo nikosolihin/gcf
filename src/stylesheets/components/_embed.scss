@@ -15,4 +15,9 @@
   &--instagram {
     padding-bottom: 85%;
   }
+
+  // If first within column, no margin top
+  &:first-of-type {
+    margin-top: $single;
+  }
 }

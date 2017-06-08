@@ -1,8 +1,8 @@
 <?php
 
-// if( get_role('campus_manager') ){
-// 	remove_role( 'campus_manager' );
-// }
+if( get_role('campus_manager') ){
+	remove_role( 'campus_manager' );
+}
 
 //=============================================
 // Create the campus manager role
@@ -16,7 +16,7 @@ function add_campus_manager_role() {
 		'upload_files' 	=> false,
 	));
 }
-add_action('admin_init', 'add_campus_manager_role', 999);
+// add_action('admin_init', 'add_campus_manager_role', 999);
 
 //=============================================
 // Assigns users capabilities for
@@ -50,4 +50,4 @@ function add_campus_caps() {
 	$admin->add_cap( 'edit_others_campuses' );
 	$admin->add_cap( 'delete_others_campuses' );
 }
-add_action('admin_init', 'add_campus_caps', 999);
+// add_action('admin_init', 'add_campus_caps', 999);

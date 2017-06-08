@@ -7,7 +7,7 @@
             "label": "",
             "name": "table",
             "type": "table",
-            "instructions": "<strong>TIP:<\/strong> You may insert HTML tags in the table cells. For example, insert a link using <em>&lt;a href=\"http:\/\/example.com\">My Link&lt;\/a><\/em>. Other available tags include &lt;strong>, &lt;em> and &lt;br>.",
+            "instructions": "<strong>TIP:<\/strong> You may insert HTML tags in the table cells. Refer to <a href=\"https:\/\/computerservices.temple.edu\/commonly-used-html-tags\" target=\"_blank\">this page<\/a> for a list of commonly used HTML tags as well as their examples.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -21,9 +21,9 @@
     "location": [
         [
             {
-                "param": "special",
+                "param": "post_type",
                 "operator": "==",
-                "value": "nowhere"
+                "value": "post"
             }
         ]
     ],
@@ -35,5 +35,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Table",
-    "modified": 1474887669
+    "modified": 1491198241
 }

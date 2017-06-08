@@ -1,26 +1,29 @@
 (function($) {
 
-	// Hide "New Post" and "Manage Comments" on Multisite dropdown
-	// Main Site
-	$("#wp-admin-bar-blog-1-n").hide();
-	$("#wp-admin-bar-blog-1-c").hide();
+	// Collapse Dashboard sidebar by default
+	$("body.wp-admin").addClass('folded');
 
-	// Second Site
-	$("#wp-admin-bar-blog-2-n").hide();
-	$("#wp-admin-bar-blog-2-c").hide();
-
-	// New Plus dropdown
-	$("#wp-admin-bar-new-post a").text("File");
-	$("#wp-admin-bar-new-post a").attr("href", "https://drive.google.com/");
-	$("#wp-admin-bar-new-post a").attr("target", "_blank");
-
-	$("#wp-admin-bar-new-media a").text("Image");
-	$("#wp-admin-bar-new-media a").attr("href", "https://photos.google.com/");
-	$("#wp-admin-bar-new-media a").attr("target", "_blank");
-
-	$("#wp-admin-bar-new-user a").text("Form");
-	$("#wp-admin-bar-new-user a").attr("href", "https://docs.google.com/forms");
-	$("#wp-admin-bar-new-user a").attr("target", "_blank");
+	// // Hide "New Post" and "Manage Comments" on Multisite dropdown
+	// // Main Site
+	// $("#wp-admin-bar-blog-1-n").hide();
+	// $("#wp-admin-bar-blog-1-c").hide();
+	//
+	// // Second Site
+	// $("#wp-admin-bar-blog-2-n").hide();
+	// $("#wp-admin-bar-blog-2-c").hide();
+	//
+	// // New Plus dropdown
+	// $("#wp-admin-bar-new-post a").text("File");
+	// $("#wp-admin-bar-new-post a").attr("href", "https://drive.google.com/");
+	// $("#wp-admin-bar-new-post a").attr("target", "_blank");
+	//
+	// $("#wp-admin-bar-new-media a").text("Image");
+	// $("#wp-admin-bar-new-media a").attr("href", "https://photos.google.com/");
+	// $("#wp-admin-bar-new-media a").attr("target", "_blank");
+	//
+	// $("#wp-admin-bar-new-user a").text("Form");
+	// $("#wp-admin-bar-new-user a").attr("href", "https://docs.google.com/forms");
+	// $("#wp-admin-bar-new-user a").attr("target", "_blank");
 
 	// // Add URL friendly hashes to ACF tabs
 	// // Useful if paired with zoneboard

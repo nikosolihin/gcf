@@ -1,61 +1,82 @@
-<div class="Gallery-preview">
-  {# Get first 3 photos as previews #}
-  {% for photo in data.gallery | slice(0,3) %}
-    {% if photo and photo is iterable %}
-      {% set image = photo|serveSquareImage %}
-    {% else %}
-      {% set image = fallback.image %}
-    {% endif %}
-    <div class="Gallery-previewImage lazyload" data-bgset="{{image.sm}} [(min-width: {{xxl}})] | {{image.sm}} [(min-width: {{xl}})] | {{image.sm}} [(min-width: {{lg}})] | {{image.xs}} [(min-width: {{md}})] | {{image.xs}} [(min-width: {{sm}})] | {{image.xs}}"></div>
-  {% endfor %}
-  <div class="Gallery-previewButton Button">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fullscreen"></use>
-    </svg><span class="h7 caps spaced bold white">{{__('Launch Gallery', 'sdh')}}</span>
-  </div>
-</div>
+<div class="Gallery" data-component="gallery">
+  <div class="Gallery-preview">
+    {% for photo in gallery %}
+      {% if loop.index != 1 %}
+        {% set image = photo|serveImage %}
+        <div class="Gallery-previewCell lazyload" data-bgset="{{image.xs}}"></div>
+      {% endif %}
+    {% endfor %}
 
-<div class="Gallery die" data-component="gallery">
-  <div class="Gallery-caption">
-    {% for photo in data.gallery %}
-      <div class="Gallery-caption-item{% if loop.index == 1 %} Gallery-caption-item--show{% endif %}" data-caption-id="{{loop.index}}">
-        {% if photo.title %}
-          {% set title = photo.title|spacify|title %}
-          <h4 class="h4 bold orange noMargin">{{title}}</h4>
-        {% endif %}
-        {% if photo.description %}
-          <p class="h5 light white">{{photo.description}}</p>
+    {# Put first image as last #}
+    <div class="Gallery-previewCell lazyload" data-bgset="{{gallery|first|serveImage.xs}}"></div>
+  </div>
+
+  <div class="Gallery-body">
+    {% for photo in gallery %}
+      {% set image = photo|serveImage %}
+      <div class="Gallery-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
+        {# Show post title only on first slide #}
+        {% if loop.index == 1 %}
+        <div class="Gallery-coverPage">
+          <div class="Icon threefourthMargin">
+            <svg aria-hidden="true" role="presentation" title="{{type}} resource">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{type_slug}}"></use>
+            </svg>
+            <span class="hsmall caps spaced white">{{type}}</span>
+          </div>
+          <h1 class="Gallery-coverPageTitle h1 white quarterMargin">{{post.title}}</h1>
+          {% if acf.subtitle %}
+            <h1 class="Gallery-coverPageTitle h3 white light threefourthMargin">{{acf.subtitle}}</h1>
+          {% endif %}
+          {% if author %}
+            <div class="Author">
+              <div class="Author-image lazyload" data-bgset="{{author.get_field('photo')|serveSquareImage(true)['xs']}}"></div>
+              <div class="Gallery-coverPageMeta small white bold">
+                {{__('By', 'gcf')}}&nbsp;
+                <a href="#" class="white underline--dark">{{author.title|title}}</a>
+                &nbsp;{{__('on', 'gcf')}}&nbsp;
+                {{post.date|date('M j, Y')}}
+              </div>
+            </div>
+          {% else %}
+            <div class="small white bold">
+              {{__('Published on', 'gcf')}} January 11, 2017
+            </div>
+          {% endif %}
+        </div>
         {% endif %}
       </div>
     {% endfor %}
+
+    <div class="Gallery-buttons">
+      <a href="" class="Gallery-button Gallery-buttonLeft">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#left"></use>
+        </svg>
+      </a>
+      <div class="Gallery-pagination small faint">
+        <span class="Gallery-paginationCurrent bold">1</span>
+        <span class="Gallery-paginationSlash light large">/</span>
+        <span class="Gallery-paginationTotal bold">{{gallery|length}}</span>
+      </div>
+      <a href="" class="Gallery-button Gallery-buttonRight">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="Gallery-caption">
+      {% for photo in gallery %}
+        {% if loop.index != 1 and photo.description %}
+          <div class="Gallery-captionItem regular light gray{% if loop.index == 1 %} Gallery-captionItem--show{% endif %}" data-caption-id="{{loop.index}}">
+            <h5 class="hregular bold brown quarterMargin">{{photo.title|spacify|title}}</h5>
+            {{photo.description}}
+
+            {# TODO: Figure out translation for gallery caption #}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-
-  <a href="" class="Gallery-close Gallery-button">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-    </svg>
-  </a>
-
-  <a href="" class="Gallery-left Gallery-button">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back"></use>
-    </svg>
-  </a>
-
-  <div class="Gallery-body">
-    {% for photo in data.gallery %}
-      {% if photo and photo is iterable %}
-        {% set image = photo|serveImage %}
-      {% else %}
-        {% set image = fallback.image %}
-      {% endif %}
-      <div class="Gallery-cell lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}"></div>
-    {% endfor %}
-  </div>
-
-  <a href="" class="Gallery-right Gallery-button">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#forward"></use>
-    </svg>
-  </a>
 </div>

@@ -1,0 +1,12 @@
+.Author {
+  box: horizontal middle;
+
+  &-image {
+    @include cover;
+    @include square;
+    size: $single*2;
+    border-radius: 50%;
+    margin-right: $threefourth;
+  }
+  
+}

@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- 7.2.1
+addons:
+  ssh_known_hosts:
+  - new.globalchristianforum.org
+  - 138.68.115.244
+before_install:
+- openssl aes-256-cbc -K $encrypted_a87f33a4e43c_key -iv $encrypted_a87f33a4e43c_iv
+  -in webteam@urban-barnicle.enc -out webteam@urban-barnicle -d
+- bash _travis/install.sh
+script:
+- bash _travis/build.sh
+after_success:
+- bash _travis/deploy.sh

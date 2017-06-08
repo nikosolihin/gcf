@@ -1,0 +1,302 @@
+{
+    "key": "group_591176da80507",
+    "title": "Resource Details",
+    "fields": [
+        {
+            "key": "field_5902f6d34261f",
+            "label": "Basic Info",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57889891f1121",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "If filled, will be displayed under the main title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "acf-short",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_578898cbf1122",
+            "label": "Author",
+            "name": "author",
+            "type": "post_object",
+            "instructions": "A Resource item can be assigned to an author\/writer. Create a new person <a target=\"_blank\" href=\"post-new.php?post_type=person\">here<\/a> with the role of \"author\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "acf-short",
+                "id": ""
+            },
+            "post_type": [
+                "person"
+            ],
+            "taxonomy": [
+                "role:author"
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5902f6d3426ec",
+            "label": "Teaser Paragraph",
+            "name": "teaser",
+            "type": "textarea",
+            "instructions": "This is the overview paragraph for this content item. It summarizes what this item is about. One\/two sentence should suffice. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong><u>Don't leave this blank.<\/u><\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5902f6d3427b6",
+            "label": "Teaser Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5902fb4def03c",
+            "label": "Select an image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "66.666",
+                "class": "",
+                "id": ""
+            },
+            "message": "The image below will be shown on resource listing\/filter page, related resources carousel, as well as social media share dialogs. <strong><u>If you choose to display banner using the option on the right, this image will also be shown as a page banner.<\/u><\/strong>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_591d3475b13d9",
+            "label": "Display Banner",
+            "name": "with_banner",
+            "type": "true_false",
+            "instructions": "Choose to show\/hide banner image. This option is inapplicable for photo gallery resources.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Show",
+            "ui_off_text": "Hide"
+        },
+        {
+            "key": "field_5902f6d342881",
+            "label": "",
+            "name": "",
+            "type": "clone",
+            "instructions": "This is the main banner and will also show up in list-based view like search result and feed list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57bd72b2e0e2c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_5911629e0e679",
+            "label": "Related Resources",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_591aa0607912b",
+            "label": "How related posts are determined",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Below the body content of each resource post is a carousel of related resource items. This list is automatically generated via the combinations of resource type and the topics tagged on this item. Items that are the same type and share common tags will be listed before items with different types.\r\n<br>\r\n<u><strong>Important:<\/strong> Every resource item must be tagged.<\/u>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_591aa0c19eeff",
+            "label": "Manual Relationship",
+            "name": "manual_posts",
+            "type": "relationship",
+            "instructions": "You may also select resource items to add to the list of automatically generated list above. Use this to include items that don't share the same sets of tags but might be relevant to readers of this particular resource item. Manually selected items will appear before the automatic ones above. Duplicates will automatically be removed. Drag to reorder.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "resource"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_591187ff9d8f2",
+            "label": "Translations",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5911cfa023a0c",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Coming soon",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5902f6d342a43",
+            "label": "Notes",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5902f6d342b0d",
+            "label": "Notes",
+            "name": "note",
+            "type": "textarea",
+            "instructions": "You can leave internal notes here for content inventory purposes. This will <strong>not<\/strong> be shown anywhere on the front-end of the website.\r\n<br>\r\nFor example: <em>Last translated to French on 1\/1\/2017. Spanish translation pending approval.<\/em>\r\n<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "POST_TYPE : New Resource",
+    "modified": 1495184833
+}

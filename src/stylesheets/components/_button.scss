@@ -1,65 +1,59 @@
 .Button {
+  cursor: pointer;
   border: 0;
   border-radius: 3px;
   display: inline-block;
   padding: $half $threefourth;
-  background-color: $button-bg;
-  border: 2px solid $button-bg;
+  background-color: $brown;
+  border: 2px solid $brown;
   transition: all .1s ease-in-out;
-  text: $white $font-weight-bold left none $font-size-h6 $line-height;
+  text: $white $font-weight-bold left none $font-size-small 1;
 
-  // Pseudo
-  &:hover,
-  &--hover {
-    background-color: darken($button-bg, 2.5%);
+  &--block {
+    display: block;
+    border-radius: 0;
   }
 
   // Style
-  &--navy {
-    background-color: $navy;
-    border: 2px solid $navy;
+  &--orange {
+    background-color: $orange;
+    border: 2px solid $orange;
   }
-  &--block {
-    width: 100%;
-    text-align: center;
+  &--green {
+    background-color: $green;
+    border: 2px solid $green;
+  }
+  &--red {
+    background-color: $red;
+    border: 2px solid $red;
+  }
+  &--metal {
+    background-color: $metal;
+    border: 2px solid $metal;
+  }
+  &--blue {
+    background-color: $blue;
+    border: 2px solid $blue;
+  }
+  &--coffee {
+    background-color: $coffee;
+    border: 2px solid $coffee;
+  }
+  &--maroon {
+    background-color: $maroon;
+    border: 2px solid $maroon;
   }
 
-  &--gray {
-    color: #555;
-    background-color: #f2f2f2;
-    border: 1px solid #f2f2f2;
-    &:hover {
-      color: $white;
-      background-color: #aaa;
-      border: 1px solid #aaa;
-    }
+  &--outline {
+    background-color: transparent;
+    border: 2px solid transparent;
   }
 
-  &--outline-light {
-    color: $white;
-    border: 2px solid $white;
-    background-color: transparent;
-    &:hover {
-      border: 2px solid $white;
-      background-color: transparent;
-    }
-  }
-  &--outline-dark {
-    color: $navy;
-    border: 2px solid $navy;
-    background-color: transparent;
-    &:hover {
-      border: 2px solid $navy;
-      background-color: transparent;
-    }
-  }
-  &--icon {
-    > * {
-      vertical-align: middle;
-    }
+  &--withIcon {
+    box: horizontal middle center;
     svg {
       size: $single;
-      margin-right: $quarter;
+      margin-right: $half;
     }
   }
 
@@ -72,8 +66,8 @@
   }
 
   // Utilities
-  &--withMargin {
-    margin-top: $single;
+  &--spaced {
+    margin-right: $half;
   }
 
   // Within the sidebar, use small buttons

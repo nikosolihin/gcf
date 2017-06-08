@@ -1,28 +1,32 @@
+//=============================================
+// Light
+//=============================================
 @font-face {
-  font-family: "Proxima Nova";
-  src: url('../fonts/proxima-nova-thin.woff2') format('woff2'),
-       url('../fonts/proxima-nova-thin.woff') format('woff');
-  font-weight: 100;
+  font-family: 'Source Sans Pro';
   font-style: normal;
-}
-@font-face {
-  font-family: "Proxima Nova";
-  src: url('../fonts/proxima-nova-light.woff2') format('woff2'),
-       url('../fonts/proxima-nova-light.woff') format('woff');
   font-weight: 300;
-  font-style: normal;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCP2LEk6lMzYsRqr3dHFImA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
+//=============================================
+// Semibold
+//=============================================
 @font-face {
-  font-family: "Proxima Nova";
-  src: url('../fonts/proxima-nova-semibold.woff2') format('woff2'),
-       url('../fonts/proxima-nova-semibold.woff') format('woff');
+  font-family: 'Source Sans Pro';
+  font-style: normal;
   font-weight: 600;
-  font-style: normal;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMzFoXZ-Kj537nB_-9jJhlA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
+//=============================================
+// Bold
+//=============================================
 @font-face {
-  font-family: "Proxima Nova";
-  src: url('../fonts/proxima-nova-extrabold.woff2') format('woff2'),
-       url('../fonts/proxima-nova-extrabold.woff') format('woff');
-  font-weight: 800;
+  font-family: 'Source Sans Pro';
   font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }

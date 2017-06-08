@@ -1,65 +1,75 @@
 .Pagination {
   box: horizontal middle center;
-  margin-top: $single*1.5;
+  margin-top: $single*3;
+  will-change: opacity, visibility;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in-out;
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-nav {
+    box: horizontal center middle;
+    color: $brown;
+    cursor: pointer;
+    svg {
+      transition: all .125s ease-in-out;
+    }
+    &--inactive {
+      cursor: default;
+      color: #bbb;
+      span {
+        color: inherit;
+      }
+      &:hover {
+        svg {
+          transform: translateX(0) !important;
+        }
+      }
+    }
+  }
+
+  &-prev {
+    margin-right: $single*1.5;
+    &:hover {
+      svg {
+        transform: translateX(-5px);
+      }
+    }
+  }
+
+  &-next {
+    margin-left: $single;
+    &:hover {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
 
   &-pages {
     box: horizontal middle center;
   }
 
-  &-prev,
-  &-next {
-    box: horizontal middle;
-    cursor: pointer;
-    color: $gray-lighter;
-    padding: $quarter $half;
-    margin: 0 $half;
-    svg {
-      size: .65rem;
-      transition: all .1s ease-out;
-    }
-  }
-  &-prev {
-    margin-right: $threefourth;
-  }
-  &-next {
-    margin-left: $threefourth;
-  }
-
   &-page {
-    @include hover($gray-lighter, $navy);
-    box: horizontal middle;
+    @include hover($gray-lighter, $brown);
+    box: vertical center middle;
+    size: $single*1.5;
+    margin-right: .4rem;
     cursor: pointer;
-    color: $gray-lighter;
-    padding: $quarter $half;
-    margin: 0 $half;
-  }
-
-  &--active {
-    color: $navy;
-    font-weight: $font-weight-bold;
-
-    &.Pagination-page {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        height: 3px;
-        width: 65%;
-        transform: translateX(-50%);
-        background-color: $yellow;
-      }
-    }
-
-    &.Pagination-prev:hover svg {
-      transform: translate3d(-5px, 0, 0);
-    }
-    &.Pagination-next:hover svg {
-      transform: translate3d(5px, 0, 0);
+    &--current {
+      @include hover($white, $white);
+      background-color: $brown;
+      border-radius: 2px;
     }
   }
-  &--inactive {
-    cursor: default;
+
+  &-ellipses {
+    &--inactive {
+      display: none;
+    }
   }
 }

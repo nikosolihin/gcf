@@ -3,11 +3,6 @@
     "title": "Link",
     "fields": [
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_5772253122b8a",
             "label": "Label",
             "name": "label",
@@ -20,15 +15,15 @@
                 "class": "",
                 "id": ""
             },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
             "readonly": 0,
             "disabled": 0
         },
         {
-            "default_value": 0,
-            "message": "",
-            "ui": 1,
-            "ui_on_text": "Button",
-            "ui_off_text": "Text",
             "key": "field_57c905d8f57eb",
             "label": "Display as...",
             "name": "form",
@@ -40,21 +35,14 @@
                 "width": "50",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Button",
+            "ui_off_text": "Text"
         },
         {
-            "layout": "horizontal",
-            "choices": {
-                "default": "Default",
-                "outline-dark": "Outline",
-                "outline-light": "Outline (Light)",
-                "block": "Block"
-            },
-            "default_value": "",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
             "key": "field_57722c2b81c42",
             "label": "Button Type",
             "name": "display",
@@ -74,16 +62,20 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "choices": {
+                "default": "Default",
+                "outline": "Outline",
+                "block": "Block"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
         },
         {
-            "clone": [
-                "group_5773382ac6cac"
-            ],
-            "prefix_label": 0,
-            "prefix_name": 0,
-            "display": "seamless",
-            "layout": "block",
             "key": "field_577227a862daf",
             "label": "URL",
             "name": "url",
@@ -95,7 +87,14 @@
                 "width": "50",
                 "class": "",
                 "id": ""
-            }
+            },
+            "clone": [
+                "group_5773382ac6cac"
+            ],
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "display": "seamless",
+            "layout": "block"
         }
     ],
     "location": [
@@ -115,5 +114,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "modified": 1486574347
+    "modified": 1494661102
 }

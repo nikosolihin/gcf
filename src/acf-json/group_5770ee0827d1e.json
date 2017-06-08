@@ -78,44 +78,6 @@
             "new_lines": "br"
         },
         {
-            "key": "field_58c7a5f71f969",
-            "label": "Additional Contact Department",
-            "name": "org_add_contact_dept_one",
-            "type": "text",
-            "instructions": "For example: General Inquiries, Admissions, or Events",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_58c7a6951f96a",
-            "label": "Additional Contact Details",
-            "name": "org_add_contact_details_one",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": "br"
-        },
-        {
             "key": "field_5770ee878907d",
             "label": "Error Page",
             "name": "",
@@ -170,6 +132,57 @@
             "media_upload": 0,
             "default_value": "",
             "delay": 0
+        },
+        {
+            "key": "field_592514682abab",
+            "label": "Empty Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5925146d2abac",
+            "label": "Paragraph",
+            "name": "empty_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_590384c1180e2",
+            "label": "Assets",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_58bcf91e8c8dc",
@@ -397,43 +410,6 @@
             "allow_archives": 0
         },
         {
-            "key": "field_58cb9d51f2bed",
-            "label": "Career",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_58cb9d55f2bee",
-            "label": "Career page",
-            "name": "career",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "allow_archives": 0,
-            "multiple": 0
-        },
-        {
             "key": "field_580882e953557",
             "label": "Languages",
             "name": "",
@@ -467,10 +443,10 @@
         },
         {
             "key": "field_58c39cc38569b",
-            "label": "ID",
-            "name": "language_id",
+            "label": "FR",
+            "name": "language_fr",
             "type": "url",
-            "instructions": "What's the URL for the Indonesian site?",
+            "instructions": "What's the URL for the French site?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -482,11 +458,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_58c984f5c594d",
-            "label": "Temporarily disable IN",
-            "name": "language_solo",
-            "type": "true_false",
-            "instructions": "",
+            "key": "field_590383e24a940",
+            "label": "ES",
+            "name": "language_es",
+            "type": "url",
+            "instructions": "What's the URL for the Spanish site?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -494,11 +470,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_580cffa14e9fb",
@@ -579,8 +552,8 @@
         },
         {
             "key": "field_580cffb64e9fc",
-            "label": "ID Search Engine ID",
-            "name": "search_id_id",
+            "label": "FR Search Engine ID",
+            "name": "search_fr_id",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -591,10 +564,29 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_590384644a95c",
+            "label": "ES Search Engine ID",
+            "name": "search_es_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5810c6d250535",
@@ -707,5 +699,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1490546840
+    "modified": 1495602319
 }

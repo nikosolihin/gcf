@@ -1,0 +1,82 @@
+.ResourceObject {
+  border-radius: 3px;
+  background-color: #fafafa;
+  overflow: hidden;
+  margin-bottom: $threefourth;
+
+  @include from(md) {
+    box: horizontal;
+    margin-bottom: $single*1.75;
+  }
+
+  &-image {
+    @include cover;
+    display: none;
+    @include from(md) {
+      display: block;
+      width: 30%;
+    }
+    @include from(lg) {
+      width: 22%;
+      min-height: $single*14.75;
+    }
+  }
+
+  &-body {
+    padding: $single*1.5;
+    @include from(md) {
+      width: 70%;
+      padding: $single*1.5 $single*2;
+    }
+    @include from(lg) {
+      width: 78%;
+      box: horizontal;
+      padding: $single*2 $single*2.75;
+    }
+  }
+
+  &-content {
+    @include from(md) {
+      width: 100%;
+    }
+    @include from(lg) {
+      width: 75%;
+      border-right: 1px solid $line;
+      padding-right: $single*1.5;
+    }
+    &Type {
+      box: horizontal middle;
+      margin-bottom: $threefourth;
+    }
+    &Icon {
+      box: vertical middle center;
+      color: $white;
+      size: $single*1.825;
+      border-radius: 3px;
+      margin-right: $half;
+      svg {
+        size: .9rem;
+      }
+    }
+    &Title {
+      margin-bottom: $half;
+    }
+    &Description {
+      color: $gray;
+    }
+  }
+
+  &-topics {
+    margin-top: $single;
+    flex: 0 0 auto;
+    @include from(md) {
+      width: 100%;
+    }
+    @include from(lg) {
+      width: 25%;
+      padding-left: $single*1.5;
+      margin-top: 0;
+    }
+  }
+
+}

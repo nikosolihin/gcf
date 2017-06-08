@@ -27,3 +27,15 @@
     opacity: 1;
   }
 }
+
+@keyframes loading {
+  0% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}

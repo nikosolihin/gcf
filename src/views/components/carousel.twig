@@ -1,64 +1,44 @@
-<div class="Carousel" data-component="carousel">
-<div class="Carousel-items">
+<div class="Carousel">
 
-{% for voice in voices %}
-  {% if voice.link.type == "single" %}
-    {% set url = voice.link.single_url %}
-  {% elseif voice.link.type == "external" %}
-    {% set url = voice.link.external_url %}
-  {% else %}
-    {% set url = voice.link.search_url %}
-  {% endif %}
-
-  {% if voice.photo and voice.photo is iterable %}
-    {% set photo = voice.photo|serveSquareImage %}
-  {% else %}
-    {% set photo = fallback.square %}
-  {% endif %}
-
-  {% if voice.image and voice.image is iterable %}
-    {% set image = voice.image|serveImage %}
-  {% else %}
-    {% set image = fallback.image %}
-  {% endif %}
-
-  <div class="{{'Carousel-item'|modifiers("#{voice.alignment}")}} lazyload" data-bgset="{{image.xxl}} [(min-width: {{xxl}})] | {{image.xl}} [(min-width: {{xl}})] | {{image.lg}} [(min-width: {{lg}})] | {{image.md}} [(min-width: {{md}})] | {{image.sm}} [(min-width: {{sm}})] | {{image.xs}}">
-    <div class="Carousel-container">
-      <div class="Carousel-copy">
-        <svg aria-hidden="true" role="presentation" title="Testimonials">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quotes"></use>
-        </svg>
-        <blockquote class="white normal">{{voice.quote}}</blockquote>
-        <div class="Carousel-author">
-          <div class="Carousel-photo lazyload" data-bgset="{{photo.xs}}"></div>
-          <div class="flex-wrapper">
-            <div class="h5 bold white">{{voice.title}}</div>
-            <div class="h5 normal white">{{voice.info}}</div>
-            <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
-          </div>
-        </div>
-        {% if url %}
-          <a href="{{url}}" class="Carousel-button Button Button--small">{{__('Read More', 'sdh')}}</a>
-        {% endif %}
-      </div>
+  <div class="Carousel-nav">
+    <div class="Button Button--withIcon Button--outline">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#article"></use>
+      </svg>
+      <span>{{__('Articles', 'gcf')}}</span>
+    </div>
+    <div class="Button Button--withIcon Button--blue">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#document"></use>
+      </svg>
+      <span>{{__('Documents', 'gcf')}}</span>
+    </div>
+    <div class="Button Button--withIcon Button--red">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#photo"></use>
+      </svg>
+      <span>{{__('Photos', 'gcf')}}</span>
+    </div>
+    <div class="Button Button--withIcon Button--orange">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#publication"></use>
+      </svg>
+      <span>{{__('Publications', 'gcf')}}</span>
+    </div>
+    <div class="Button Button--withIcon Button--maroon">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#video"></use>
+      </svg>
+      <span>{{__('Videos', 'gcf')}}</span>
     </div>
   </div>
-{% endfor %}
-</div>
 
-<div class="Carousel-nav container">
-{% for voice in voices %}
-  {% set photo = voice.photo|serveSquareImage %}
-  <div class="Carousel-navItem{% if loop.first %} Carousel-navItem--active{% endif %}" data-nth="{{loop.index0}}">
-    <div class="flex-wrapper">
-      <div class="Carousel-navPhoto lazyload" data-bgset="{{photo.xs}}"></div>
-    </div>
-    <div class="Carousel-navCopy">
-      <div class="h5 bold white">{{voice.title}}</div>
-      <div class="h7 caps spaced medium faint">{{voice.campus}}</div>
+  <div class="Carousel-wrapper">
+    <div class="Carousel-item">
+      <h3 class="large bold">
+        <a href="">The Domestic Implementation of International Humanitarian Law</a>
+      </h3>
+      <a href="" class="Button Button--block Button--metal">{{__('Read More', 'gcf')}}</a>
     </div>
   </div>
-{% endfor %}
-</div>
-
 </div>

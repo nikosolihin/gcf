@@ -10,7 +10,7 @@
           </svg>
         </div>
       </label>
-      <div class="Accordion-body container--text-nosidebar" role="toggle">
+      <div class="Accordion-body" role="toggle">
         {% for component in item.accordion_components %}
           {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
         {% endfor %}

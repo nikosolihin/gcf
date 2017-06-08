@@ -1,12 +1,56 @@
 <?php
 /*=============================================*/
+/* Remove jQuery from front and admin side
+/* WP uses v1.12.4 which is very old
+/*=============================================*/
+add_action('wp_enqueue_scripts', 'my_jquery_enqueue');
+add_action('admin_enqueue_scripts', 'my_jquery_enqueue');
+function my_jquery_enqueue() {
+  wp_dequeue_script('jquery');
+  wp_deregister_script('jquery');
+  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', true);
+  wp_enqueue_script('jquery');
+}
+
+/*=============================================*/
+/* Disable WP Emojis
+/* Based on http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
+/*=============================================*/
+function disable_wp_emojicons() {
+  // all actions related to emojis
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+  // filter to remove TinyMCE emojis
+  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+}
+add_action( 'init', 'disable_wp_emojicons' );
+function disable_emojicons_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+}
+add_filter( 'emoji_svg_url', '__return_false' );
+
+/*=============================================*/
+/* Remove TinyMCE from dashboard
+/*=============================================*/
+add_filter( 'user_can_richedit' , '__return_false', 50 );
+
+/*=============================================*/
 /* Show favicon in the dashboard
 /*=============================================*/
 add_action('admin_head', 'show_favicon');
 function show_favicon() {
   echo '<link href="FAVICON IMAGE URL" rel="icon" type="image/x-icon">';
-  echo '<link rel="icon" type="image/png" href="https://sdh.or.id/wp-content/themes/sdh/favicon-32x32.png?v=bOv5Xbx3PO" sizes="32x32">';
-  echo '<link rel="icon" type="image/png" href="https://sdh.or.id/wp-content/themes/sdh/favicon-16x16.png?v=bOv5Xbx3PO" sizes="16x16">';
+  echo '<link rel="icon" type="image/png" href="https://new.globalchristianforum.org/wp-content/themes/gcf/favicon-32x32.png?v=bOv5Xbx3PO" sizes="32x32">';
+  echo '<link rel="icon" type="image/png" href="https://new.globalchristianforum.org/wp-content/themes/gcf/favicon-16x16.png?v=bOv5Xbx3PO" sizes="16x16">';
 }
 
 /*=============================================*/
@@ -62,7 +106,7 @@ function my_login_logo_url() {
 // Alt attribute
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 function my_login_logo_url_title() {
-  return 'Sekolah Dian Harapan';
+  return 'Global Christian Forum';
 }
 
 /*=============================================*/

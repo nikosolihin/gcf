@@ -18,9 +18,19 @@
 //========================================================
 // Mixins
 //========================================================
+@mixin hover($before: inherit, $after: darken($before,11%)) {
+  transition: all .165s ease-in-out;
+  color: $before;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $after;
+    text-decoration: none;
+  }
+}
 @mixin white {
-  color: $white;
-  * { color: $white; }
+  color: $white !important;
+  * { color: $white !important; }
 }
 @mixin cover($pos: center center) {
   background-repeat: no-repeat;
@@ -64,74 +74,19 @@
     }
   }
 }
-@mixin left-slant($angle: 7.5, $left: -.8rem) {
-  position: relative;
-  z-index: 1;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: #{$left};
-    width: 50%;
-    height: 100%;
-    transform: skewX(-#{$angle}deg);
-    background: inherit;
-    z-index: -1;
-  }
-}
-@mixin right-slant($angle: 7.5, $right: -.8rem) {
-  position: relative;
-  z-index: 1;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: #{$right};
-    width: 50%;
-    height: 100%;
-    transform: skewX(-#{$angle}deg);
-    background: inherit;
-    z-index: -1;
-  }
-}
-@mixin bottom-slant($angle: 6.75, $bottom: -.8rem) {
-  position: relative;
-  z-index: 1;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: #{$bottom};
-    left: 0;
-    height: 50%;
-    width: 100%;
-    transform: skewY(-#{$angle}deg);
-    background: inherit;
-    z-index: -1;
-  }
-}
-@mixin line-divider($space) {
-  margin-bottom: $space;
-  position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    left: -7px;
-    bottom: -($space/1.75);
-    height: 3px;
-    width: 1.5rem;
-    background-color: $yellow;
-  }
-}
-@mixin underlink {
-  line-height: 1.4;
-  border-bottom: 1px dotted #bbb;
+@mixin underline($fordark: false) {
+  text-decoration: none;
   transition: all .15s ease-out;
-  &:focus,
-  &:hover {
-    border-bottom: 1px dotted $brand-primary;
+  @if $fordark {
+    border-bottom: 1px dashed $white;
+    &:focus, &:hover {
+      border-bottom: 1px dashed $white;
+    }
+  } @else {
+    border-bottom: 1px dashed #cccccc;
+    &:focus, &:hover {
+      border-bottom: 1px dashed #cccccc;
+    }
   }
 }
 @mixin no-outline {
@@ -162,16 +117,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-@mixin hover($before: inherit, $after: $before) {
-  transition: all .11s ease-in-out;
-  color: $before;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: $after;
-    text-decoration: none;
-  }
 }
 @mixin fullwidth {
   // Based on https://css-tricks.com/full-width-containers-limited-width-parents/

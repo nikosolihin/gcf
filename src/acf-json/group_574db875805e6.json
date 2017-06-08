@@ -7,7 +7,7 @@
             "label": "Inherit from parents?",
             "name": "inherit",
             "type": "true_false",
-            "instructions": "<strong><em>If applicable<\/em><\/strong>, you may choose to have this page inherit its parent's sidebar, in addition to the sidebar contents below.",
+            "instructions": "<strong><em>If applicable<\/em><\/strong>, you may choose to have this page inherit its parent's sidebar, in addition to the sidebar contents below.<br>\r\n<strong>NOTE: This option doesn't apply if you're building inheritable sidebars for resource types.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 0,
             "message": "",
+            "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -102,20 +102,19 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "65",
+                        "width": "35",
                         "class": "acf-image-select",
                         "id": ""
                     },
-                    "layout": "horizontal",
                     "choices": {
-                        "callout": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>",
-                        "framed": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-framed.png\"><p>Framed<\/p>",
-                        "plain": "<img src=\"..\/..\/wp-content\/themes\/sdh\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>"
+                        "plain": "<img src=\"..\/..\/wp-content\/themes\/gcf\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>",
+                        "callout": "<img src=\"..\/..\/wp-content\/themes\/gcf\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>"
                     },
-                    "default_value": "plain",
+                    "allow_null": 0,
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "allow_null": 0,
+                    "default_value": "plain",
+                    "layout": "horizontal",
                     "return_format": "value"
                 },
                 {
@@ -135,24 +134,21 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "35",
+                        "width": "65",
                         "class": "",
                         "id": ""
                     },
-                    "layout": "horizontal",
                     "choices": {
-                        "gray": "Gray",
-                        "navy": "Navy",
-                        "yellow": "Yellow",
-                        "blue": "Blue",
-                        "purple": "Purple",
-                        "maroon": "Maroon",
-                        "green": "Green"
+                        "beige": "Beige",
+                        "gray": "Light Gray",
+                        "metal": "Metal",
+                        "type": "Use Resource Type Color"
                     },
-                    "default_value": "gray",
+                    "allow_null": 0,
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "allow_null": 0,
+                    "default_value": "beige",
+                    "layout": "horizontal",
                     "return_format": "value"
                 }
             ]
@@ -180,18 +176,11 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "news"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "event"
+                "value": "resource"
             }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -199,5 +188,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Sidebar Builder",
-    "modified": 1487171035
+    "modified": 1495093638
 }

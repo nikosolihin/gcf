@@ -4,7 +4,7 @@
 // Radio Button for Taxonomies
 //=============================================
 // Disable the "No term" option on a the "resource_type" taxonomy
-add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
+add_filter( "radio-buttons-for-taxonomies-no-term-resource_type", "__return_FALSE" );
 
 //==========================================================
 // Admin Columns Pro
@@ -14,148 +14,11 @@ add_filter( "radio-buttons-for-taxonomies-no-term-campus", "__return_FALSE" );
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-function ac_custom_column_settings_e2b9aab8() {
+add_action( 'init', 'ac_custom_column_settings_49d975cd' );
+function ac_custom_column_settings_49d975cd() {
 
 	if ( function_exists( 'ac_register_columns' ) ) {
-		ac_register_columns( 'page', array(
-			array(
-				'columns' => array(
-					'column-order' => array(
-						'column-name' => 'column-order',
-						'type' => 'column-order',
-						'clone' => '',
-						'label' => 'Order',
-						'width' => '6',
-						'width_unit' => '%',
-						'edit' => 'on',
-						'sort' => 'off'
-					),
-			'title' => array(
-						'column-name' => 'title',
-						'type' => 'title',
-						'clone' => '',
-						'label' => 'Title',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'off'
-					),
-			'column-page_template' => array(
-						'column-name' => 'column-page_template',
-						'type' => 'column-page_template',
-						'clone' => '',
-						'label' => 'Template',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'off'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Overview',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_576ce022e631e',
-						'excerpt_length' => '10',
-						'edit' => 'off',
-						'sort' => 'off'
-					),
-			'column-modified' => array(
-						'column-name' => 'column-modified',
-						'type' => 'column-modified',
-						'clone' => '',
-						'label' => 'Last modified',
-						'width' => '',
-						'width_unit' => '%',
-						'date_format' => 'd M y',
-						'sort' => 'off'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'block', array(
-			array(
-				'columns' => array(
-					'title' => array(
-						'column-name' => 'title',
-						'type' => 'title',
-						'clone' => '',
-						'label' => 'Title',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Description',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_589c3344f996c',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'off'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'voice', array(
-			array(
-				'columns' => array(
-					'title' => array(
-						'column-name' => 'title',
-						'type' => 'title',
-						'clone' => '',
-						'label' => 'Title',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Testimony',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_58b44c2ede82b',
-						'excerpt_length' => '10',
-						'edit' => 'off',
-						'sort' => 'off'
-					),
-			'column-acf_field-1' => array(
-						'column-name' => 'column-acf_field-1',
-						'type' => 'column-acf_field',
-						'clone' => '1',
-						'label' => 'Author Info',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_58b44c6cde82d',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'off'
-					),
-			'date' => array(
-						'column-name' => 'date',
-						'type' => 'date',
-						'clone' => '',
-						'label' => 'Date',
-						'width' => '10',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'event', array(
+		ac_register_columns( 'resource', array(
 			array(
 				'columns' => array(
 					'title' => array(
@@ -172,12 +35,37 @@ function ac_custom_column_settings_e2b9aab8() {
 						'column-name' => 'column-taxonomy',
 						'type' => 'column-taxonomy',
 						'clone' => '',
-						'label' => 'Campus',
+						'label' => 'Type',
 						'width' => '',
 						'width_unit' => '%',
-						'taxonomy' => 'campus',
+						'taxonomy' => 'resource_type',
 						'edit' => 'off',
 						'enable_term_creation' => 'off',
+						'filter' => 'on',
+						'sort' => 'on'
+					),
+			'column-taxonomy-1' => array(
+						'column-name' => 'column-taxonomy-1',
+						'type' => 'column-taxonomy',
+						'clone' => '1',
+						'label' => 'Topics',
+						'width' => '',
+						'width_unit' => '%',
+						'taxonomy' => 'resource_topic',
+						'edit' => 'off',
+						'enable_term_creation' => 'off',
+						'filter' => 'on',
+						'sort' => 'on'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Author',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_578898cbf1122',
+						'edit' => 'off',
 						'filter' => 'off',
 						'sort' => 'on'
 					),
@@ -185,17 +73,17 @@ function ac_custom_column_settings_e2b9aab8() {
 						'column-name' => 'column-date_published',
 						'type' => 'column-date_published',
 						'clone' => '',
-						'label' => 'Event Start Date',
+						'label' => 'Date Published',
 						'width' => '',
 						'width_unit' => '%',
-						'date_format' => 'd M Y',
+						'date_format' => '',
 						'edit' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
 					)
 				),
 			)
 		) );
-		ac_register_columns( 'news', array(
+		ac_register_columns( 'person', array(
 			array(
 				'columns' => array(
 					'title' => array(
@@ -208,78 +96,26 @@ function ac_custom_column_settings_e2b9aab8() {
 						'edit' => 'off',
 						'sort' => 'on'
 					),
-			'column-taxonomy' => array(
-						'column-name' => 'column-taxonomy',
-						'type' => 'column-taxonomy',
-						'clone' => '',
-						'label' => 'Campus',
-						'width' => '',
-						'width_unit' => '%',
-						'taxonomy' => 'campus',
-						'edit' => 'off',
-						'enable_term_creation' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
-					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
 						'type' => 'column-acf_field',
 						'clone' => '',
-						'label' => 'Overview',
+						'label' => 'Email',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_576ce022e631e',
-						'excerpt_length' => '15',
-						'edit' => 'off',
-						'sort' => 'off'
-					),
-			'date' => array(
-						'column-name' => 'date',
-						'type' => 'date',
-						'clone' => '',
-						'label' => 'Date',
-						'width' => '10',
-						'width_unit' => '%',
+						'field' => 'field_575faa4800735',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'on'
-					)
-				),
-			)
-		) );
-		ac_register_columns( 'campus', array(
-			array(
-				'columns' => array(
-					'title' => array(
-						'column-name' => 'title',
-						'type' => 'title',
-						'clone' => '',
-						'label' => 'Unit',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
 					),
 			'column-acf_field-1' => array(
 						'column-name' => 'column-acf_field-1',
 						'type' => 'column-acf_field',
 						'clone' => '1',
-						'label' => 'Leadership',
+						'label' => 'Title',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_58be446b10870',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'off'
-					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
-						'type' => 'column-acf_field',
-						'clone' => '',
-						'label' => 'Primary Language',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_58abe5ad7bc56',
+						'field' => 'field_575faacb00736',
 						'edit' => 'off',
 						'filter' => 'off',
 						'sort' => 'off'
@@ -288,105 +124,72 @@ function ac_custom_column_settings_e2b9aab8() {
 						'column-name' => 'column-acf_field-2',
 						'type' => 'column-acf_field',
 						'clone' => '2',
-						'label' => 'Address',
+						'label' => 'Location',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_58ac0b1c6cb46',
-						'sub_field' => 'field_58bd4405d2e4d',
-						'sub_field_display' => '',
-						'excerpt_length' => '8',
-						'sort' => 'off'
-					),
-			'column-acf_field-3' => array(
-						'column-name' => 'column-acf_field-3',
-						'type' => 'column-acf_field',
-						'clone' => '3',
-						'label' => 'Quicklink Items',
-						'width' => '',
-						'width_unit' => '%',
-						'field' => 'field_58be596abb55c',
+						'field' => 'field_575fac82597e1',
 						'edit' => 'off',
-						'sort' => 'off'
-					),
-			'column-modified' => array(
-						'column-name' => 'column-modified',
-						'type' => 'column-modified',
-						'clone' => '',
-						'label' => 'Last modified',
-						'width' => '',
-						'width_unit' => '%',
-						'date_format' => 'd M Y',
+						'filter' => 'off',
 						'sort' => 'off'
 					)
 				),
+				'layout' => array(
+					'id' => 'ccc5f451a8c24abf',
+					'name' => 'Imported',
+					'roles' => '',
+					'users' => '',
+					'not_editable' => '1'
+				)
 			)
 		) );
-		ac_register_columns( 'wp-users', array(
+		ac_register_columns( 'wp-taxonomy_resource_type', array(
 			array(
 				'columns' => array(
-					'column-user_id' => array(
-						'column-name' => 'column-user_id',
-						'type' => 'column-user_id',
-						'clone' => '',
-						'label' => 'User ID',
-						'width' => '4',
-						'width_unit' => '%',
-						'sort' => 'off'
-					),
-			'username' => array(
-						'column-name' => 'username',
-						'type' => 'username',
-						'clone' => '',
-						'label' => 'Username',
-						'width' => '',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
-					),
-			'name' => array(
+					'name' => array(
 						'column-name' => 'name',
 						'type' => 'name',
 						'clone' => '',
 						'label' => 'Name',
 						'width' => '',
 						'width_unit' => '%',
-						'sort' => 'on'
+						'edit' => 'on'
 					),
-			'email' => array(
-						'column-name' => 'email',
-						'type' => 'email',
+			'slug' => array(
+						'column-name' => 'slug',
+						'type' => 'slug',
 						'clone' => '',
-						'label' => 'Email',
+						'label' => 'Slug',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
+						'edit' => 'on'
 					),
-			'role' => array(
-						'column-name' => 'role',
-						'type' => 'role',
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
 						'clone' => '',
-						'label' => 'Role',
-						'width' => '15',
+						'label' => 'Color',
+						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'off'
+						'field' => 'field_57d64fab2d7a8',
+						'edit' => 'on'
 					),
 			'posts' => array(
 						'column-name' => 'posts',
 						'type' => 'posts',
 						'clone' => '',
-						'label' => 'Posts',
-						'width' => '74',
-						'width_unit' => 'px',
-						'sort' => 'off'
+						'label' => 'Count',
+						'width' => '',
+						'width_unit' => '%'
 					)
 				),
+				'layout' => array(
+					'id' => '320925ff2f500cef',
+					'name' => 'Imported',
+					'roles' => '',
+					'users' => '',
+					'not_editable' => '1'
+				)
 			)
 		) );
 	}
 }
-add_action( 'init', 'ac_custom_column_settings_e2b9aab8' );

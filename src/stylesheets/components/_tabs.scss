@@ -6,7 +6,7 @@
     @include from(md) {
       box: horizontal wrap left;
     }
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
     margin-bottom: $single*1.5;
     &::after {
@@ -15,7 +15,7 @@
       position: absolute;
       height: 1px;
       width: 100%;
-      background-color: #ddd;
+      background-color: $line;
       left: 0;
       bottom: 0;
       z-index: -99999;
@@ -26,7 +26,6 @@
     }
   }
   &-tab {
-    // @include hover($orange, $navy);
     @include no-outline;
     float: left;
     padding: 0 $single $threefourth;
@@ -38,11 +37,11 @@
         content: "";
         display: block;
         position: absolute;
-        height: 3px;
+        height: 4px;
         width: 100%;
-        background-color: $yellow;
+        background-color: $brown;
         left: 0;
-        bottom: 0;
+        bottom: -1px;
       }
     }
   }

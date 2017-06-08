@@ -3,29 +3,34 @@
 //=============================================
 $black:                        #000000 !default;
 $white:                        #ffffff !default;
-$blue:                         #42C1FF !default;
-$sky:                          #24ACCE !default;
-$navy:                         #202F67 !default;
-$navy-light:                   #344896 !default;
-$yellow:                       #FFD200 !default;
-$orange:                       #EEB111 !default;
-$teal:                         #3DB0B0 !default;
-$maroon:                       #820024 !default;
-$green:                        #679423 !default;
-$purple:                       #5B1E4B !default;
-$gray-darker:                  #111111 !default;
-$gray-dark:                    #111111 !default;
-$gray:                         #333333 !default;
-$gray-lighter:                 #aaaaaa !default;
-$line:                         #eee !default;
+$body:                         #222222 !default;
+$headings:                     #111111 !default;
+$gray:                         #666666 !default;
+$gray-lighter:                 #999999 !default;
+$gray-darker:                  #333333 !default;
+$line:                         #eeeeee !default;
+
+$orange:                       #e65325 !default;
+// $orange:                       #f57512 !default;
+$red:                          #d45b35 !default;
+$green:                        #888d28 !default;
+$sky:                          #009cff !default;
+$blue:                         #628b9d !default;
+$metal:                        #666b78 !default;
+$beige:                        #f8f4f1 !default;
+$coffee:                       #6c4820 !default;
+$maroon:                       #89462e !default;
+$smoke:                        #f0f3f7 !default;
+// $brown:                        #e29549 !default;
+$brown:                        #e49341 !default;
 
 //=============================================
-// Spacer
+// Spacing
 //=============================================
-$quarter:               .25rem !default;
-$half:                  .5rem !default;
-$threefourth:           .75rem !default;
-$single:                1rem !default;
+$quarter:                     .25rem !default;
+$half:                        .5rem !default;
+$threefourth:                 .75rem !default;
+$single:                      1rem !default;
 
 //=============================================
 // Layout
@@ -47,7 +52,7 @@ $image-breakpoints: (
   xxl: 1600
 ) !default;
 $desktop:                         'md' !default;
-$container-width:                 1280px !default;
+$container-width:                 1200px !default;
 $container-landing-width:         1400px !default;
 $container-text-width:            800px !default;
 
@@ -55,13 +60,9 @@ $container-text-width:            800px !default;
 // Elements
 //=============================================
 
-// Text Colors ////////////////////////////////
-$body-color:                   $gray !default;
-$headings-color:               $gray-darker !default;
-
 // Links //////////////////////////////////////
-$link-color:                    $sky !default;
-$link-hover-color:              darken($sky, 15%) !default;
+$link-color:                    #3887BE !default;
+$link-hover-color:              #63b6e5 !default;
 
 // List ///////////////////////////////////////
 $list-style-type-ul-first:      square !default;
@@ -70,84 +71,79 @@ $list-style-type-ul-third:      circle !default;
 $list-style-type-ol-first:      decimal !default;
 $list-style-type-ol-second:     lower-alpha !default;
 $list-style-type-ol-third:      lower-roman !default;
-$list-padding-left:             $single*1.125 !default;
+$list-padding-left:             $single !default;
 
-// HR ////////////////////////////////////////
-$hr-padding:                    $single*1.25 !default;
-$hr-color:                      #ccc !default;
+// // HR ////////////////////////////////////////
+// $hr-padding:                    $single*1.25 !default;
+// $hr-color:                      #ccc !default;
 
 //=============================================
 // Typography
 //=============================================
-$font-size-root:               20px !default;
-$font-size-mini:               18px !default;
+$font-size-root:               18px !default;
+$font-size-mini:               16px !default;
 $font-size:                    1rem !default;
 
-// Common properties //////////////////////////
-$font-weight-light:            100 !default;
+// Weights ///////////////////////////////////
+$font-weight-light:            300 !default;
 $font-weight-normal:           300 !default;
 $font-weight-medium:           600 !default;
-$font-weight-bold:             800 !default;
+$font-weight-bold:             700 !default;
+
+// Sizes /////////////////////////////////////
+$font-size-h1:                 2.074rem !default;
+$font-size-h2:                 1.728rem !default;
+$font-size-h3:                 1.44rem !default;
+$font-size-large:              1.2rem !default;
+$font-size-regular:            1rem !default;
+$font-size-small:              .833rem !default;
+$font-size-micro:              .694rem !default;
+
+// Line Heights /////////////////////////////
+$line-height:                  1.45 !default;
+$headings-line-height:         1.25 !default;
 
 // Sans Serif /////////////////////////////////
-$font-family:             "Proxima Nova", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-$font-size-h1:                 3rem !default;
-$font-size-h2:                 2.4rem !default;
-$font-size-h3:                 1.4rem !default;
-$font-size-h4:                 1rem !default;
-$font-size-h5:                 .9rem !default;
-$font-size-h6:                 .8rem !default;
-$font-size-h7:                 .7rem !default;
-$line-height:                  1.65 !default;
-$headings-line-height:         1.25 !default;
+$font-family:                  "Source Sans Pro", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 
 
 //=============================================
 // Miscellaneous
 //=============================================
-
+//
 // Z-Index ///////////////////////////////////
-$zindex-burger:                  7500 !default;
-$zindex-mobile-header:           7000 !default;
-
-$zindex-announcement:            6100 !default;
+// $zindex-burger:                  7500 !default;
+// $zindex-mobile-header:           7000 !default;
+//
+// $zindex-announcement:            6100 !default;
 $zindex-loader:                  6000 !default;
+//
+// $zindex-panels:                  5700 !default;
+// $zindex-modal:                   5600 !default;
+// $zindex-primarynav:              5500 !default;
+// $zindex-home-content:            5000 !default;
+//
+// $zindex-gallery:                 5100 !default;
+//
+// $zindex-cta:                     4200 !default;
+// $zindex-footer-main:             4100 !default;
+// $zindex-footer-bg:               4000 !default;
+//
+// $zindex-hero-copy:               3100 !default;
+// $zindex-hero:                    3000 !default;
+//
+//
+// //=============================================
+// // Components
+// //=============================================
+//
+// // // Callout ///////////////////////////////////
+// $callout-bg:                    lighten($black, 97%) !default;
 
-$zindex-panels:                  5700 !default;
-$zindex-modal:                   5600 !default;
-$zindex-primarynav:              5500 !default;
-$zindex-home-content:            5000 !default;
-
-$zindex-gallery:                 5100 !default;
-
-$zindex-cta:                     4200 !default;
-$zindex-footer-main:             4100 !default;
-$zindex-footer-bg:               4000 !default;
-
-$zindex-hero-copy:               3100 !default;
-$zindex-hero:                    3000 !default;
-
-
-//=============================================
-// Components
-//=============================================
-
-// // Callout ///////////////////////////////////
-$callout-bg:                    lighten($black, 97%) !default;
-
-// Buttons ///////////////////////////////////
-$button-bg:                     $orange !default;
-$button-small-padding:          $half .625rem !default;
-
-// // Loader //////////////////////////////////////
-$loader-size:                  $single*2 !default;
-$loader-color:                 $orange !default;
-
-// Banner ///////////////////////////////////
-$banner-small-height:          450px !default;
-$banner-large-height:          650px !default;
-
-// Figures //////////////////////////////////
-$figure-caption-font-size:      90% !default;
-$figure-caption-line-height:    1.4 !default;
-$figure-caption-color:          #ababab !default;
+// // // Loader //////////////////////////////////////
+// $loader-size:                  $single*2 !default;
+// $loader-color:                 $orange !default;
+//
+// // Banner ///////////////////////////////////
+// $banner-small-height:          450px !default;
+// $banner-large-height:          650px !default;

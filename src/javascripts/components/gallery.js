@@ -1,74 +1,79 @@
-import 'jquery-bridget'
-import Flickity from 'flickity'
+import jQueryBridget from 'jquery-bridget'
+import Flickity from 'flickity-sync'
 
-$.bridget('flickity', Flickity) // jQuerify flickity
+jQueryBridget('flickity', Flickity, $)
 
 export default class Gallery {
   constructor(el) {
     this.$el = $(el)
-    this.$body = $(".Gallery-body")
-    this.count = $(".Gallery-cell").length
-    this.flickity = this.initializeFlickity( this.count, this.$body, {
+    this.$body = this.$el.find('.Gallery-body')
+    this.$preview = this.$el.find('.Gallery-preview')
+    this.$captions = this.$el.find('.Gallery-captionItem')
+    this.$current = this.$el.find('.Gallery-paginationCurrent')
+    this.$total = this.$el.find('.Gallery-paginationTotal')
+
+    this.current = 1
+    this.total = 0
+    this.count = 0
+    this.galleryData = null
+    this.offset = 0
+
+    // Delegation
+    this.left = '.Gallery-buttonLeft'
+    this.right = '.Gallery-buttonRight'
+
+    // States
+    this.activeCaption = 'Gallery-captionItem--show'
+    this.$activeCaption = $('.Gallery-captionItem--show')
+
+    this.galleryOptions = {
+      cellSelector: '.Gallery-cell',
+      sync: '.Gallery-preview',
       wrapAround: true,
+      pageDots: false,
+      prevNextButtons: false,
+      adaptiveHeight: false,
+      // autoPlay: 8500,
+      setGallerySize: false
+    }
+    this.previewOptions = {
+      cellSelector: '.Gallery-previewCell',
+      draggable: false,
       pageDots: false,
       prevNextButtons: false,
       adaptiveHeight: false,
       autoPlay: false,
       setGallerySize: false
-    })
+    }
+
+    this.initialize()
+  }
+
+  initialize() {
+    this.galleryData = this.$body.flickity(this.galleryOptions).data('flickity')
+    this.$preview.flickity(this.previewOptions)
+    this.total = this.galleryData.cells.length
     this.attachEvents()
   }
 
-  initializeFlickity(count, target, options) {
-    let galleryData = target.flickity(options).data('flickity')
-    // Flickity events need to be done like this since
-    // jQuery is encapsulated when used with Webpack
-    // https://github.com/metafizzy/flickity/issues/329
-    target.flickity( 'on', 'cellSelect', function() {
-      $(".Gallery-caption-item--show").removeClass('Gallery-caption-item--show')
-      $(".Gallery-caption-item").eq( galleryData.selectedIndex ).addClass('Gallery-caption-item--show')
-    })
-    return galleryData
-  }
-
   attachEvents() {
-    this.$el.on('click', '.Gallery-left', (event) => {
-      event.preventDefault()
-      this.flickity.previous()
-    })
-    .on('click', '.Gallery-right', (event) => {
-      event.preventDefault()
-      this.flickity.next()
-    })
-    .on('click', '.Gallery-close', (event) => {
-      event.preventDefault()
-      this.close()
-    })
-    $(".Gallery-previewButton, .Gallery-preview").on('click', (event) => {
-      event.preventDefault()
-      this.open()
-    })
-    $(document).keyup( (event) => {
-      if(event.keyCode == 27) {
-        event.preventDefault()
-        this.close()
-      }
-    })
-  }
+    this.$body.flickity('on', 'select', () => {
+      // Change pagination
+      this.current = this.galleryData.selectedIndex + 1
+      this.$current.text(this.current)
+      this.$total.text(this.total)
 
-  open() {
-    $("body").addClass('noScroll')
-    this.$el.removeClass('die')
-    setTimeout(() => {
-      this.$el.addClass('Gallery--open')
-    }, 10)
-  }
-
-  close() {
-    $("body").removeClass('noScroll')
-    this.$el.removeClass('Gallery--open')
-    setTimeout(() => {
-      this.$el.addClass('die')
-    }, 125)
+      // Change caption
+      $('.Gallery-captionItem--show').removeClass('Gallery-captionItem--show')
+      $('.Gallery-captionItem[data-caption-id="' + this.current + '"]').addClass(this.activeCaption)
+    })
+    this.$el.on('click', this.left, (event) => {
+      event.preventDefault()
+      this.galleryData.previous()
+    })
+    .on('click', this.right, (event) => {
+      event.preventDefault()
+      this.galleryData.next()
+    })
   }
 }

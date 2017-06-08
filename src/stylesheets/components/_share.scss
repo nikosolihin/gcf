@@ -1,67 +1,24 @@
 .Share {
-  box: horizontal center middle;
-  size: 100%;
-  margin: $single*2.5 0 $single;
+  margin-bottom: $single*2;
 
-  @include from(xl) {
-    box: vertical center;
-    width: 7%;
-    padding-top: $single*3.25;
-    margin-right: $single*1.5;
-  }
-
-  &-socialMedia {
-    box: horizontal left middle;
-    @include from(xl) {
-      box: vertical top center;
-    }
-  }
-
-  &-title {
-    text-align: center;
-    margin-bottom: 0;
-    margin-right: $threefourth;
-    @include from(xl) {
-      margin-bottom: $threefourth;
-      margin-right: 0;
-    }
+  .flex-wrapper {
+    box: horizontal middle;
   }
 
   &-button {
-    @include hover(#aaa, $navy);
-    box: horizontal middle;
-    padding: $quarter;
-    margin-bottom: 0;
+    box: vertical middle center;
+    size: $single*1.9;
+    color: #888;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: $half;
+    transition: all .225s ease-in-out;
     svg {
-      size: $single;
+      height: .775rem;
     }
-    @include from(xl) {
-      margin-bottom: $half;
-      svg {
-        size: $single*1.125;
-      }
+    &:hover {
+      color: $brown;
+      border-color: $brown;
     }
   }
-
-  // &--horizontal {
-  //   @include to(md) {
-  //     box: horizontal middle center;
-  //     width: 100%;
-  //     padding: 0;
-  //     margin: 0;
-  //     .Share-title {
-  //       margin-bottom: 0;
-  //       margin-right: $threefourth;
-  //     }
-  //     .Share-button {
-  //       margin-bottom: 0;
-  //       svg {
-  //         size: $single;
-  //       }
-  //     }
-  //     .Share-socialMedia {
-  //       box: horizontal middle;
-  //     }
-  //   }
-  // }
 }

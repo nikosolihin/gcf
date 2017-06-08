@@ -1,0 +1,8 @@
+.Video {
+  @include fullwidth;
+  background-color: #000;
+
+  &-wrapper {
+    padding: $single*3 0;
+  }
+}

@@ -1,6 +1,5 @@
 .Accordion {
   @include normalist;
-  border-top: 3px solid $yellow;
 
   &-checkbox {
     display: none;
@@ -21,22 +20,24 @@
   }
 
   &-head {
+    user-select: none;
     * { user-select: none }
-    box: horizontal space-between;
+    box: horizontal space-between middle;
     cursor: pointer;
-    color: $navy;
+    color: $brown;
     font-weight: $font-weight-bold;
-    padding: $single*1.5 0;
+    padding: $single*1.25 0;
     margin-bottom: 0;
   }
 
   &-icon {
+    box: horizontal center middle;
     flex: 0 0 auto;
     margin: 0 $threefourth 0 $single*1.5;
     size: 30px;
     transition: all .1025s ease-in-out;
     svg {
-      fill: $orange;
+      fill: $brown;
       size: $single*1.5;
     }
   }
@@ -46,6 +47,6 @@
   }
 
   &-item {
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid #eee;
   }
 }

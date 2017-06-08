@@ -1,6 +1,6 @@
 {
     "key": "group_58a04d88d7cd7",
-    "title": "Article Builder",
+    "title": "Content Builder",
     "fields": [
         {
             "key": "field_58a04d88db11d",
@@ -110,7 +110,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "news"
+                "value": "resource"
             }
         ]
     ],
@@ -121,6 +121,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "Article Builder",
-    "modified": 1486900705
+    "description": "2-column Article Builder",
+    "modified": 1494779203
 }

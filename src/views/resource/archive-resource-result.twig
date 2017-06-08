@@ -1,0 +1,6 @@
+{% set fImg = ''|serveSquareImage()['sm'] %}
+{% set fProfile = ''|serveSquareImage(true)['xs'] %}
+
+{% include 'components/loader.twig' %}
+
+<div class="ArchiveResource-result" data-component="resource-result" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "on_word": "{{on_word}}", "by_word": "{{by_word}}", "published_word": "{{published_word}}", "types": {{types_json}}, "topics": {{topics_json}}, "authors": {{authors_json}}, "emptyMsg": "{{empty_msg}}", "fallbackImage": "{{fImg}}", "fallbackProfile": "{{fProfile}}" }'></div>

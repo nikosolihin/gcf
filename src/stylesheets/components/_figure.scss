@@ -8,9 +8,8 @@
   }
 
   &-caption {
-    color: $figure-caption-color;
-    line-height: $figure-caption-line-height;
-    padding: 12px 25px 0;
+    text: $font-weight-light italic $gray-lighter $font-size-small 1.25 normal;
+    padding: .65rem $half 0;
     @at-root .Sidebar-section #{&} {
       padding: 0 $quarter;
     }

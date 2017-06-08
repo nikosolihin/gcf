@@ -12,25 +12,25 @@
   th {
     // Hide on mobile, switch to horizontal view
     display: none;
-    // font-size: $font-size-h7;
     border-bottom: 1px solid #eee;
   }
   td {
     display: block;
-    font-size: $font-size-h5;
+    font-size: $font-size-regular;
     &:before {
       content: attr(data-th)": ";
+      color: $brown;
       display: inline-block;
       width: 45vw;
       font-weight: $font-weight-bold;
-      @include from(sm) { display: none; }
+      @include from(md) { display: none; }
     }
   }
   th, td {
     text-align: left;
-    border-top: 3px solid $yellow;
+    border-top: 4px solid $brown;
     padding: $quarter;
-    @include from(sm) {
+    @include from(md) {
       display: table-cell;
       padding: $single;
     }
@@ -40,15 +40,14 @@
   tr {
     border-top: $single*1.25 solid transparent;
     border-bottom: $single*1.25 solid transparent;
-    @include from(sm) {
+    @include from(md) {
       border: 0;
     }
     td {
       border: none;
     }
     &:nth-of-type(even) {
-      background-color: $callout-bg;
-      // @include from(sm) { background-color: transparent; }
+      background-color: lighten($beige,3%);
     }
   }
 }

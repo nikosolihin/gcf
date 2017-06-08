@@ -1,0 +1,11 @@
+<div class="ArchiveResource-filterDate">
+  {# Render Author #}
+  {% include 'resource/archive-resource-filter-author.twig' %}
+
+  <div class="ArchiveResource-filterTitle brown bold">{{__('Publication Date', 'gcf')}}</div>
+
+  <!-- <div class="flex-wrapper"> -->
+    {% include 'resource/archive-resource-filter-month.twig' %}
+    {% include 'resource/archive-resource-filter-year.twig' %}
+  <!-- </div> -->
+</div>

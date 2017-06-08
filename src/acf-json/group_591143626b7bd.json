@@ -1,0 +1,221 @@
+{
+    "key": "group_591143626b7bd",
+    "title": "Document\/Publication Options",
+    "fields": [
+        {
+            "key": "field_591147a3a6377",
+            "label": "Metadata",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59114680a6376",
+            "label": "Additional metadata",
+            "name": "metadata",
+            "type": "repeater",
+            "instructions": "Add miscellaneous metadata here (For example: ISBN, Edition, Publisher, etc. ). These will show up under the cover page, along with the listing of available languages. Click and drag on the number to the left of each metadata to change the rendering order.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_591170964fc26",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Metadata",
+            "sub_fields": [
+                {
+                    "key": "field_591170964fc26",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_591170a54fc27",
+                    "label": "Value",
+                    "name": "value",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_591143626f26b",
+            "label": "Cover Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5911448c0a6e5",
+            "label": "Select Cover Image",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "When adding a new cover image, try to use an image with portrait orientation whenever possible. We recommend a 420 x 550 pixels image.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_591143626f332",
+            "label": "",
+            "name": "cover",
+            "type": "acf_google_photos_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "google_photos_limit": 1,
+            "google_photos_user_id": "",
+            "google_photos_access_token": "",
+            "google_photos_message": ""
+        },
+        {
+            "key": "field_5911886980c62",
+            "label": "Download Link",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5911d039faff1",
+            "label": "Google Drive URL",
+            "name": "download",
+            "type": "google_drive_field",
+            "instructions": "Paste the share URL of this document\/publication. Click help for more info.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_type:document"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy_ancestor",
+                "operator": "==",
+                "value": "resource_type:document"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource_type:publication"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            },
+            {
+                "param": "post_taxonomy_ancestor",
+                "operator": "==",
+                "value": "resource_type:publication"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "POST_TYPE : New Resource : DOCUMENT & PUBLICATION",
+    "modified": 1495176970
+}

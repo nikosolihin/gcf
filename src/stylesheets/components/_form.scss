@@ -1,10 +1,8 @@
 .Form {
   overflow: hidden;
-  
   @include to(sm) {
     @include fullwidth;
   }
-
   &-embed {
     @include from(xl) {
       // Help hide the annoying colored masthead

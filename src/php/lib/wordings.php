@@ -1,4 +1,14 @@
 <?php
+/*=============================================*/
+/* Change the default template name
+/*=============================================*/
+// add_filter('default_page_template_title', function() {
+//   $screen = get_current_screen();
+//   if( $screen->post_type == 'resource' ) {
+//     return __('Without Banner', 'gcf');
+//   }
+// });
+
 // function custom_wordings(){
 //   if ( $GLOBALS['pagenow'] != 'upload.php' ){
 //     return;

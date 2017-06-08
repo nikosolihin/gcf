@@ -1,0 +1,51 @@
+{# Special carousel style feed used for related resource items  #}
+
+{% set posts = getRelatedResources(data) %}
+
+{% if posts %}
+
+<div class="Feed Feed--card">
+  <div class="Feed-body">
+  {% for post in posts %}
+    <div class="Feed-item">
+      <div class="Feed-corner" style="background-color:{{post.type_color}}">
+        <a href="{{site.url ~ '/resources/?utf8=%E2%9C%93&types=' ~ post.type_slug}}" class="ResourceObject-contentType noMargin">
+          <div class="ResourceObject-contentIcon">
+            <svg aria-hidden="true" role="presentation" title="{{post.type|title}}">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{post.type_slug}}"></use>
+            </svg>
+          </div>
+          <div class="hsmall white">{{post.type|title}}</div>
+        </a>
+      </div>
+      <div class="Feed-media">
+        <a href="{{post.link}}" class="Feed-mediaImage lazyload" data-bgset="{{post.image.xs}}"></a>
+      </div>
+      <div class="flex-wrapper">
+        <a href="{{post.link}}" class="Feed-title regular medium">{{post.title}}</a>
+        <div class="Feed-meta small medium faint">
+          {% if post.author %}
+            <em class="light dark-gray">{{__('By', 'gcf')}}</em>&nbsp;&nbsp;
+            <a href="{{site.url ~ '/resources/?utf8=%E2%9C%93&author=' ~ post.author_id}}" class="brown">{{post.author}}</a>
+            <em class="light dark-gray">&nbsp;&nbsp;on</em>
+            &nbsp;&nbsp;{{post.date|date('M j, Y')}}
+          {% else %}
+            <em class="light dark-gray">{{__('On', 'gcf')}}</em>&nbsp;&nbsp;{{post.date|date('M j, Y')}}
+          {% endif %}
+        </div>
+        {% if post.topics %}
+          <div class="flex-wrapper">
+            {% for topic in post.topics %}
+              <a class="Pill Pill--mini hmicro" href="{{site.url ~ '/resources/?utf8=%E2%9C%93&topics=' ~ topic.slug}}">{{topic.name}}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% else %}
+  <p class="h5 normal gray">{{empty}}</p>
+{% endif %}

@@ -1,0 +1,27 @@
+{# Cover Page #}
+<a href="#" class="SingleResource-cover">
+  <div class="SingleResource-coverImage lazyload" data-bgset="{{acf.cover|serveImage.xs}}"></div>
+</a>
+
+{# Metadata #}
+{% for data in acf.metadata %}
+  <h5 class="hregular bold brown noMargin">{{data.name}}</h5>
+  <p class="gray threefourthMargin">{{data.value|title}}</p>
+{% endfor %}
+
+{# Languages #}
+<h5 class="hregular bold brown noMargin">{{__('Available Languages', 'gcf')}}</h5>
+<a href="" class="gray underline">{{__('English', 'gcf')}}</a>,&nbsp;
+<a href="" class="gray underline">{{__('French', 'gcf')}}</a>,&nbsp;
+<a href="" class="gray underline">{{__('Spanish', 'gcf')}}</a>
+
+{# CTA #}
+<a href="{{acf.download}}" class="SingleResource-cta Button Button--withIcon">
+  <svg aria-hidden="true" role="presentation" title="{{__('Download this resource', 'gcf')}}">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use>
+  </svg>
+  <span>{{__('Download', 'gcf')}} {{type_slug|title}}</span>
+</a>
+
+{# Share #}
+{% include 'components/share.twig' %}

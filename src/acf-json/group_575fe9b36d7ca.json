@@ -421,37 +421,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                {
-                    "key": "58a7e74a6b3f3",
-                    "name": "gallery",
-                    "label": "Gallery",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_58a7e74f6b3f4",
-                            "label": "Gallery",
-                            "name": "gallery",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_58a7e4ccb7e1c"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             ]
         }
@@ -473,5 +442,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Components Parent",
-    "modified": 1488881513
+    "modified": 1494349083
 }

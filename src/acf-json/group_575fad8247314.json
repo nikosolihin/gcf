@@ -1,0 +1,46 @@
+{
+    "key": "group_575fad8247314",
+    "title": "Resource Topics",
+    "fields": [
+        {
+            "key": "field_575fad824d365",
+            "label": "",
+            "name": "topic_box",
+            "type": "taxonomy",
+            "instructions": "The topics of this resource. A resource can have multiple topics assigned to it.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "resource_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "resource"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TAG BOX : Replacement for resource topics",
+    "modified": 1493364046
+}

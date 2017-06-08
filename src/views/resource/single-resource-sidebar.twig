@@ -1,0 +1,21 @@
+<div class="SingleResource-sidebar">
+
+  {# Get different metadata needed for different resource type #}
+  {% include 'resource/single-resource-' ~ type_slug ~ '.twig' %}
+
+  {# Resource Topic Tags - show for all except article #}
+  {% if type_slug != 'article' %}
+    <div class="SingleResource-tags">
+      <h5 class="hregular bold brown">{{__('Tagged as', 'gcf')}}</h5>
+      {% for topic in topics %}
+        <a class="Pill hmicro" href="{{site.url ~ '/resources/?utf8=%E2%9C%93&topics=' ~ topic.slug}}">{{topic.name}}</a>
+      {% endfor %}
+    </div>
+
+    {# Sidebar Builder #}
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
+  {% endif %}
+
+</div>

@@ -1,18 +1,18 @@
 .wrapper {
   position: relative;
   margin: 0 auto;
-}
 
-.flex-wrapper {
-  // Just an empty div
-  &--fixed {
-    flex: 0 0 auto;
+  @at-root .single-resource #{&} {
+    background-color: $beige;
+    border-left: $single*1.75 solid $beige;
+    border-right: $single*1.75 solid $beige;
   }
 }
 
 .container {
+  position: relative;
   margin: 0 auto;
-  max-width: $container-width;  // 1280px
+  max-width: $container-width;
 
   &--landing {
     max-width: $container-landing-width;
@@ -28,6 +28,19 @@
     @include from(md) {
       margin-bottom: $single*4;
     }
+  }
+
+  // Style
+  &--shift {
+    position: relative;
+    top: -$single*13;
+  }
+}
+
+.flex-wrapper {
+  // Just an empty div
+  &--fixed {
+    flex: 0 0 auto;
   }
 }
 
@@ -72,8 +85,8 @@
 
   // The column divs act as a flex child wrapper.
   @include from($desktop) {
-    border-left: 1.125rem solid transparent;
-    border-right: 1.125rem solid transparent;
+    border-left: $single solid transparent;
+    border-right: $single solid transparent;
     &:last-of-type {
       // The following keep single column in their place,
       // despite being only child

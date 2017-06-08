@@ -3,17 +3,6 @@
     "title": "URL",
     "fields": [
         {
-            "layout": "horizontal",
-            "choices": {
-                "single": "Single Resource Post\/Page",
-                "search": "Filtered Resource Listing",
-                "external": "External URL"
-            },
-            "default_value": "",
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "allow_null": 0,
-            "return_format": "value",
             "key": "field_57715f2ceaa16",
             "label": "Link Type",
             "name": "type",
@@ -25,16 +14,20 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "layout": "horizontal",
+            "choices": {
+                "single": "Single Resource Post\/Page",
+                "search": "Filtered Resource Listing",
+                "external": "External URL"
+            },
+            "default_value": "",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value"
         },
         {
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "allow_archives": 0,
             "key": "field_577164437f04d",
             "label": "Choose a single post\/page",
             "name": "single_url",
@@ -54,14 +47,17 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "page",
+                "resource"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
         },
         {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_57715d004646e",
             "label": "URL",
             "name": "external_url",
@@ -81,16 +77,19 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
-            "default_value": "",
-            "placeholder": "",
             "key": "field_57716240387bb",
             "label": "URL",
             "name": "search_url",
             "type": "url",
-            "instructions": "To generate the URL of a filtered resource search, head over to the resource <a href=\"\/resources\/search\">search page<\/a>. The URL of the page will update as you set\/unset search filters. When finished, paste the URL here.",
+            "instructions": "To generate the URL of a filtered resource search, head over to the resource <a href=\"\/resources\">listing page<\/a>. The URL of the page will update as you set\/unset search filters. When finished, paste the URL here.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -105,7 +104,9 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -125,5 +126,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "modified": 1486089068
+    "modified": 1494661232
 }

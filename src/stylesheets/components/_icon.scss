@@ -1,0 +1,12 @@
+.Icon {
+  box: horizontal middle;
+  color: $white;
+
+  svg {
+    margin-right: $half;
+  }
+
+  &--brown {
+    color: $brown;
+  }
+}

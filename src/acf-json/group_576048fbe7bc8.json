@@ -43,8 +43,8 @@
             "key": "field_576176af3565f",
             "label": "Bubble Content",
             "name": "info",
-            "type": "medium_editor",
-            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph. Highlight text for formatting options.",
+            "type": "medium-editor",
+            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph. Highlight text for formatting options. Your browser's undo\/redo shortcuts will work here.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -59,21 +59,7 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "standard_buttons": [
-                "bold",
-                "italic",
-                "underline",
-                "removeFormat"
-            ],
-            "other_options": [
-                "disableDoubleReturn",
-                "disableExtraSpaces"
-            ],
-            "placeholder": "",
-            "default_value": "",
-            "custom_buttons": "",
-            "delay": 0
+            }
         }
     ],
     "location": [
@@ -93,5 +79,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Maps",
-    "modified": 1488952216
+    "modified": 1494680326
 }

@@ -1,8 +1,6 @@
+//=============================================
 // Utilities
-.die {
-  display: none !important;
-}
-
+//=============================================
 .noLineHeight {
   line-height: 1;
 }
@@ -12,7 +10,19 @@
 }
 
 .noMargin {
-  margin: 0;
+  margin: 0 !important;
+}
+.quarterMargin {
+  margin-bottom: $quarter;
+}
+.halfMargin {
+  margin-bottom: $half;
+}
+.threefourthMargin {
+  margin-bottom: $threefourth;
+}
+.singleMargin {
+  margin-bottom: $single;
 }
 
 .noPadding {
@@ -27,60 +37,49 @@
   display: flex;
 }
 
-.icon {
-  box: horizontal;
-  padding: .125rem;
-  margin-right: $half;
-
-  svg {
-    size: $single;
-    fill: currentColor;
-  }
-}
-
-// Type Styling
+//=============================================
+// Colors
+//=============================================
 .white {
   @include white;
-}
-.body {
-  color: $body-color;
-}
-.yellow {
-  color: $yellow;
-}
-.orange {
-  color: $orange;
-}
-.navy {
-  color: $navy;
-}
-.blue {
-  color: $blue;
-}
-.sky {
-  color: $sky;
 }
 .faint {
   color: $gray-lighter;
 }
+.body {
+  color: $body;
+}
 .gray {
-  color: #777;
+  color: $gray;
 }
-.caps {
-  text-transform: uppercase;
+.dark-gray {
+  color: $gray-darker;
 }
-.spaced {
-  letter-spacing: 2.2px;
+.green {
+  color: $green;
 }
-.center {
-  text-align: center;
+.blue {
+  color: $blue;
 }
-.right {
-  text-align: right;
+.orange {
+  color: $orange;
 }
-.italic {
-  font-style: italic;
+.red {
+  color: $red;
 }
-.underline {
-  border-bottom: 2px solid $orange;
+.brown {
+  color: $brown;
+}
+.metal {
+  color: $metal;
+}
+.maroon {
+  color: $maroon;
+}
+
+//=============================================
+// Delete This!
+//=============================================
+.xdebug-var-dump {
+  font-size: 14px;
 }

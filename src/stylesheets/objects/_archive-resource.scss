@@ -1,0 +1,78 @@
+.ArchiveResource {
+  margin-bottom: $single*6;
+  background-color: $white;
+
+  &-search {
+    position: relative;
+    background-color: $white;
+    border-radius: 3px;
+    transition: all .35s ease-out .05s;
+    @include to(sm) {
+      order: 1;
+      width: 100%;
+    }
+    @include at(md) {
+      flex: 1;
+    }
+    @include from(lg) {
+      width: $single*15.75;
+    }
+    &Box {
+      width: 100%;
+      border: 0;
+      padding: $threefourth $single;
+    }
+    &Icon {
+      position: absolute;
+      right: $single;
+      top: 50%;
+      transform: translateY(-35%);
+      color: $brown;
+    }
+    @at-root .ArchiveResource-filter--open #{&} {
+      flex: 1;
+      margin-left: $quarter;
+    }
+  }
+
+  &-header {
+    box: vertical middle center;
+    margin-bottom: $single*2;
+    @include from(md) {
+      box: horizontal space-between;
+      padding: 0 $threefourth;
+    }
+    .flex-wrapper {
+      box: horizontal middle;
+      > span {
+        margin-right: $threefourth;
+      }
+      &:first-of-type {
+        margin-bottom: $single;
+      }
+    }
+    &--fade {
+      opacity: .3;
+    }
+  }
+
+  &-sort {
+    cursor: pointer;
+    color: $gray-lighter;
+    padding: .4rem .65rem;
+    border-radius: 3px;
+    &--active {
+      color: $white;
+      background-color: $brown;
+    }
+  }
+
+  &-result {
+    position: relative;
+    min-height: $single*11;
+    padding: 0 $threefourth;
+    &--fade {
+      opacity: .3;
+    }
+  }
+}

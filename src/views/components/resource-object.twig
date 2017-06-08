@@ -1,0 +1,55 @@
+<script id="ResourceObject" type="x-tmpl-mustache">
+{% verbatim %}
+
+{{#error}}
+  <h1 class="h1 orange center">Error</h1>
+  <p class="faint large center">{{error}}</p>
+{{/error}}
+{{#empty}}
+  <h1 class="h1 orange center">No Results</h1>
+  <p class="faint large center">{{empty}}</p>
+{{/empty}}
+
+{{#title}}
+  <div class="ResourceObject">
+    <a href="{{url}}" class="ResourceObject-image lazyload" data-bgset="{{image}}"></a>
+    <div class="ResourceObject-body">
+      <div class="ResourceObject-content">
+        <div className="flex-wrapper">
+          <a href="/resources/?utf8=%E2%9C%93&types={{typeSlug}}" class="ResourceObject-contentType">
+            <div class="ResourceObject-contentIcon" style="background-color:{{typeColor}};">
+              <svg aria-hidden="true" role="presentation" title="{{typeName}}">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{typeSlug}}"></use>
+              </svg>
+            </div>
+            <div class="hsmall caps spaced faint">{{typeName}}</div>
+          </a>
+        </div>
+        <h2 class="ResourceObject-contentTitle large bold">
+          <a href="{{url}}">{{title}}</a>
+        </h2>
+        <p class="ResourceObject-contentDescription">{{teaser}}</p>
+        <div class="Author">
+          {{#authorName}}
+            <div class="Author-image lazyload" data-bgset="{{authorPhoto}}"></div>
+            <div class="small faint bold">
+              {{by}} <a href="#">{{authorName}}</a> {{on}} {{date}}
+            </div>
+          {{/authorName}}
+          {{^authorName}}
+            <div class="small faint bold">{{published}} {{on}} {{date}}</div>
+          {{/authorName}}
+        </div>
+      </div>
+
+      <div class="ResourceObject-topics">
+        {{#topics}}
+          <div class="Pill hmicro">{{topic}}</div>
+        {{/topics}}
+      </div>
+    </div>
+  </div>
+{{/title}}
+
+{% endverbatim %}
+</script>

@@ -1,14 +1,19 @@
 {% for section in sidebar_sections %}
   {% set callout = section.sidebar_section_options %}
   {% if callout == 'callout' %}
-    {% set color = section.sidebar_section_color %}
+    {% if section.sidebar_section_color == 'type' %}
+      {% set color = type_color %}
+      <div class="{{'Sidebar-section'|modifiers("#{callout}, type")}}" style="background-color: {{color}}">
+    {% else %}
+      {% set color = section.sidebar_section_color %}
+      <div class="{{'Sidebar-section'|modifiers("#{callout}, #{color}")}}">
+    {% endif %}
   {% else %}
-    {% set color = '' %}
+    <div class="Sidebar-section">
   {% endif %}
 
-  <div class="{{'Sidebar-section'|modifiers("#{callout}, #{color}")}}">
-    {% for component in section.sidebar_components %}
-      {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
-    {% endfor %}
-  </div>
+  {% for component in section.sidebar_components %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
+  {% endfor %}
+</div>
 {% endfor %}

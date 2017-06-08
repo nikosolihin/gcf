@@ -1,16 +1,8 @@
 {
     "key": "group_5799c139c255f",
-    "title": "Multiple Blocks",
+    "title": "Blocks",
     "fields": [
         {
-            "post_type": [
-                "block"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1,
             "key": "field_5799c139cb390",
             "label": "",
             "name": "blocks",
@@ -22,14 +14,23 @@
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "post_type": [
+                "block"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
         }
     ],
     "location": [
         [
             {
                 "param": "post_type",
-                "operator": "=="
+                "operator": "==",
+                "value": "post"
             }
         ]
     ],
@@ -41,5 +42,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Blocks",
-    "modified": 1486218905
+    "modified": 1494349126
 }
