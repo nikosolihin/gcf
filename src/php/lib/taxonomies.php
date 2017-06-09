@@ -43,9 +43,9 @@ function resource_type_taxonomy() {
 		'show_in_rest'               => true,
 		'rest_base'                  => 'types',
 		'rest_controller_class'      => 'WP_REST_Terms_Controller',
-		'show_in_graphql'     			 => true,
-		'graphql_single_name' 	     => 'resourceType',
-		'graphql_plural_name' 	     => 'resourceTypes'
+		// 'show_in_graphql'     			 => true,
+		// 'graphql_single_name' 	     => 'resourceType',
+		// 'graphql_plural_name' 	     => 'resourceTypes'
 	);
 	register_taxonomy( 'resource_type', array( 'resource' ), $args );
 }
@@ -96,9 +96,9 @@ function resource_topic_taxonomy() {
 		'show_in_rest'               => true,
 		'rest_base'                  => 'topics',
 		'rest_controller_class'      => 'WP_REST_Terms_Controller',
-		'show_in_graphql'     			 => true,
-		'graphql_single_name' 	     => 'resourceTopic',
-		'graphql_plural_name' 	     => 'resourceTopics'
+		// 'show_in_graphql'     			 => true,
+		// 'graphql_single_name' 	     => 'resourceTopic',
+		// 'graphql_plural_name' 	     => 'resourceTopics'
 	);
 	register_taxonomy( 'resource_topic', array( 'resource' ), $args );
 }
