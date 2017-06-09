@@ -60,9 +60,9 @@ function resources_post_type() {
 		'show_in_rest'       		=> true,
 		'rest_base'          		=> 'resources',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
-		'show_in_graphql'     	=> true,
-		'graphql_single_name' 	=> 'resource',
-		'graphql_plural_name' 	=> 'resources'
+		// 'show_in_graphql'     	=> true,
+		// 'graphql_single_name' 	=> 'resource',
+		// 'graphql_plural_name' 	=> 'resources'
 	);
 	register_post_type( 'resource', $args );
 }

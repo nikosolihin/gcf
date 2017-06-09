@@ -2,7 +2,7 @@
   "root": {
     "src": "./src",
     "dest": "./public",
-    "de_st": "./htdocs/wp-content/themes/gcf"
+    "dest": "./htdocs/wp-content/themes/gcf"
   },
 
   "tasks": {
