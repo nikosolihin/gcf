@@ -182,7 +182,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Below the body content of each resource post is a carousel of related resource items. This list is automatically generated via the combinations of resource type and the topics tagged on this item. Items that are the same type and share common tags will be listed before items with different types.\r\n<br>\r\n<u><strong>Important:<\/strong> Every resource item must be tagged.<\/u>",
+            "message": "Below the body content of each resource post is a carousel of related resource items. This list is automatically generated via the combination of resource type and the topics tagged on this item. Items that are the same type and share common tags will be listed before items with different types.\r\n<br>\r\n<u><strong>Important:<\/strong> Every resource item must be tagged.<\/u>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -191,7 +191,7 @@
             "label": "Manual Relationship",
             "name": "manual_posts",
             "type": "relationship",
-            "instructions": "You may also select resource items to add to the list of automatically generated list above. Use this to include items that don't share the same sets of tags but might be relevant to readers of this particular resource item. Manually selected items will appear before the automatic ones above. Duplicates will automatically be removed. Drag to reorder.",
+            "instructions": "You may also select resource items to add to the list of automatically generated list above. Use this to include items that don't share the same sets of tags but might be relevant to readers of this particular resource item. Manually selected items will be prioritized and appear before the automatic ones above. Duplicates will automatically be removed. Drag to reorder.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -298,5 +298,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "POST_TYPE : New Resource",
-    "modified": 1495184833
+    "modified": 1497251397
 }

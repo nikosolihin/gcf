@@ -16,44 +16,6 @@
                 "id": ""
             },
             "default_value": "#e29f5b"
-        },
-        {
-            "key": "field_591c751fafcf5",
-            "label": "",
-            "name": "",
-            "type": "message",
-            "instructions": "Sometime you may need to show different sidebars on the listing page and actual news article pages. You may build a sidebar which can be inherited to any news article page here.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "",
-            "esc_html": 0
-        },
-        {
-            "key": "field_591c74dcafcf4",
-            "label": "Sidebar Builder",
-            "name": "resource_sidebar",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_574db875805e6"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
         }
     ],
     "location": [
@@ -73,5 +35,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TAXONOMY : Resource Type",
-    "modified": 1495036938
+    "modified": 1497249325
 }
