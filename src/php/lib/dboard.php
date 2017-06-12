@@ -4,7 +4,7 @@
 /* WP uses v1.12.4 which is very old
 /*=============================================*/
 add_action('wp_enqueue_scripts', 'my_jquery_enqueue');
-add_action('admin_enqueue_scripts', 'my_jquery_enqueue');
+// add_action('admin_enqueue_scripts', 'my_jquery_enqueue');
 function my_jquery_enqueue() {
   wp_dequeue_script('jquery');
   wp_deregister_script('jquery');
@@ -173,7 +173,7 @@ add_action( 'admin_init', 'wpse_edit_footer' );
 function my_footer_shh() {
   remove_filter( 'update_footer', 'core_update_footer' );
 }
-add_action( 'admin_menu', 'my_footer_shh' );
+// add_action( 'admin_menu', 'my_footer_shh' );
 
 /*=============================================*/
 /* Increase `timeout` for `api.wordpress.org` requests
