@@ -108,23 +108,23 @@ function acf_location_rules_match_post_taxonomy_ancestor($match, $rule, $options
 // Site Settings //////////////////////////////
 if( function_exists('acf_add_options_page') ) {
 
-  // // Menu //////////////////////////////
-	// acf_add_options_page(array(
-	// 	'page_title' 	=> '', // No page title since acf already has
-	// 	'menu_title'	=> 'Header & Footer',
-	// 	'menu_slug' 	=> 'header-footer',
-	// 	'position' 		=> '200',
-	// 	'icon_url' 		=> 'dashicons-menu'
-	// ));
-  //
-  // // Home Page //////////////////////////////
-	// acf_add_options_page(array(
-	// 	'page_title' 	=> '', // No page title since acf already has
-	// 	'menu_title'	=> 'Home Page',
-	// 	'menu_slug' 	=> 'homepage',
-	// 	'position' 		=> '201',
-	// 	'icon_url' 		=> 'dashicons-admin-home'
-	// ));
+  // Menu //////////////////////////////
+	acf_add_options_page(array(
+		'page_title' 	=> '', // No page title since acf already has
+		'menu_title'	=> 'Header & Footer',
+		'menu_slug' 	=> 'header-footer',
+		'position' 		=> '200',
+		'icon_url' 		=> 'dashicons-menu'
+	));
+
+  // Home Page //////////////////////////////
+	acf_add_options_page(array(
+		'page_title' 	=> '', // No page title since acf already has
+		'menu_title'	=> 'Home Page',
+		'menu_slug' 	=> 'homepage',
+		'position' 		=> '201',
+		'icon_url' 		=> 'dashicons-admin-home'
+	));
 
   // Site Settings //////////////////////////////
   acf_add_options_page(array(

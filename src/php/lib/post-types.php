@@ -126,6 +126,63 @@ function person_post_type() {
 }
 add_action( 'init', 'person_post_type', 0 );
 
+/**
+ * Register Block Post Type
+ */
+function blocks_post_type() {
+	$labels = array(
+		'name'                  => _x( 'Blocks', 'Post Type General Name', 'sdh' ),
+		'singular_name'         => _x( 'Block', 'Post Type Singular Name', 'sdh' ),
+		'menu_name'             => __( 'Blocks', 'sdh' ),
+		'name_admin_bar'        => __( 'Block', 'sdh' ),
+		'archives'              => __( 'Block Archives', 'sdh' ),
+		'parent_item_colon'     => __( 'Parent Block:', 'sdh' ),
+		'all_items'             => __( 'All Blocks', 'sdh' ),
+		'add_new_item'          => __( 'Add New Block', 'sdh' ),
+		'add_new'               => __( 'New Block', 'sdh' ),
+		'new_item'              => __( 'New Block', 'sdh' ),
+		'edit_item'             => __( 'Edit Block', 'sdh' ),
+		'update_item'           => __( 'Update Block', 'sdh' ),
+		'view_item'             => __( 'View Block', 'sdh' ),
+		'search_items'          => __( 'Search Blocks', 'sdh' ),
+		'not_found'             => __( 'No block found', 'sdh' ),
+		'not_found_in_trash'    => __( 'No block found in trash', 'sdh' ),
+		'featured_image'        => __( 'Featured Image', 'sdh' ),
+		'set_featured_image'    => __( 'Set featured image', 'sdh' ),
+		'remove_featured_image' => __( 'Remove featured image', 'sdh' ),
+		'use_featured_image'    => __( 'Use as featured image', 'sdh' ),
+		'insert_into_item'      => __( 'Insert into item', 'sdh' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'sdh' ),
+		'items_list'            => __( 'Items list', 'sdh' ),
+		'items_list_navigation' => __( 'Items list navigation', 'sdh' ),
+		'filter_items_list'     => __( 'Filter items list', 'sdh' ),
+	);
+	$args = array(
+		'label'                 => __( 'Block', 'sdh' ),
+		'description'           => __( 'Custom post type for blocks', 'sdh' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title' ),
+		'taxonomies'            => array(),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 100,
+		'menu_icon'             => 'dashicons-screenoptions',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => false,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => false, //Disable single page viewing
+		'rewrite'               => false,
+		'capability_type'       => array('campus','campuses'),
+		'map_meta_cap'        	=> true,
+	);
+	register_post_type( 'block', $args );
+}
+add_action( 'init', 'blocks_post_type', 0 );
+
 
 /**
  * Filters to enable %custom-taxonomy% in rewrites
