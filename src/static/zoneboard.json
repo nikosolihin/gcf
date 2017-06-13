@@ -1,19 +1,10 @@
 {
-  "logo_url":"zoneboard.svg",
+  "logo_url":"zoneboard.png",
   "bricks":[
     {
       "label":"Home Page",
       "icon":"fa-home",
-      "links":[
-        {
-          "label":"Add a commitment statement",
-          "url":"/wp-admin/admin.php?page=homepage"
-        },
-        {
-          "label":"Add a homepage quicklinks",
-          "url":"/wp-admin/admin.php?page=settings"
-        }
-      ]
+      "links":[]
     },
     {
       "label":"Site-Wide",
@@ -68,69 +59,37 @@
       ]
     },
     {
-      "label":"Events",
-      "icon":"fa-calendar",
+      "label":"Resources",
+      "icon":"fa-folder-open",
       "links":[
         {
-          "label":"Add a new event",
-          "url":"/wp-admin/post-new.php?post_type=event"
+          "label":"See all resources",
+          "url":"/wp-admin/edit.php?post_type=resource"
         },
         {
-          "label":"See all events",
-          "url":"/wp-admin/edit.php?post_type=event"
+          "label":"Add a new resource",
+          "url":"/wp-admin/post-new.php?post_type=resource"
         },
         {
-          "label":"Edit an event you created",
-          "url":"/wp-admin/edit.php?post_type=event"
-        }
-      ]
-    },
-    {
-      "label":"News",
-      "icon":"fa-bullhorn",
-      "links":[
-        {
-          "label":"Add a new news article",
-          "url":"/wp-admin/post-new.php?post_type=news"
+          "label":"Create a new resource type",
+          "url":"/wp-admin/edit-tags.php?taxonomy=resource_type&post_type=resource"
         },
         {
-          "label":"See all news",
-          "url":"/wp-admin/edit.php?post_type=news"
-        },
-        {
-          "label":"Edit a news article you wrote",
-          "url":"/wp-admin/edit.php?post_type=news"
-        }
-      ]
-    },
-    {
-      "label":"Campuses",
-      "icon":"fa-map-marker",
-      "links":[
-        {
-          "label":"Add a new campus location. (Managed by current username)",
-          "url":"/wp-admin/post-new.php?post_type=campus"
-        },
-        {
-          "label":"See all campuses",
-          "url":"/wp-admin/edit.php?post_type=campus"
-        },
-        {
-          "label":"Edit a campus you own",
-          "url":"/wp-admin/edit.php?post_type=campus"
+          "label":"Create a new resource topic",
+          "url":"/wp-admin/edit-tags.php?taxonomy=resource_topic&post_type=resource"
         }
       ]
     },
     {
       "label":"Social Presence",
-      "icon":"fa-child",
+      "icon":"fa-share-square-o",
       "links":[
         {
           "label":"Change social media pages/URL",
           "url":"/wp-admin/admin.php?page=settings"
         },
         {
-          "label":"See SDH Facebook Insights Analytics",
+          "label":"See GCF Facebook Insights Analytics",
           "url":"https://www.facebook.com/insights"
         },
         {
@@ -138,7 +97,7 @@
           "url":"https://developers.facebook.com/tools/debug/sharing/"
         },
         {
-          "label":"See SDH Twitter analytics",
+          "label":"See GCF Twitter analytics",
           "url":"https://analytics.twitter.com/about"
         },
         {
