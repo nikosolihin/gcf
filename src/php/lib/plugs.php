@@ -11,7 +11,7 @@ add_filter( "radio-buttons-for-taxonomies-no-term-resource_type", "__return_FALS
 // Use the following code so column settings
 // apply to multisites
 //
-// Turn on only on prod
+// Turn on only on prod (i.e. before pushing)
 //==========================================================
 add_action( 'init', 'ac_custom_column_settings_c69625df' );
 function ac_custom_column_settings_c69625df() {
