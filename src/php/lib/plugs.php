@@ -11,12 +11,10 @@ add_filter( "radio-buttons-for-taxonomies-no-term-resource_type", "__return_FALS
 // Use the following code so column settings
 // apply to multisites
 //
-// Uncoment the action before pushing to prod
-// Use the GUI on dev since if using php GUI is disabled
+// Turn on only on prod
 //==========================================================
-// add_action( 'init', 'ac_custom_column_settings_49d975cd' );
-
-function ac_custom_column_settings_49d975cd() {
+add_action( 'init', 'ac_custom_column_settings_c69625df' );
+function ac_custom_column_settings_c69625df() {
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'resource', array(
 			array(
@@ -61,13 +59,25 @@ function ac_custom_column_settings_49d975cd() {
 						'column-name' => 'column-acf_field',
 						'type' => 'column-acf_field',
 						'clone' => '',
-						'label' => 'Author',
+						'label' => 'Author(s)',
 						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_578898cbf1122',
 						'edit' => 'off',
 						'filter' => 'off',
 						'sort' => 'on'
+					),
+			'column-acf_field-1' => array(
+						'column-name' => 'column-acf_field-1',
+						'type' => 'column-acf_field',
+						'clone' => '1',
+						'label' => 'Overview',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_576ce022e631e',
+						'excerpt_length' => '7',
+						'edit' => 'off',
+						'sort' => 'off'
 					),
 			'column-date_published' => array(
 						'column-name' => 'column-date_published',
@@ -76,7 +86,7 @@ function ac_custom_column_settings_49d975cd() {
 						'label' => 'Date Published',
 						'width' => '',
 						'width_unit' => '%',
-						'date_format' => '',
+						'date_format' => 'M j, Y',
 						'edit' => 'off',
 						'sort' => 'on'
 					)
@@ -90,7 +100,7 @@ function ac_custom_column_settings_49d975cd() {
 						'column-name' => 'title',
 						'type' => 'title',
 						'clone' => '',
-						'label' => 'Title',
+						'label' => 'Name',
 						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
@@ -106,7 +116,7 @@ function ac_custom_column_settings_49d975cd() {
 						'field' => 'field_575faa4800735',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
 					),
 			'column-acf_field-1' => array(
 						'column-name' => 'column-acf_field-1',
@@ -118,7 +128,7 @@ function ac_custom_column_settings_49d975cd() {
 						'field' => 'field_575faacb00736',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
 					),
 			'column-acf_field-2' => array(
 						'column-name' => 'column-acf_field-2',
@@ -130,16 +140,22 @@ function ac_custom_column_settings_49d975cd() {
 						'field' => 'field_575fac82597e1',
 						'edit' => 'off',
 						'filter' => 'off',
-						'sort' => 'off'
+						'sort' => 'on'
+					),
+			'column-taxonomy' => array(
+						'column-name' => 'column-taxonomy',
+						'type' => 'column-taxonomy',
+						'clone' => '',
+						'label' => 'Role',
+						'width' => '',
+						'width_unit' => '%',
+						'taxonomy' => 'role',
+						'edit' => 'off',
+						'enable_term_creation' => 'off',
+						'filter' => 'on',
+						'sort' => 'on'
 					)
 				),
-				'layout' => array(
-					'id' => 'ccc5f451a8c24abf',
-					'name' => 'Imported',
-					'roles' => '',
-					'users' => '',
-					'not_editable' => '1'
-				)
 			)
 		) );
 		ac_register_columns( 'wp-taxonomy_resource_type', array(
@@ -152,7 +168,7 @@ function ac_custom_column_settings_49d975cd() {
 						'label' => 'Name',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'on'
+						'edit' => 'off'
 					),
 			'slug' => array(
 						'column-name' => 'slug',
@@ -161,7 +177,7 @@ function ac_custom_column_settings_49d975cd() {
 						'label' => 'Slug',
 						'width' => '',
 						'width_unit' => '%',
-						'edit' => 'on'
+						'edit' => 'off'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
@@ -171,24 +187,90 @@ function ac_custom_column_settings_49d975cd() {
 						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_57d64fab2d7a8',
-						'edit' => 'on'
+						'edit' => 'off'
 					),
 			'posts' => array(
 						'column-name' => 'posts',
 						'type' => 'posts',
 						'clone' => '',
-						'label' => 'Count',
+						'label' => 'Item Count',
 						'width' => '',
 						'width_unit' => '%'
 					)
 				),
-				'layout' => array(
-					'id' => '320925ff2f500cef',
-					'name' => 'Imported',
-					'roles' => '',
-					'users' => '',
-					'not_editable' => '1'
-				)
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_resource_topic', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'slug' => array(
+						'column-name' => 'slug',
+						'type' => 'slug',
+						'clone' => '',
+						'label' => 'Slug',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Item Count',
+						'width' => '',
+						'width_unit' => '%'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_role', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'slug' => array(
+						'column-name' => 'slug',
+						'type' => 'slug',
+						'clone' => '',
+						'label' => 'Slug',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'description' => array(
+						'column-name' => 'description',
+						'type' => 'description',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'People Count',
+						'width' => '',
+						'width_unit' => '%'
+					)
+				),
 			)
 		) );
 	}
