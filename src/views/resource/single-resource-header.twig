@@ -14,10 +14,10 @@
       {% endif %}
       {% if author %}
         <div class="Author">
-          <div class="Author-image lazyload" data-bgset="{{author.get_field('photo')|serveSquareImage(true)['xs']}}"></div>
+          <div class="Author-image lazyload" data-bgset="{{author.photo}}"></div>
           <div class="small white bold">
             {{__('By', 'gcf')}}&nbsp;
-            <a href="#" class="white underline--dark">{{author.title|title}}</a>
+            <a href="{{site.url ~ '/resources/?utf8=%E2%9C%93&author=' ~ author.id}}" class="white underline--dark">{{author.name|title}}</a>
             &nbsp;{{__('on', 'gcf')}}&nbsp;
             {{post.date|date('M j, Y')}}
           </div>
