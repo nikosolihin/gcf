@@ -117,7 +117,7 @@
         },
         {
             "key": "field_5773959af7881",
-            "label": "",
+            "label": "Notes",
             "name": "note",
             "type": "textarea",
             "instructions": "You can leave internal notes here for content inventory purposes. This will <strong>not<\/strong> be shown anywhere on the front-end of the website.\r\n<br>\r\nFor example: <em>Last translated to French on 1\/1\/2016. Spanish translation pending approval.<\/em>\r\n<br><br>",
@@ -129,12 +129,10 @@
                 "id": ""
             },
             "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
             "placeholder": "",
+            "maxlength": "",
             "rows": "",
-            "readonly": 0,
-            "disabled": 0
+            "new_lines": ""
         }
     ],
     "location": [
@@ -168,5 +166,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Page",
-    "modified": 1487585027
+    "modified": 1497610332
 }

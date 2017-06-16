@@ -31,4 +31,6 @@ if ($exclude_all) {
   }
 }
 
-Timber::render( 'page/landing-page.twig' , $context, 600 );
+
+
+// Timber::render( 'page/landing-page.twig' , $context, 600 );
