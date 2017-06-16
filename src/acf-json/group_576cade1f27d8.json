@@ -1,0 +1,119 @@
+{
+    "key": "group_576cade1f27d8",
+    "title": "Landing Page Options",
+    "fields": [
+        {
+            "key": "field_58c37b7ca2247",
+            "label": "Exclude All",
+            "name": "landing_exclude_all",
+            "type": "true_false",
+            "instructions": "Exclude all children pages - in other words, don't show the landing page grid at all.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_580f8cc599745",
+            "label": "Exception List",
+            "name": "landing_layout_exception",
+            "type": "post_object",
+            "instructions": "Which children pages should be excluded? Pages set here will not be included in the landing page's grid layout. Leave blank to include all.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58c37b7ca2247",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_577206d248af1",
+            "label": "Content Position",
+            "name": "position",
+            "type": "radio",
+            "instructions": "Should this page's content appear before or after the grid of its children pages?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "before": "Before",
+                "after": "After"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57cc59f577305",
+            "label": "Sidebar",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Unlike the default page template, the landing page template will not display any sidebar. You may still build a sidebar using the builder on the left so that children of this landing page can inherit it, saving you time from defining repeated sidebar modules across children pages.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "landing-page.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : Landing Page",
+    "modified": 1497602454
+}

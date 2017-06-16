@@ -49,7 +49,14 @@ if ( isset($manual) && is_array($manual) ) {
 }
 
 // Author
-$context['author'] = Timber::get_post($context['acf']['author']);
+$author = $context['acf']['author'];
+if ( isset($author) && is_object($author) ) {
+	$author = Timber::get_post($author);
+	$context['author']['name'] = $author->post_title;
+	$context['author']['id'] = $author->id;
+	$context['author']['slug'] = $author->slug;
+	$context['author']['photo'] = serveSquareImage( $author->get_field('photo'), true )['xs'];
+}
 
 // Get Sidebar
 $inherit = $context['acf']['inherit'];
@@ -75,5 +82,4 @@ if ($inherit) {
 // TODO:
 // If type is gallery or video, grab og:image
 
-Timber::render( 'resource/single-resource.twig' , $context );
-// Timber::render( 'resource/single-resource.twig' , $context, 600 );
+Timber::render( 'resource/single-resource.twig' , $context, 600 );

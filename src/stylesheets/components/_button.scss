@@ -11,7 +11,6 @@
 
   &--block {
     display: block;
-    border-radius: 0;
   }
 
   // Style
@@ -45,8 +44,9 @@
   }
 
   &--outline {
+    color: $brown;
     background-color: transparent;
-    border: 2px solid transparent;
+    border: 2px solid $brown;
   }
 
   &--withIcon {

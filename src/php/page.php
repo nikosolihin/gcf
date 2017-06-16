@@ -2,13 +2,14 @@
 /**
  * Description: Page template for default pages
  */
+
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-// $context['acf'] = get_fields();
-// $context['sections'] = $context['acf']['sections'];
-// $context['toc'] = $post->get_field('toc');
-// $context['with_toc_block'] = $post->get_field('toc_block');
+$context['acf'] = get_fields();
+$context['sections'] = $context['acf']['sections'];
+$context['toc'] = $post->get_field('toc');
+$context['with_toc_block'] = $post->get_field('toc_block');
 
 // // Get TOC block if set
 // if ($context['with_toc_block']) {

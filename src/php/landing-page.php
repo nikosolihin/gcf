@@ -9,7 +9,6 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
-$context['is_voice'] = false;
 $context['children'] = array();
 $exclude_all = $post->get_field('landing_exclude_all');
 $exception = $post->get_field('landing_layout_exception');
@@ -32,4 +31,4 @@ if ($exclude_all) {
   }
 }
 
-Timber::render( 'page/landing-page.twig' , $context, 600, TimberLoader::CACHE_SITE_TRANSIENT );
+Timber::render( 'page/landing-page.twig' , $context, 600 );
