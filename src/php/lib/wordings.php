@@ -2,37 +2,30 @@
 /*=============================================*/
 /* Change the default template name
 /*=============================================*/
-// add_filter('default_page_template_title', function() {
-//   $screen = get_current_screen();
-//   if( $screen->post_type == 'resource' ) {
-//     return __('Without Banner', 'gcf');
-//   }
-// });
+add_filter('default_page_template_title', function() {
+  $screen = get_current_screen();
+  if( $screen->post_type == 'page' ) {
+    return __('With Sidebar', 'gcf');
+  }
+});
 
-// function custom_wordings(){
-//   if ( $GLOBALS['pagenow'] != 'upload.php' ){
-//     return;
-//   } else { $GLOBALS['title'] =  __( 'File Library' ); }
-// }
-// add_action( 'admin_head', 'custom_wordings' );
-//
-// function post_type_change_title_text( $title ){
-//   $screen = get_current_screen();
-//   if( 'page' == $screen->post_type) {
-//     $title = "Enter page's title";
-//   }
-//   if( 'person' == $screen->post_type) {
-//     $title = "Enter person's name";
-//   }
-//   if( 'news' == $screen->post_type) {
-//     $title = "Enter news title";
-//   }
-//   if( 'event' == $screen->post_type) {
-//     $title = "Enter event name";
-//   }
-//   if( 'resource' == $screen->post_type) {
-//     $title = "Enter media title";
-//   }
-//   return $title;
-// }
-// add_filter( 'enter_title_here', 'post_type_change_title_text' );
+/*=============================================*/
+/* Change "Enter title here" based on CPT
+/*=============================================*/
+function post_type_change_title_text( $title ){
+  $screen = get_current_screen();
+  if( 'page' == $screen->post_type) {
+    $title = "Enter page title";
+  }
+  if( 'person' == $screen->post_type) {
+    $title = "Enter person full name";
+  }
+  if( 'resource' == $screen->post_type) {
+    $title = "Enter resource title";
+  }
+  if( 'block' == $screen->post_type) {
+    $title = "Enter block title";
+  }
+  return $title;
+}
+add_filter( 'enter_title_here', 'post_type_change_title_text' );
