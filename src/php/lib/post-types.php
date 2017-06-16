@@ -176,7 +176,7 @@ function blocks_post_type() {
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false, //Disable single page viewing
 		'rewrite'               => false,
-		'capability_type'       => array('campus','campuses'),
+		'capability_type'       => 'page',
 		'map_meta_cap'        	=> true,
 	);
 	register_post_type( 'block', $args );

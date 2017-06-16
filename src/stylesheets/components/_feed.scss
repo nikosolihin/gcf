@@ -88,43 +88,43 @@
   }
 
   // ///////////////// JUICER.IO /////////////////
-  // &-social {
-  //   // Juicer.io custom styling
-  //   &.juicer-feed {
-  //     font-family: $font-family !important;
-  //     h1.referral { display: none; }
-  //     .j-stack {
-  //       .feed-item {
-  //         border: 1px solid #e5e5e5;
-  //         border-radius: 2px;
-  //         .j-message p a.auto {
-  //           @include hover($link-color, $link-hover-color);
-  //           font-weight: $font-weight-medium;
-  //         }
-  //         .j-meta {
-  //           .comments, .likes {
-  //             font-size: .75rem;
-  //           }
-  //           a::before {
-  //             font-size: .8rem !important;
-  //           }
-  //         }
-  //         &.juicer { // Ad feed
-  //           display: none !important;
-  //         }
-  //       }
-  //     }
-  //     .j-paginate.juicer-button {
-  //       margin-top: $single;
-  //       margin-bottom: $single;
-  //       border: 0;
-  //       border-radius: 3px;
-  //       background-color: $button-bg;
-  //       border: 2px solid $button-bg;
-  //       padding: $half $threefourth;
-  //       text-transform: none;
-  //       text: $white $font-weight-bold center none $font-size-h6 $line-height;
-  //     }
-  //   }
-  // }
+  &-social {
+    // Juicer.io custom styling
+    &.juicer-feed {
+      font-family: $font-family !important;
+      h1.referral { display: none; }
+      .j-stack {
+        .feed-item {
+          border: 1px solid #e5e5e5;
+          border-radius: 2px;
+          .j-message p a.auto {
+            @include hover($link-color, $link-hover-color);
+            font-weight: $font-weight-medium;
+          }
+          .j-meta {
+            .comments, .likes {
+              font-size: .75rem;
+            }
+            a::before {
+              font-size: .8rem !important;
+            }
+          }
+          &.juicer { // Ad feed
+            display: none !important;
+          }
+        }
+      }
+      .j-paginate.juicer-button {
+        margin-top: $single;
+        margin-bottom: $single;
+        border: 0;
+        border-radius: 3px;
+        background-color: $brown;
+        border: 2px solid $brown;
+        padding: $half $threefourth;
+        text-transform: none;
+        text: $white $font-weight-bold center none $font-size-small $line-height;
+      }
+    }
+  }
 }

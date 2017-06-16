@@ -157,7 +157,7 @@
             "label": "Display Style",
             "name": "style",
             "type": "radio",
-            "instructions": "Displaying resources as a list saves space and should be used if there are many resources to be displayed. The card display style will feature a larger teaser image and works best if there are fewer resources in the list.",
+            "instructions": "Displaying resources as a list saves space and should be used if there are many resources to be displayed. The card display style will feature a larger teaser image and works best if there are fewer resources in the list. Note that all feed items stack vertically not horizontally.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -195,5 +195,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Feed",
-    "modified": 1494349283
+    "modified": 1497600761
 }
