@@ -6,7 +6,7 @@
 //
 // Turn on only on prod (i.e. before pushing)
 //==========================================================
-// add_action( 'init', 'ac_custom_column_settings_3628c532' );
+add_action( 'init', 'ac_custom_column_settings_3628c532' );
 function ac_custom_column_settings_3628c532() {
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
