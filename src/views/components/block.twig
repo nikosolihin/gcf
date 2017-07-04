@@ -1,0 +1,36 @@
+{% for block_id in data.blocks %}
+  {% set block = TimberPost(block_id) %}
+
+  {# Vars #}
+  {% set image = block.get_field('image')|serveImage %}
+  {% set description = block.get_field('description') %}
+  {% set link_type = block.get_field('type') %}
+  {% set is_stripped = block.get_field('stripped') %}
+  {% set stripped = is_stripped ? 'stripped' : '' %}
+  {% if link_type == "single" %}
+    {% set url = block.get_field('single_url') %}
+  {% elseif link_type == "external" %}
+    {% set url = block.get_field('external_url') %}
+  {% else %}
+    {% set url = block.get_field('search_url') %}
+  {% endif %}
+
+  <div class="{{'Block'|modifiers("#{stripped}")}} lazyload" data-component="block" data-url="{{url}}" data-bgset="{{image.xs}}">
+    {% if not is_stripped %}
+      <div class="Block-title h3 light white center">{{block.title}}</div>
+    {% endif %}
+
+    <a href="{{url}}" class="Block-body">
+      <p class="Block-bodyTitle hregular bold white">{{block.title}}</p>
+
+      <p class="Block-bodyTeaser hregular normal white center">{{description}}</p>
+
+      <p class="Block-bodyLink hmicro caps medium spaced white noMargin">
+        <span>{{__('Learn More', 'gcf')}}</span>
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+        </svg>
+      </p>
+    </a>
+  </div>
+{% endfor %}

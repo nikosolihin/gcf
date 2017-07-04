@@ -1,24 +1,19 @@
 .SinglePage {
-  padding: $single*1.5 0;
+  padding: 0 $single*2.5;
   box: vertical;
 
   @include from(md) {
-    padding-bottom: $single*3;
+    // padding-bottom: $single*3;
   }
   @include from(xl) {
-    padding: $single*5 0;
-    box: horizontal;
+    // padding: $single*5 0;
+    box: horizontal space-between;
   }
 
   &-content {
-    padding: $single*1.25;
-    padding-bottom: 0;
-    @include to(md) {
-      flex: 1 0 auto;
-      order: 1;
-    }
-    @include from(lg) {
-      flex: 1;
+    width: 63%;
+    @at-root .SinglePage--noSidebar #{&} {
+      width: 92.5%;
     }
   }
 
@@ -29,66 +24,75 @@
   }
 
   &-sidebar {
-    @include to(md) {
-      order: 1;
+    flex: 0 0 auto;
+    overflow: hidden;
+    @include from(lg) {
+      width: 28.5%;
+    }
+  }
+
+  &-toc {
+    position: relative;
+    border-top: 5px solid $brown;
+    background-color: #f7f7f7;
+    padding: $single*1.5 $single $single*2.25 $single*2;
+    margin-bottom: $single*2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: $single*1.85;
+      left: 0;
+      border-left: 12px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    &Content {
+      position: relative;
+      z-index: 1;
+
+      .Link {
+        padding: $quarter 0;
+      }
+    }
+
+    &Pattern {
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+      border-bottom: 125px solid rgba(0,0,0,0.025);
+      border-left: 125px solid transparent;
+      border-right: 125px solid transparent;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -125px;
+        z-index: 0;
+      }
+      &::before {
+        border-bottom: 100px solid rgba(255,255,255,0.3);
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+
+      }
+      &::after {
+        border-bottom: 80px solid rgba(255,255,255,0.3);
+        border-right: 80px solid transparent;
+        border-left: 80px solid transparent;
+        left: -200px;
+      }
     }
   }
 
   &--noSidebar {
+    box: vertical center;
     // Some components need smaller width when using the without-sidebar template
     [class="row"] > .column > .Editor {
       // In a one column layout, slim out editor
       max-width: $container-text-width;
       margin: 0 auto;
-    }
-  }
-
-  @at-root .page #{&},
-  .archive #{&} {
-    &-sidebar {
-      display: none;
-      @include from(xl) {
-        display: block;
-        padding-top: $single*5;
-      }
-    }
-  }
-
-  @at-root .single-news #{&} {
-    padding-top: 0;
-    padding-bottom: $single*4;
-    border-top: 1px solid $line;
-    @include from(lg) {
-      padding: $single*1.5 0;
-      border-top: 0;
-    }
-
-    &-content {
-      @include to(md) {
-        order: 1;
-        padding-bottom: 0;
-      }
-    }
-    &-share {
-      @include to(md) {
-        order: 2;
-      }
-    }
-    &-sidebar {
-      display: none;
-      @include from(lg) {
-        display: block;
-      }
-    }
-  }
-
-  @at-root .single-campus #{&} {
-    &-content {
-      margin-bottom: $single*2;
-    }
-    @include from(lg) {
-      padding: $single*5 0;
-      box: horizontal;
     }
   }
 }

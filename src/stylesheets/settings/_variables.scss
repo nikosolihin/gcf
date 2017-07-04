@@ -21,7 +21,8 @@ $beige:                        #f8f4f1 !default;
 $coffee:                       #6c4820 !default;
 $maroon:                       #89462e !default;
 $smoke:                        #f0f3f7 !default;
-// $brown:                        #e29549 !default;
+// saturated brown
+// $brown:                        #e9821a !default;
 $brown:                        #e49341 !default;
 
 //=============================================
@@ -54,7 +55,7 @@ $image-breakpoints: (
 $desktop:                         'md' !default;
 $container-width:                 1200px !default;
 $container-landing-width:         1400px !default;
-$container-text-width:            800px !default;
+$container-text-width:            700px !default;
 
 //=============================================
 // Elements
@@ -143,7 +144,7 @@ $zindex-loader:                  6000 !default;
 // // // Loader //////////////////////////////////////
 // $loader-size:                  $single*2 !default;
 // $loader-color:                 $orange !default;
-//
-// // Banner ///////////////////////////////////
-// $banner-small-height:          450px !default;
-// $banner-large-height:          650px !default;
+
+// Banner ///////////////////////////////////
+$banner-small-height:          450px !default;
+$banner-large-height:          650px !default;

@@ -4,6 +4,7 @@
   background-color: lighten($beige, 2%);
   border-radius: 3px;
   padding: $single $single $single $single*1.25;
+  margin: $single 0;
   border: 1px solid lighten($beige, 2%);
   transition: background-color .135s ease-in-out;
 
@@ -31,7 +32,7 @@
   }
 
   @at-root .Sidebar-section #{&} {
-    margin-bottom: 0 !important;
+    // margin-bottom: 0 !important;
     max-width: 100%;
     width: 100%;
   }

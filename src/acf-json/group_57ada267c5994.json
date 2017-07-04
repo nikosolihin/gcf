@@ -15,11 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "button_label": "Add Component",
-            "min": "",
-            "max": "",
-            "layouts": [
-                {
+            "layouts": {
+                "57cce912c04f5": {
                     "key": "57cce912c04f5",
                     "name": "link",
                     "label": "Link",
@@ -50,7 +47,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57cce96cd6dbb": {
                     "key": "57cce96cd6dbb",
                     "name": "spacer",
                     "label": "Spacer",
@@ -81,7 +78,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57ada279dd4f6": {
                     "key": "57ada279dd4f6",
                     "name": "editor",
                     "label": "Text Editor",
@@ -112,7 +109,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57addadab1af7": {
                     "key": "57addadab1af7",
                     "name": "feed",
                     "label": "Feed",
@@ -143,7 +140,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57ada2fbf1f9d": {
                     "key": "57ada2fbf1f9d",
                     "name": "tabs",
                     "label": "Tabs",
@@ -174,7 +171,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57bd405e76341": {
                     "key": "57bd405e76341",
                     "name": "block",
                     "label": "Blocks",
@@ -205,7 +202,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "57dae4fbd1434": {
                     "key": "57dae4fbd1434",
                     "name": "map",
                     "label": "Maps",
@@ -236,7 +233,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "589c8e294d8cb": {
                     "key": "589c8e294d8cb",
                     "name": "download",
                     "label": "Download",
@@ -267,7 +264,7 @@
                     "min": "",
                     "max": ""
                 },
-                {
+                "58a2899f4c067": {
                     "key": "58a2899f4c067",
                     "name": "image",
                     "label": "Image",
@@ -297,39 +294,11 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                {
-                    "key": "58cac55129c9b",
-                    "name": "voice",
-                    "label": "Voices",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_58cac55129c9c",
-                            "label": "Voices",
-                            "name": "voice",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_58cac23a62a71"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
-            ]
+            },
+            "button_label": "Add Component",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -349,5 +318,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1489683820
+    "modified": 1499145703
 }
