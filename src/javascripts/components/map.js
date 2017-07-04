@@ -7,7 +7,7 @@ export default class Map {
   }
 
   newMap(el) {
-    GoogleMapsLoader.KEY = 'AIzaSyCcqne1WUPeDEbyBfk9jurNKJ5ofAZlLIY'
+    GoogleMapsLoader.KEY = 'AIzaSyDW7g4UuMum00xC2pm6kPgAyWckSxa6xd8'
     GoogleMapsLoader.load( google => {
       let $markers = $(el).find('.marker'),
         latlng = []

@@ -15,8 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "center_lat": "-6.2187765",
-            "center_lng": "106.6258711",
+            "center_lat": "48.5878986",
+            "center_lng": "7.7580128",
             "zoom": "",
             "height": ""
         },
@@ -79,5 +79,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Maps",
-    "modified": 1494680326
+    "modified": 1499152112
 }
