@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_589c32ce9df61",
-            "label": "Label",
+            "label": "Text",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -17,6 +17,23 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_595afde5e3973",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<strong>About Blocks<\/strong><br>\r\nBlocks are <em>attention-grabbing<\/em> buttons that are customized with a title and brief teaser text overlaying an image background. They're mainly used to cross-link related pages\/posts that you have listed in the <em>Related Information<\/em> section of the content planner template.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_589c3344f996c",
@@ -36,6 +53,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_595b12cdac938",
+            "label": "Disable block title?",
+            "name": "stripped",
+            "type": "true_false",
+            "instructions": "If the background image already contains texts you may disable the title from being shown.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_589c32da9df62",
@@ -107,41 +143,6 @@
             "google_photos_user_id": "",
             "google_photos_access_token": "",
             "google_photos_message": ""
-        },
-        {
-            "key": "field_5940fe288741c",
-            "label": "Orientation",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5940fe318741d",
-            "label": "",
-            "name": "orientation",
-            "type": "true_false",
-            "instructions": "The default is horizontal, meaning it will be wider than it is tall. Vertical is the opposite, the block will be taller, like a bookmark. You may insert multiple blocks using the block component on the page builder and they will arrange themselves automatically.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Horizontal vs. Vertical",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "Vertical",
-            "ui_off_text": "Horizontal"
         }
     ],
     "location": [
@@ -177,5 +178,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1497610763
+    "modified": 1499144037
 }

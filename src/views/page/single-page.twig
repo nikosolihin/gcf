@@ -1,26 +1,54 @@
 {% extends "base.twig" %}
 {% block content %}
 
-<div class="TypeTester">
+{% set sidebar = no_sidebar ? 'noSidebar' : '' %}
 
-<h1 class="h1 orange">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+{% if not with_banner %}
+  {# TODO: Fix banner #}
+  {# include 'components/banner.twig' #}
+{% endif %}
 
-<h2 class="h2">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
-<p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing</strong> elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at. Cras sit amet nibh libero, <em>in gravida nulla.</em> Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. <a href="#">Dolor tenetur</a> saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+<div class="{{'SinglePage'|modifiers("#{sidebar}")}} container">
 
-<hr>
+  <div class="SinglePage-content">
+    {% include 'layout/base.twig' %}
+  </div>
 
-<h3 class="h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+  {% if not no_sidebar %}
+    <div class="SinglePage-sidebar Sidebar">
 
-<h4 class="h4">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+      {% if toc %}
+        <div class="SinglePage-toc">
+          <div class="SinglePage-tocContent">
+            <h2 class="h3 light brown singleMargin">{{post.parent.title|title}}</h2>
+            {% for child in post.parent.children %}
+              {% if child.id == post.id %}
+                <a href="{{child.link}}" class="Link Link--reversed hregular brown bold halfPadding">
+                  <span>{{child.title}}</span>
+                  <svg aria-hidden="true" role="presentation" title="{{child.title}}">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+                  </svg>
+                </a>
+              {% else %}
+                <a href="{{child.link}}" class="Link Link--reversed Link--fillCurrent hregular line light halfPadding">
+                  <span class="dark-gray">{{child.title}}</span>
+                  <svg aria-hidden="true" role="presentation" title="{{child.title}}">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right"></use>
+                  </svg>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="SinglePage-tocPattern"></div>
+        </div>
+      {% endif %}
 
-<h5 class="h5">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
-
-<h6 class="h6 caps spaced orange">World News</h6>
+      {# Sidebar #}
+      {% if sidebar_sections %}
+        {% include 'layout/sidebar-base.twig' %}
+      {% endif %}
+    </div>
+  {% endif %}
 
 </div>
 

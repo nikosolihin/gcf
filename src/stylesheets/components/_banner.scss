@@ -1,14 +1,34 @@
 .Banner {
   &-image {
     @include cover;
-    width: 100%;
-    height: $single*27;
+    size: 100%;
 
     &--top {
       background-position: top center;
     }
     &--bottom {
       background-position: bottom center;
+    }
+  }
+
+  // Styles
+  &--hidden { display: none; }
+  &--small {
+    height: $banner-small-height/1.75;
+    @include from(md) {
+      height: $banner-small-height/1.25;
+    }
+    @include from(lg) {
+      height: $banner-small-height;
+    }
+  }
+  &--large {
+    height: $banner-large-height/1.75;
+    @include from(md) {
+      height: $banner-large-height/1.25;
+    }
+    @include from(lg) {
+      height: $banner-large-height;
     }
   }
 }

@@ -210,8 +210,8 @@ if( function_exists('acf_add_options_page') ) {
 // Only list children pages for landing page
 // exception list
 //=============================================
-// function landing_exception_query( $args, $field, $post_id ) {
-//   $args['post_parent'] = $post_id;
-//   return $args;
-// }
-// add_filter('acf/fields/post_object/query/name=landing_layout_exception', 'landing_exception_query', 10, 3);
+function landing_exception_query( $args, $field, $post_id ) {
+  $args['post_parent'] = $post_id;
+  return $args;
+}
+add_filter('acf/fields/post_object/query/name=landing_layout_exception', 'landing_exception_query', 10, 3);

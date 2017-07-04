@@ -43,6 +43,9 @@
 .white {
   @include white;
 }
+.line {
+  color: #bbbbbb;
+}
 .faint {
   color: $gray-lighter;
 }

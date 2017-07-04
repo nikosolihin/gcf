@@ -79,7 +79,6 @@ if ($inherit) {
 	$context['sidebar_sections'] = $sidebar;
 }
 
-// TODO:
-// If type is gallery or video, grab og:image
+// TODO: If type is gallery or video, grab og:image
 
 Timber::render( 'resource/single-resource.twig' , $context, 600 );

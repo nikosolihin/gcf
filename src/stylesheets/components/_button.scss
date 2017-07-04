@@ -10,7 +10,10 @@
   text: $white $font-weight-bold left none $font-size-small 1;
 
   &--block {
+    @extend .medium, .caps, .spaced;
     display: block;
+    text-align: center;
+    padding: $threefourth $single;
   }
 
   // Style
